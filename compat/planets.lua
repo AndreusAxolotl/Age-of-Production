@@ -36,6 +36,15 @@ if mods["maraxsis"] then
         add_crafting_categories("assembling-machine", "maraxsis-hydro-plant", {"hydraulics", "hydraulics-or-chemistry", "hydraulics-or-organic", "hydraulics-or-chemistry-or-cryogenics", "synthesis-or-chemistry"})
         data.raw["assembling-machine"]["maraxsis-hydro-plant"].effect_receiver = { base_effect = { productivity = 0.25, quality = 2.5 }}
         data.raw.technology["aop-specialized-science"].prerequisites = {"aop-armory", "aop-petrochemistry", "aop-hybridation", "cryogenic-science-pack", "maraxsis-deepsea-research"}
+    else
+        -- fix missing advanced thruster fuel/oxidizer recipes
+        data:extend{{type="recipe-category", name="maraxsis-hydro-plant-or-hydraulics-or-chemistry"}}
+        add_crafting_categories("assembling-machine", "aop-hydraulic-plant", {"maraxsis-hydro-plant-or-hydraulics-or-chemistry"})
+        add_crafting_categories("assembling-machine", "maraxsis-hydro-plant", {"maraxsis-hydro-plant-or-hydraulics-or-chemistry", "synthesis-or-chemistry"}) -- also add stone/calcite synthesis to maraxis hydro plant
+        local recipesToMove = {"advanced-thruster-fuel","advanced-thruster-oxidizer"}
+        for _,rec in pairs(recipesToMove) do
+            data.raw.recipe[rec].category_id = "maraxsis-hydro-plant-or-hydraulics-or-chemistry"
+        end
     end
     
     data.raw.technology["aop-core-mining"].prerequisites = {"aop-electromechanics", "promethium-science-pack", "maraxsis-project-seadragon"}
