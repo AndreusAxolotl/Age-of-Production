@@ -1,4 +1,18 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.7.0
+Date: 2025-07-22
+  Atmospheric Sillynes Part 1.5:
+
+  Changes:
+    - All scrubbing recipes have been reworked. Waste water and waste water treating recipes have been removed and everything has been moved to the scrubber. Added a third output to the Scrubber.
+    - Paracelsin now has a scrubbing recipe, first modded one.
+    - Igrys, Paracelsin and Rubia now have set densities.
+    - Paracelsin now has a core mining recipe.
+
+  Notes:
+    - Yes, part 2 will come. trust me
+    - If anyone wants to help with the mod I'd appreciate it. Stuff's been getting too much for me to handle alone, and I don't want to abandon it. Mostly compat stuff the rest is pretty solid i think.
+---------------------------------------------------------------------------------------------------
 Version: 1.6.22
 Date: 2025-06-22
   Biological assemblers:

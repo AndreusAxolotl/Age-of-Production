@@ -88,6 +88,20 @@ data:extend{
           },
           {
             production_type = "output",
+            pipe_picture = require("__space-age__.prototypes.entity.electromagnetic-plant-pictures").pipe_pictures,
+            pipe_covers = pipecoverspictures(),
+            volume = 1000,
+            pipe_connections =
+            {
+              {
+                flow_direction = "output",
+                direction = defines.direction.south,
+                position = {0, 1}
+              }
+            }
+          },
+          {
+            production_type = "output",
             pipe_picture =                 biochamber_pictures.pipe_pictures_2,
             mirrored_pipe_picture =        biochamber_pictures.pipe_pictures_1,
             pipe_covers = pipecoverspictures(),

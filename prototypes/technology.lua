@@ -20,14 +20,6 @@ data:extend{
       },
       {
         type = "unlock-recipe",
-        recipe = "aop-nauvitian-waste-water-cleaning",
-      },
-      {
-        type = "unlock-recipe",
-        recipe = "aop-gleban-waste-water-cleaning",
-      },
-      {
-        type = "unlock-recipe",
         recipe = "aop-calcite-synthesis",
       },
       {
@@ -70,18 +62,6 @@ data:extend{
       {
         type = "unlock-recipe",
         recipe = "aop-aquiloan-air-scrubbing",
-      },
-      {
-        type = "unlock-recipe",
-        recipe = "aop-vulcanusian-waste-water-cleaning",
-      },
-      {
-        type = "unlock-recipe",
-        recipe = "aop-fulgoran-waste-water-cleaning",
-      },
-      {
-        type = "unlock-recipe",
-        recipe = "aop-aquiloan-waste-water-cleaning",
       },
     },
     prerequisites = {"aop-mineral-synthesis", "cryogenic-science-pack"},

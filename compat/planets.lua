@@ -512,4 +512,65 @@ if mods["maraxsis"] then
         }}
         add_tech_effect("aop-core-mining", {type = "unlock-recipe", recipe = "aop-naufulglebunusiloan-crushing"})
         add_tech_effect("aop-deep-mineral-refining-productivity", {type = "change-recipe-productivity", recipe = "aop-naufulglebunusiloan-crushing", change = 0.05})
+    end
+
+    if mods["Paracelsin"] then 
+        data.raw.planet["paracelsin"].surface_properties.density = 6300
+    data:extend {{
+            type = "recipe",
+            name = "aop-paracelsian-crushing",
+            icon = "__Age-of-Production-Graphics__/graphics/icons/paracelsian-crushing.png",
+            subgroup = "aop-core-mining",
+            enabled = false,
+            energy_required = 2,
+            ingredients = {
+                {type = "item", name = "aop-refined-mineral",      amount = 1},
+            },
+            results = {
+                {type = "item", name = "tetrahedrite", amount = 1, probability = 0.9},
+                {type = "item", name = "sphalerite", amount = 1, probability = 0.9},
+                {type = "item", name = "vaterite", amount = 1, probability = 0.45}, 
+            },
+            allow_productivity = true,
+            category = "crushing",
+            auto_recycle = false,
+            show_amount_in_title = false,
+            maximum_productivity = 1,
+            surface_conditions = {{property = "density", min = 6300, max = 6300}},
+        }}
+        data:extend {{
+    type = "recipe",
+    name = "aop-paracelsian-air-scrubbing",
+    icon = "__Age-of-Production-Graphics__/graphics/icons/paracelsian-air-scrubbing.png",
+    subgroup = "aop-scrubbing",
+    enabled = false,
+    energy_required = 5,
+    ingredients = {
+        {type = "item", name = "vaterite",      amount = 2},
+        {type = "fluid", name = "water",      amount = 100},
+    },
+    results = {
+        {type = "fluid", name = "water", amount = 10},
+        {type = "fluid", name = "nitrogen", amount = 10, probability = 0.50}, 
+        {type = "fluid", name = "steam", amount = 5, probability = 0.10}, 
+        {type = "item", name = "ice", amount = 2, probability = 0.10},
+    },
+    allow_productivity = false,
+    allow_quality = false,
+    category = "scrubbing",
+    auto_recycle = false,
+    show_amount_in_title = false,
+    surface_conditions = {{property = "pressure", min = 5300, max = 5300}}
+}}
+        add_tech_effect("aop-core-mining", {type = "unlock-recipe", recipe = "aop-paracelsian-crushing"})
+        add_tech_effect("aop-deep-mineral-refining-productivity", {type = "change-recipe-productivity", recipe = "aop-paracelsian-crushing", change = 0.05})
+        add_tech_effect("aop-additional-air-scrubbing", {type = "unlock-recipe", recipe = "aop-paracelsian-air-scrubbing"})
     end    
+
+    if mods["rubia"] then 
+        data.raw.planet["rubia"].surface_properties.density = 2420
+    end
+
+    if mods["Igrys"] then 
+        data.raw.planet["igrys"].surface_properties.density = 2934
+    end
