@@ -43,7 +43,7 @@ data:extend {{
     category = "scrubbing",
     auto_recycle = false,
     show_amount_in_title = false,
-    surface_conditions = {{property = "pressure", min = 1000, max = 1000}, {property = "density", min = 5500, max = 5500}}
+    surface_conditions = {{property = "pressure", min = 1000, max = 1000}, {property = "deep-crustal-stability", min = 5500, max = 5500}}
 }}
 data:extend {{
     type = "recipe",

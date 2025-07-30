@@ -1,4 +1,15 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.7.1
+Date: 2025-07-30
+  We love stupid surface conditions in this house:
+
+  Additions:
+    - Added Deep Crustal Stability to some new planets.
+    - Added Jahtran Mineral Crushing.
+
+  Changes:
+    - Replaced Density with Deep Crustal Stability. Just an aesthetic change to free an actual planetary value for other modders to use seriously and not like i did lol.
+---------------------------------------------------------------------------------------------------
 Version: 1.7.0
 Date: 2025-07-22
   Atmospheric Sillynes Part 1.5:

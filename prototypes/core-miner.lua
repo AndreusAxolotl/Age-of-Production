@@ -61,7 +61,7 @@ data:extend{
         surface_conditions =
         {
             {
-                property = "density",
+                property = "deep-crustal-stability",
                 min = 3000,
             }
         },

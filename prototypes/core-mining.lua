@@ -161,7 +161,7 @@ data:extend {{
     auto_recycle = false,
     show_amount_in_title = false,
     maximum_productivity = 1,
-    surface_conditions = {{property = "density", min = 5200, max = 5200}},
+    surface_conditions = {{property = "deep-crustal-stability", min = 5200, max = 5200}},
 }}
 
 data:extend {{
@@ -185,7 +185,7 @@ data:extend {{
     auto_recycle = false,
     show_amount_in_title = false,
     maximum_productivity = 1,
-    surface_conditions = {{property = "density", min = 5500, max = 5500}},
+    surface_conditions = {{property = "deep-crustal-stability", min = 5500, max = 5500}},
 }}
 
 data:extend {{
@@ -213,7 +213,7 @@ data:extend {{
     auto_recycle = false,
     show_amount_in_title = false,
     maximum_productivity = 1,
-    surface_conditions = {{property = "density", min = 5300, max = 5300}},
+    surface_conditions = {{property = "deep-crustal-stability", min = 5300, max = 5300}},
 }}
 
 data:extend {{
@@ -237,5 +237,5 @@ data:extend {{
     auto_recycle = false,
     show_amount_in_title = false,
     maximum_productivity = 1,
-    surface_conditions = {{property = "density", min = 3900, max = 3900}},
+    surface_conditions = {{property = "deep-crustal-stability", min = 3900, max = 3900}},
 }}

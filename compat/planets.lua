@@ -82,8 +82,8 @@ if mods["maraxsis"] then
                 {type = "item", name = "carbon", amount = 2},
                 {type = "fluid", name = "hydrogen", amount = 4},
          }
-        data.raw.planet["maraxsis"].surface_properties.density = 4700
-        data.raw.planet["maraxsis-trench"].surface_properties.density = 4700
+        data.raw.planet["maraxsis"].surface_properties["deep-crustal-stability"] = 4700
+        data.raw.planet["maraxsis-trench"].surface_properties["deep-crustal-stability"] = 4700
     data:extend {{
             type = "recipe",
             name = "aop-maraxsian-crushing",
@@ -106,7 +106,7 @@ if mods["maraxsis"] then
             auto_recycle = false,
             show_amount_in_title = false,
             maximum_productivity = 1,
-            surface_conditions = {{property = "density", min = 4700, max = 4700}},
+            surface_conditions = {{property = "deep-crustal-stability", min = 4700, max = 4700}},
         }}
         add_tech_effect("aop-core-mining", {type = "unlock-recipe", recipe = "aop-maraxsian-crushing"})
         add_tech_effect("aop-deep-mineral-refining-productivity", {type = "change-recipe-productivity", recipe = "aop-maraxsian-crushing", change = 0.05})
@@ -117,7 +117,7 @@ if mods["maraxsis"] then
     add_science_pack("aop-arc-furnace", {"electrochemical-science-pack", 1})
     add_tech_prerequisites("aop-petrochemistry", "electrochemical-science-pack")
     add_science_pack("aop-petrochemistry", {"electrochemical-science-pack", 1})
-    data.raw.planet["corrundum"].surface_properties.density = 4000
+    data.raw.planet["corrundum"].surface_properties["deep-crustal-stability"] = 4000
     data:extend {{
         type = "recipe",
         name = "aop-corrundumian-crushing",
@@ -139,7 +139,7 @@ if mods["maraxsis"] then
         auto_recycle = false,
         show_amount_in_title = false,
         maximum_productivity = 1,
-        surface_conditions = {{property = "density", min = 4000, max = 4000}},
+        surface_conditions = {{property = "deep-crustal-stability", min = 4000, max = 4000}},
     }}
     add_tech_effect("aop-core-mining", {type = "unlock-recipe", recipe = "aop-corrundumian-crushing"})
     add_tech_effect("aop-deep-mineral-refining-productivity", {type = "change-recipe-productivity", recipe = "aop-corrundumian-crushing", change = 0.05})
@@ -154,7 +154,7 @@ if mods["maraxsis"] then
     data.raw.recipe["aop-salvager"].surface_conditions = {{property = "pressure", min = 200, max = 280}}
     data.raw.item["aop-salvager"].default_import_location = "frozeta"
     data.raw["furnace"]["aop-salvager"].result_inventory_size = 40
-    data.raw.planet["frozeta"].surface_properties.density = 3100
+    data.raw.planet["frozeta"].surface_properties["deep-crustal-stability"] = 3100
     data:extend {{
         type = "recipe",
         name = "aop-frozetan-crushing",
@@ -174,7 +174,7 @@ if mods["maraxsis"] then
         auto_recycle = false,
         show_amount_in_title = false,
         maximum_productivity = 1,
-        surface_conditions = {{property = "density", min = 3100, max = 3100}},
+        surface_conditions = {{property = "deep-crustal-stability", min = 3100, max = 3100}},
     }}
     add_tech_effect("aop-core-mining", {type = "unlock-recipe", recipe = "aop-frozetan-crushing"})
     add_tech_effect("aop-deep-mineral-refining-productivity", {type = "change-recipe-productivity", recipe = "aop-frozetan-crushing", change = 0.05})
@@ -189,7 +189,7 @@ if mods["maraxsis"] then
 
     add_science_pack("aop-quantum-machinery", {"bioluminescent-science-pack", 1})
 
-    data.raw.planet["tenebris"].surface_properties.density = 5100
+    data.raw.planet["tenebris"].surface_properties["deep-crustal-stability"] = 5100
     data:extend {{
         type = "recipe",
         name = "aop-tenebrisian-crushing",
@@ -210,7 +210,7 @@ if mods["maraxsis"] then
         auto_recycle = false,
         show_amount_in_title = false,
         maximum_productivity = 1,
-        surface_conditions = {{property = "density", min = 5100, max = 5100}},
+        surface_conditions = {{property = "deep-crustal-stability", min = 5100, max = 5100}},
     }}
     add_tech_effect("aop-core-mining", {type = "unlock-recipe", recipe = "aop-tenebrisian-crushing"})
     add_tech_effect("aop-deep-mineral-refining-productivity", {type = "change-recipe-productivity", recipe = "aop-tenebrisian-crushing", change = 0.05})
@@ -230,7 +230,7 @@ if mods["maraxsis"] then
             {type = "item", name = "palusium-plate", amount = 25},
         }
     data.raw.item["aop-biochemical-facility"].default_import_location = "terrapalus"
-    data.raw.planet["terrapalus"].surface_properties.density = 2200
+    data.raw.planet["terrapalus"].surface_properties["deep-crustal-stability"] = 2200
     end
     
     if mods["castra"] then
@@ -248,7 +248,7 @@ if mods["maraxsis"] then
         }
     data.raw["assembling-machine"]["forge"].effect_receiver = { base_effect = { productivity = 0.0, quality = 1 }}
     
-    data.raw.planet["castra"].surface_properties.density = 5000
+    data.raw.planet["castra"].surface_properties["deep-crustal-stability"] = 5000
     data:extend {{
         type = "recipe",
         name = "aop-castran-crushing",
@@ -270,13 +270,13 @@ if mods["maraxsis"] then
         auto_recycle = false,
         show_amount_in_title = false,
         maximum_productivity = 1,
-        surface_conditions = {{property = "density", min = 5000, max = 5000}},
+        surface_conditions = {{property = "deep-crustal-stability", min = 5000, max = 5000}},
     }}
     add_tech_effect("aop-core-mining", {type = "unlock-recipe", recipe = "aop-castran-crushing"})
     add_tech_effect("aop-deep-mineral-refining-productivity", {type = "change-recipe-productivity", recipe = "aop-castran-crushing", change = 0.05})
     end
     if mods["planet-muluna"] then 
-        data.raw.planet["muluna"].surface_properties.density = 3400
+        data.raw.planet["muluna"].surface_properties["deep-crustal-stability"] = 3400
     data:extend {{
             type = "recipe",
             name = "aop-mulunan-crushing",
@@ -298,7 +298,7 @@ if mods["maraxsis"] then
             auto_recycle = false,
             show_amount_in_title = false,
             maximum_productivity = 1,
-            surface_conditions = {{property = "density", min = 3400, max = 3400}},
+            surface_conditions = {{property = "deep-crustal-stability", min = 3400, max = 3400}},
         }}
         add_tech_effect("aop-core-mining", {type = "unlock-recipe", recipe = "aop-mulunan-crushing"})
         add_tech_effect("aop-deep-mineral-refining-productivity", {type = "change-recipe-productivity", recipe = "aop-mulunan-crushing", change = 0.05})
@@ -306,32 +306,32 @@ if mods["maraxsis"] then
     end
 
     if mods["Cerys-Moon-of-Fulgora"] then 
-        data.raw.planet["cerys"].surface_properties.density = 1200
+        data.raw.planet["cerys"].surface_properties["deep-crustal-stability"] = 1200
     end
 
     if mods["cubium"] then 
-        data.raw.planet["cubium"].surface_properties.density = 2300
+        data.raw.planet["cubium"].surface_properties["deep-crustal-stability"] = 2300
     end
 
     if mods["planet-arrakis"] then 
-        data.raw.planet["arrakis"].surface_properties.density = 2900
+        data.raw.planet["arrakis"].surface_properties["deep-crustal-stability"] = 2900
     end
 
     if mods["erm_toss"] then 
-        data.raw.planet["aiur"].surface_properties.density = 5500
+        data.raw.planet["aiur"].surface_properties["deep-crustal-stability"] = 5500
     end
 
     if mods["erm_zerg"] then 
-        data.raw.planet["char"].surface_properties.density = 5200
+        data.raw.planet["char"].surface_properties["deep-crustal-stability"] = 5200
     end
 
     if mods["Factorio-Tiberium"] then 
         if common.whichPlanet == "nauvis" or common.whichPlanet == "pure-nauvis" then return end
-        data.raw.planet["tiber"].surface_properties.density = 2700
+        data.raw.planet["tiber"].surface_properties["deep-crustal-stability"] = 2700
     end 
 
     if mods["janus"] then 
-        data.raw.planet["janus"].surface_properties.density = 2300
+        data.raw.planet["janus"].surface_properties["deep-crustal-stability"] = 2300
     end
 
     if mods["lignumis"] then 
@@ -353,13 +353,13 @@ if mods["maraxsis"] then
         add_crafting_categories("assembling-machine", "steam-assembling-machine", {"advanced-centrifuging-or-crafting", "advanced-centrifuging-or-crafting-or-electromechanics", "quantum-assembling-or-crafting", "woodworking-or-crafting", "electromechanics-or-crafting", "electronics-or-electromechanics", "pressing-or-electromechanics", "ammunition-or-crafting", "woodworking-or-organic-or-assembling", "organic-or-assembling-or-electromechanics"})
         add_crafting_categories("assembling-machine", "lumber-mill", {"woodworking", "woodworking-or-organic", "woodworking-or-crafting", "woodworking-or-organic-or-assembling"})
         add_crafting_categories("assembling-machine", "aop-lumber-mill", {"wood-processing-or-assembling"})
-        data.raw.planet["lignumis"].surface_properties.density = 2000
+        data.raw.planet["lignumis"].surface_properties["deep-crustal-stability"] = 2000
     end
 
     if mods["metal-and-stars"] then 
-        data.raw.planet["shipyard"].surface_properties.density = 100
-        data.raw.planet["nix"].surface_properties.density = 3600
-        data.raw.planet["ringworld"].surface_properties.density = 500
+        data.raw.planet["shipyard"].surface_properties["deep-crustal-stability"] = 0
+        data.raw.planet["nix"].surface_properties["deep-crustal-stability"] = 3600
+        data.raw.planet["ringworld"].surface_properties["deep-crustal-stability"] = 0
     data:extend {{
             type = "recipe",
             name = "aop-nixan-crushing",
@@ -380,16 +380,16 @@ if mods["maraxsis"] then
             auto_recycle = false,
             show_amount_in_title = false,
             maximum_productivity = 1,
-            surface_conditions = {{property = "density", min = 3600, max = 3600}},
+            surface_conditions = {{property = "deep-crustal-stability", min = 3600, max = 3600}},
         }}
         add_tech_effect("aop-core-mining", {type = "unlock-recipe", recipe = "aop-nixan-crushing"})
         add_tech_effect("aop-deep-mineral-refining-productivity", {type = "change-recipe-productivity", recipe = "aop-nixan-crushing", change = 0.05})
     end
 
     if mods["dea-dia-system"] then 
-        data.raw.planet["planet-dea-dia"].surface_properties.density = 1500
-        data.raw.planet["lemures"].surface_properties.density = 3300
-        data.raw.planet["prosephina"].surface_properties.density = 3350
+        data.raw.planet["planet-dea-dia"].surface_properties["deep-crustal-stability"] = 50
+        data.raw.planet["lemures"].surface_properties["deep-crustal-stability"] = 3300
+        data.raw.planet["prosephina"].surface_properties["deep-crustal-stability"] = 3350
         data:extend {{
             type = "recipe",
             name = "aop-lemuresian-crushing",
@@ -411,7 +411,7 @@ if mods["maraxsis"] then
             auto_recycle = false,
             show_amount_in_title = false,
             maximum_productivity = 1,
-            surface_conditions = {{property = "density", min = 3300, max = 3300}},
+            surface_conditions = {{property = "deep-crustal-stability", min = 3300, max = 3300}},
         }}
         data:extend {{
             type = "recipe",
@@ -433,7 +433,7 @@ if mods["maraxsis"] then
             auto_recycle = false,
             show_amount_in_title = false,
             maximum_productivity = 1,
-            surface_conditions = {{property = "density", min = 3350, max = 3350}},
+            surface_conditions = {{property = "deep-crustal-stability", min = 3350, max = 3350}},
         }}
         add_tech_effect("aop-core-mining", {type = "unlock-recipe", recipe = "aop-lemuresian-crushing"})
         add_tech_effect("aop-core-mining", {type = "unlock-recipe", recipe = "aop-prosephinan-crushing"})
@@ -442,7 +442,7 @@ if mods["maraxsis"] then
     end
 
     if mods["Moshine-assets"] and mods["Moshine"] then 
-        data.raw.planet["moshine"].surface_properties.density = 4200
+        data.raw.planet["moshine"].surface_properties["deep-crustal-stability"] = 4200
         data:extend {{
             type = "recipe",
             name = "aop-moshinean-crushing",
@@ -466,14 +466,14 @@ if mods["maraxsis"] then
             auto_recycle = false,
             show_amount_in_title = false,
             maximum_productivity = 1,
-            surface_conditions = {{property = "density", min = 4200, max = 4200}},
+            surface_conditions = {{property = "deep-crustal-stability", min = 4200, max = 4200}},
         }}
         add_tech_effect("aop-core-mining", {type = "unlock-recipe", recipe = "aop-moshinean-crushing"})
         add_tech_effect("aop-deep-mineral-refining-productivity", {type = "change-recipe-productivity", recipe = "aop-moshinean-crushing", change = 0.05})
     end
 
     if mods["naufulglebunusilo"] then 
-        data.raw.planet["naufulglebunusilo"].surface_properties.density = 10000
+        data.raw.planet["naufulglebunusilo"].surface_properties["deep-crustal-stability"] = 10000
         data:extend {{
             type = "recipe",
             name = "aop-naufulglebunusiloan-crushing",
@@ -508,14 +508,14 @@ if mods["maraxsis"] then
             auto_recycle = false,
             show_amount_in_title = false,
             maximum_productivity = 1,
-            surface_conditions = {{property = "density", min = 10000, max = 10000}},
+            surface_conditions = {{property = "deep-crustal-stability", min = 10000, max = 10000}},
         }}
         add_tech_effect("aop-core-mining", {type = "unlock-recipe", recipe = "aop-naufulglebunusiloan-crushing"})
         add_tech_effect("aop-deep-mineral-refining-productivity", {type = "change-recipe-productivity", recipe = "aop-naufulglebunusiloan-crushing", change = 0.05})
     end
 
     if mods["Paracelsin"] then 
-        data.raw.planet["paracelsin"].surface_properties.density = 6300
+        data.raw.planet["paracelsin"].surface_properties["deep-crustal-stability"] = 6300
     data:extend {{
             type = "recipe",
             name = "aop-paracelsian-crushing",
@@ -536,7 +536,7 @@ if mods["maraxsis"] then
             auto_recycle = false,
             show_amount_in_title = false,
             maximum_productivity = 1,
-            surface_conditions = {{property = "density", min = 6300, max = 6300}},
+            surface_conditions = {{property = "deep-crustal-stability", min = 6300, max = 6300}},
         }}
         data:extend {{
     type = "recipe",
@@ -568,9 +568,41 @@ if mods["maraxsis"] then
     end    
 
     if mods["rubia"] then 
-        data.raw.planet["rubia"].surface_properties.density = 2420
+        data.raw.planet["rubia"].surface_properties["deep-crustal-stability"] = 2420
     end
 
     if mods["Igrys"] then 
-        data.raw.planet["igrys"].surface_properties.density = 2934
+        data.raw.planet["igrys"].surface_properties["deep-crustal-stability"] = 2934
+    end
+
+    if mods["jahtra"] then 
+        data.raw.planet["jahtra"].surface_properties["deep-crustal-stability"] = 9001 
+        -- ITS OVER 9000 
+data:extend {{
+            type = "recipe",
+            name = "aop-jahtran-crushing",
+            icon = "__Age-of-Production-Graphics__/graphics/icons/jahtran-crushing.png",
+            subgroup = "aop-core-mining",
+            enabled = false,
+            energy_required = 2,
+            ingredients = {
+                {type = "item", name = "aop-refined-mineral",      amount = 1},
+            },
+            results = {
+                {type = "item", name = "jahtra-ilmenite", amount = 1, probability = 0.5},
+                {type = "item", name = "copper-ore", amount = 2, probability = 0.3},
+            },
+            allow_productivity = true,
+            category = "crushing",
+            auto_recycle = false,
+            show_amount_in_title = false,
+            maximum_productivity = 1,
+            surface_conditions = {{property = "deep-crustal-stability", min = 9001, max = 9001}},
+        }}
+        add_tech_effect("aop-core-mining", {type = "unlock-recipe", recipe = "aop-jahtran-crushing"})
+        add_tech_effect("aop-deep-mineral-refining-productivity", {type = "change-recipe-productivity", recipe = "aop-jahtran-crushing", change = 0.05})
+    end
+
+    if mods["skewer_shattered_planet"] then 
+        data.raw.planet["skewer_shattered_planet"].surface_properties["deep-crustal-stability"] = 0
     end
