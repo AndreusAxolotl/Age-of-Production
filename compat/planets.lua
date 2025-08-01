@@ -55,8 +55,9 @@ if mods["maraxsis"] then
         data.raw["recipe"]["aop-hydraulic-plant-recycling"] = nil
         data.raw["technology"]["aop-hydraulics"].hidden = true
         data.raw["assembling-machine"]["maraxsis-hydro-plant"].effect_receiver = { base_effect = { productivity = 0.25, quality = 2.5 }}
+        data.raw.technology["aop-core-mining"].prerequisites = { "aop-electromechanics", "promethium-science-pack", "maraxsis-deepsea-research" }
         if settings.startup["aop-specialized-science"].value then
-            add_tech_prerequisites("aop-specialized-science", "maraxsis-deepsea-research")
+            data.raw.technology["aop-specialized-science"].prerequisites = { "aop-armory", "aop-petrochemistry", "aop-hybridation", "maraxsis-deepsea-research" }
         end 
     end
     data.raw.recipe["coal-synthesis"].category = "hydro-or-synthesis"

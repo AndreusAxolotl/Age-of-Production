@@ -1,4 +1,11 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.7.2
+Date: 2025-08-01
+  Salty fix:
+
+  Fixes:
+    - Fixed Core Mining and Specialized Sciences not being able to be researched when Maraxsis was installed and the Hydro Merge enabled.
+---------------------------------------------------------------------------------------------------
 Version: 1.7.1
 Date: 2025-07-30
   We love stupid surface conditions in this house:
