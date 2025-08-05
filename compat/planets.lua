@@ -55,10 +55,18 @@ if mods["maraxsis"] then
         data.raw["recipe"]["aop-hydraulic-plant-recycling"] = nil
         data.raw["technology"]["aop-hydraulics"].hidden = true
         data.raw["assembling-machine"]["maraxsis-hydro-plant"].effect_receiver = { base_effect = { productivity = 0.25, quality = 2.5 }}
-        data.raw.technology["aop-core-mining"].prerequisites = { "aop-electromechanics", "promethium-science-pack", "maraxsis-deepsea-research" }
+        if mods["Krastorio2-spaced-out"] then 
+            data.raw.technology["aop-core-mining"].prerequisites = { "aop-electromechanics", "promethium-science-pack", "maraxsis-research-vessel" }
+        else
+            data.raw.technology["aop-core-mining"].prerequisites = { "aop-electromechanics", "promethium-science-pack", "maraxsis-deepsea-research" }
+        end
         if settings.startup["aop-specialized-science"].value then
-            data.raw.technology["aop-specialized-science"].prerequisites = { "aop-armory", "aop-petrochemistry", "aop-hybridation", "maraxsis-deepsea-research" }
-        end 
+            if mods["Krastorio2-spaced-out"] then 
+                data.raw.technology["aop-specialized-science"].prerequisites = { "aop-armory", "aop-petrochemistry", "aop-hybridation", "maraxsis-research-vessel" }
+            else    
+                data.raw.technology["aop-specialized-science"].prerequisites = { "aop-armory", "aop-petrochemistry", "aop-hybridation", "maraxsis-deepsea-research" }
+            end 
+        end
     end
     data.raw.recipe["coal-synthesis"].category = "hydro-or-synthesis"
     add_crafting_categories("assembling-machine", "maraxsis-hydro-plant", {"hydro-or-synthesis", "hydraulics", "hydraulics-or-chemistry", "hydraulics-or-organic", "hydraulics-or-chemistry-or-cryogenics", "synthesis-or-chemistry"})
