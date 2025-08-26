@@ -8,7 +8,7 @@ local function add_crafting_categories(entity_type, entity_name, categories)
 end
 
 local meld = require("meld")
-            data.raw["lab"]["aop-quantum-computer"].inputs = meld(data.raw["lab"]["aop-quantum-computer"].inputs, data.raw["lab"]["lab"].inputs)
+            data.raw["lab"]["aop-quantum-computer"].inputs = meld(data.raw["lab"]["aop-quantum-computer"].inputs, data.raw["lab"]["biolab"].inputs)
 
 data.raw.recipe["nutrients-recycling"].results = {
                 {
