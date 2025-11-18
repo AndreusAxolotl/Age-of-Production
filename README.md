@@ -1,7 +1,5 @@
 One day I asked myself: "Space Age adds so much! But why do I still have to smelt bricks the good old way?"
-After that, I found Hurricane's amazing textures and I decided that I'd have made a mod!
-
-Two months later, here we are! My first true mod!
+After that, I found Hurricane's amazing textures and I decided that I'd have had to make a mod!
 
 # Age of Production
 
@@ -27,7 +25,7 @@ The new additions, per planet, are:
 # Gleba:
 - Biochemical Facility: Hybridate pentapods and biters to satiate your desire for pain and suffering! This abomination can make most solid biological recipes without the need of eating! Why only solid when the machine is filled with fluids? Well... Uhm... The poor Pentapod-biter hybrid has a weak digestive system it'd feel bad if it drank something! :c Going back to the important stuff, only 25% prod! (Unlocked after Quantum Processors and Captive Biter Spawners)
 - Greenhouse: Even the engineer has a green thumb! Or is it just pentapod blood? We may never know! This calm paradise in the factory's chaos can grow plants for you. 50% prod, the usual. Gleban products can only be grown there but wood on the other hand... let's just say there will be some more oxygen in space. It even has a related infinite tech! (Unlocked after the Lumber Mill and Cryogenic Science)
-- Scrubber: This little machine will clean up all of your mistakes! Give it a catalyst and some water and it will clean up any atmosphere, only leaving some Waste Water for you to clean up! But your atmospheric trash is your own treasure! By cleaning the water you may get back some polluting products... (Unlocked after Agricultural Science, with additional recipes after unlocking Mineral Synthesis)
+- Scrubber: This little machine will clean up all of your mistakes! Give it a catalyst and some water and it will clean up any atmosphere, only leaving sone polluting byproducts... (Unlocked after Agricultural Science, with additional recipes after unlocking Mineral Synthesis)
 
 # Fulgora:
 - Salvager: This upgraded Recycler doesn't just scrap the stuff you throw inside of it, it melts the components and then rebuilds them, sometimes with an higher quality than before! That's right, 10% quality recycler! (Unlocked after Quality Modules 3 and Carbon Fiber.)
