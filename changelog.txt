@@ -1,4 +1,18 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.7.6
+Date: 2025-11-18
+  freedom:
+
+  Changes:
+    - Freed assets mod from its shackles of being dependant on aop. i thought i did that months ago but welp
+---------------------------------------------------------------------------------------------------
+Version: 1.7.5
+Date: 2025-11-01
+  labful:
+
+  Fixex:
+    - Removed Muluna dependency to fix a loop.
+---------------------------------------------------------------------------------------------------
 Version: 1.7.4
 Date: 2025-08-09
   labful:
