@@ -361,7 +361,7 @@ if mods["maraxsis"] then
         add_crafting_categories("assembling-machine", "burner-assembling-machine", {"advanced-centrifuging-or-crafting", "advanced-centrifuging-or-crafting-or-electromechanics", "quantum-assembling-or-crafting", "woodworking-or-crafting", "electromechanics-or-crafting", "electronics-or-electromechanics", "pressing-or-electromechanics", "ammunition-or-crafting", "woodworking-or-organic-or-assembling", "organic-or-assembling-or-electromechanics"})
         add_crafting_categories("assembling-machine", "steam-assembling-machine", {"advanced-centrifuging-or-crafting", "advanced-centrifuging-or-crafting-or-electromechanics", "quantum-assembling-or-crafting", "woodworking-or-crafting", "electromechanics-or-crafting", "electronics-or-electromechanics", "pressing-or-electromechanics", "ammunition-or-crafting", "woodworking-or-organic-or-assembling", "organic-or-assembling-or-electromechanics"})
         add_crafting_categories("assembling-machine", "lumber-mill", {"woodworking", "woodworking-or-organic", "woodworking-or-crafting", "woodworking-or-organic-or-assembling"})
-        add_crafting_categories("assembling-machine", "aop-lumber-mill", {"wood-processing-or-assembling"})
+        add_crafting_categories("assembling-machine", "aop-lumber-mill", {"wood-processing"})
         data.raw.planet["lignumis"].surface_properties["deep-crustal-stability"] = 2000
     end
 
