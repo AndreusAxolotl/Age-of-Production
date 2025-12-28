@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pac-Man: Twisted Edition</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Courier New', monospace;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            overflow: hidden;
+        }
+
+        #gameContainer {
+            text-align: center;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 0 30px rgba(255, 255, 0, 0.3);
+        }
+
+        h1 {
+            color: #ffff00;
+            text-shadow: 0 0 10px #ffff00, 0 0 20px #ffff00;
+            margin-bottom: 10px;
+            font-size: 2.5em;
+        }
+
+        #gameCanvas {
+            border: 4px solid #0000ff;
+            background: #000;
+            display: block;
+            margin: 20px auto;
+            box-shadow: 0 0 20px rgba(0, 100, 255, 0.5);
+        }
+
+        #stats {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 15px;
+            color: #fff;
+            font-size: 1.2em;
+        }
+
+        .stat {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 10px 20px;
+            border-radius: 8px;
+            border: 2px solid #0088ff;
+        }
+
+        .stat span {
+            color: #ffff00;
+            font-weight: bold;
+        }
+
+        #controls {
+            color: #aaa;
+            margin-top: 10px;
+            font-size: 0.9em;
+        }
+
+        #powerUps {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 15px;
+            flex-wrap: wrap;
+        }
+
+        .powerup-indicator {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 8px 15px;
+            border-radius: 8px;
+            border: 2px solid #ff00ff;
+            color: #fff;
+            font-size: 0.9em;
+            min-width: 120px;
+        }
+
+        .powerup-indicator.active {
+            background: rgba(255, 0, 255, 0.3);
+            border-color: #ffff00;
+            animation: pulse 0.5s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        #gameOver {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(0, 0, 0, 0.9);
+            color: #ffff00;
+            padding: 40px;
+            border-radius: 15px;
+            border: 3px solid #ffff00;
+            display: none;
+            text-align: center;
+            box-shadow: 0 0 50px rgba(255, 255, 0, 0.5);
+        }
+
+        #gameOver h2 {
+            font-size: 3em;
+            margin-bottom: 20px;
+            text-shadow: 0 0 10px #ffff00;
+        }
+
+        #gameOver button {
+            background: #ffff00;
+            color: #000;
+            border: none;
+            padding: 15px 40px;
+            font-size: 1.2em;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+            margin-top: 20px;
+            transition: all 0.3s;
+        }
+
+        #gameOver button:hover {
+            background: #fff;
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+    <div id="gameContainer">
+        <h1>PAC-MAN: TWISTED EDITION</h1>
+
+        <div id="stats">
+            <div class="stat">Score: <span id="score">0</span></div>
+            <div class="stat">Level: <span id="level">1</span></div>
+            <div class="stat">Lives: <span id="lives">3</span></div>
+            <div class="stat">High Score: <span id="highScore">0</span></div>
+        </div>
+
+        <canvas id="gameCanvas" width="672" height="744"></canvas>
+
+        <div id="powerUps">
+            <div class="powerup-indicator" id="powerUpIndicator">Normal Mode</div>
+            <div class="powerup-indicator" id="multiplierIndicator">Multiplier: x1</div>
+        </div>
+
+        <div id="controls">
+            <strong>Controls:</strong> Arrow Keys or WASD to move<br>
+            <strong>Special Pellets:</strong> 🔵 Portal | ❄️ Freeze | ⚡ Speed | 🌈 Rainbow | 💪 Mega Power
+        </div>
+    </div>
+
+    <div id="gameOver">
+        <h2>GAME OVER</h2>
+        <p style="font-size: 1.5em; margin-bottom: 10px;">Final Score: <span id="finalScore">0</span></p>
+        <p style="font-size: 1.2em;">Level Reached: <span id="finalLevel">1</span></p>
+        <button onclick="restartGame()">Play Again</button>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>
