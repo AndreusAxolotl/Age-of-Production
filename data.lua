@@ -160,38 +160,23 @@ data.raw.recipe["carbon"].crafting_machine_tint =
     quaternary = {r = 0.0, g = 0.0, b = 0.0, a = 1.000}
 }
 data.raw.recipe["wood-processing"].surface_conditions = nil
+data.raw.item["spoilage"].fuel_category = "aop-spoilage"
 
-require "prototypes.advanced-agriculture"
-require "prototypes.advanced-assembling-machine"
-require "prototypes.advanced-metallurgy"
-require "prototypes.arc-furnace"
-require "prototypes.armory"
-require "prototypes.atomic-enricher"
-require "prototypes.biochemical-facility"
-require "prototypes.biomass-reactor"
-require "prototypes.biomass"
-require "prototypes.building-recipes"
-require "prototypes.core-miner"
-require "prototypes.core-mining"
-require "prototypes.electromechanic-facility"
-require "prototypes.greenhouse"
-require "prototypes.hydraulic-plant"
-require "prototypes.item-subgroups"
-require "prototypes.lumber-mill"
-require "prototypes.mineral-synthesizer"
-require "prototypes.miscellaneous-recipes"
-require "prototypes.petrochemical-facility"
-require "prototypes.petrochemistry"
-require "prototypes.deep-crustal-stability"
-require "prototypes.quantum-assembler"
-require "prototypes.quantum-computer"
-require "prototypes.quantum-stabilizer"
+data:extend({
+    {
+        type = "surface-property",
+        name = "deep-crustal-stability",
+        default_value = 2900,
+    },
+})
+data.raw.surface["space-platform"].surface_properties["deep-crustal-stability"] = 0
+data.raw.planet["nauvis"].surface_properties["deep-crustal-stability"] = 5500
+data.raw.planet["vulcanus"].surface_properties["deep-crustal-stability"] = 5200
+data.raw.planet["fulgora"].surface_properties["deep-crustal-stability"] = 3900
+data.raw.planet["gleba"].surface_properties["deep-crustal-stability"] = 5300
+data.raw.planet["aquilo"].surface_properties["deep-crustal-stability"] = 2000
+
 require "prototypes.recipe-categories"
-require "prototypes.salvager"
-require "prototypes.scrubber"
-require "prototypes.scrubbing"
-require "prototypes.smeltery"
-require "prototypes.specialized-science"
+require "prototypes.entities"
+require "prototypes.recipes"
 require "prototypes.technology"
-require "prototypes.transmitter"
-require "prototypes.woodworking"

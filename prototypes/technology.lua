@@ -41,9 +41,7 @@ data:extend{
       },
       time = 60
     }
-  }
-}
-data:extend{
+  },
 {
     type = "technology",
     name = "aop-additional-air-scrubbing",
@@ -77,9 +75,7 @@ data:extend{
       },
       time = 60
     }
-  }
-}
-data:extend{
+  },
 {
     type = "technology",
     name = "aop-arc-furnace",
@@ -107,9 +103,7 @@ data:extend{
       },
       time = 60
     }
-  }
-}
-data:extend{
+  },
 {
     type = "technology",
     name = "aop-atomic-enricher",
@@ -143,9 +137,7 @@ data:extend{
       },
       time = 60
     }
-  }
-}
-data:extend{
+  },
 {
     type = "technology",
     name = "aop-electromechanics",
@@ -177,9 +169,7 @@ data:extend{
       },
       time = 60
     }
-  }
-}
-data:extend{
+  },
 {
     type = "technology",
     name = "aop-greenhouse",
@@ -230,9 +220,7 @@ data:extend{
       },
       time = 60
     }
-  }
-}
-data:extend{
+  },
 {
     type = "technology",
     name = "aop-hybridation",
@@ -264,9 +252,7 @@ data:extend{
       },
       time = 60
     }
-  }
-}
-data:extend{
+  },
 {
     type = "technology",
     name = "aop-hydraulics",
@@ -296,9 +282,7 @@ data:extend{
       },
       time = 60
     }
-  }
-}
-data:extend{
+  },
 {
     type = "technology",
     name = "aop-petrochemistry",
@@ -340,9 +324,7 @@ data:extend{
       },
       time = 60
     }
-  }
-}
-data:extend{
+  },
 {
     type = "technology",
     name = "aop-quantum-machinery",
@@ -383,9 +365,7 @@ data:extend{
       },
       time = 90
     }
-  }
-}
-data:extend{
+  },
 {
     type = "technology",
     name = "aop-smeltery",
@@ -459,9 +439,7 @@ data:extend{
       },
       time = 90
     }
-  }
-}
-data:extend{
+  },
 {
     type = "technology",
     name = "aop-woodworking",
@@ -513,9 +491,7 @@ data:extend{
       },
       time = 60
     }
-  }
-}
-data:extend{
+  },
   {
     type = "technology",
     name = "aop-agriculture-productivity",
@@ -558,9 +534,7 @@ data:extend{
     },
     max_level = "infinite",
     upgrade = true
-  }
-}
-data:extend{
+  },
   {
       type = "technology",
       name = "aop-advanced-recycling",
@@ -590,9 +564,7 @@ data:extend{
         },
         time = 60
       }
-    }
-  }
-data:extend{
+    },
     {
         type = "technology",
         name = "aop-automation-4",
@@ -623,9 +595,7 @@ data:extend{
           },
           time = 90
         }
-      }
-    }
-data:extend{
+      },
       {
           type = "technology",
           name = "aop-core-mining",
@@ -686,9 +656,7 @@ data:extend{
             },
             time = 60
           }
-        }
-      }
-data:extend{
+        },
         {
           type = "technology",
           name = "aop-core-mining-productivity",
@@ -724,9 +692,7 @@ data:extend{
           },
           max_level = "infinite",
           upgrade = true
-        }
-      }
-data:extend{
+        },
         {
           type = "technology",
           name = "aop-deep-mineral-refining-productivity",
@@ -782,9 +748,7 @@ data:extend{
           },
           max_level = "infinite",
           upgrade = true
-        }
-      }
-data:extend{
+        },
         {
             type = "technology",
             name = "aop-armory",
@@ -813,8 +777,93 @@ data:extend{
               },
               time = 60
             }
-          }
-        }
+          },
+            {
+                type = "technology",
+                name = "aop-mineral-synthesis",
+                icon = "__Age-of-Production-Graphics__/graphics/technology/mineral-synthesis.png",
+                icon_size = 256,
+                effects =
+                {
+                  {
+                    type = "unlock-recipe",
+                    recipe = "aop-mineral-synthesizer"
+                  },
+                  {
+                    type = "unlock-recipe",
+                    recipe = "aop-ammoniacal-iron-synthesis"
+                  },
+                  {
+                    type = "unlock-recipe",
+                    recipe = "aop-ammoniacal-copper-synthesis"
+                  },
+                },
+                prerequisites = {"cryogenic-science-pack", "aop-air-scrubbing"},
+                unit =
+                {
+                  count = 1500,
+                  ingredients =
+                  {
+                    {"automation-science-pack", 1},
+                    {"logistic-science-pack", 1},
+                    {"chemical-science-pack", 1},
+                    {"production-science-pack", 1},
+                    {"utility-science-pack", 1},
+                    {"space-science-pack", 1},
+                    {"cryogenic-science-pack", 1}
+                  },
+                  time = 60
+                }
+              },
+              {
+                  type = "technology",
+                  name = "aop-biomass-reactor",
+                  icon = "__Age-of-Production-Graphics__/graphics/technology/biomass-reactor.png",
+                  icon_size = 256,
+                  effects =
+                  {
+                    {
+                      type = "unlock-recipe",
+                      recipe = "aop-biomass-reactor"
+                    },
+                  },
+                  prerequisites = {"aop-woodworking"},
+                  research_trigger =
+                  {
+                    type = "craft-item",
+                    item = "aop-biomass",
+                    count = 100
+                  },
+                },
+                {
+                    type = "technology",
+                    name = "aop-smaller-beacons",
+                    icon = "__Age-of-Production-Graphics__/graphics/technology/smaller-beacons.png",
+                    icon_size = 256,
+                    effects =
+                    {
+                      {
+                        type = "unlock-recipe",
+                        recipe = "aop-transmitter"
+                      },
+                    },
+                    prerequisites = {"effect-transmission", "space-science-pack"},
+                    unit =
+    {
+      count = 400,
+      ingredients =
+      {
+        {"automation-science-pack", 1},
+        {"logistic-science-pack", 1},
+        {"chemical-science-pack", 1},
+        {"space-science-pack", 1},
+        {"production-science-pack", 1},
+      },
+      time = 45
+    }
+                  }
+                }
+
 if settings.startup["aop-specialized-science"].value then
 data:extend{
           {
@@ -890,96 +939,6 @@ data:extend{
             }
           }
         end
-data:extend{
-            {
-                type = "technology",
-                name = "aop-mineral-synthesis",
-                icon = "__Age-of-Production-Graphics__/graphics/technology/mineral-synthesis.png",
-                icon_size = 256,
-                effects =
-                {
-                  {
-                    type = "unlock-recipe",
-                    recipe = "aop-mineral-synthesizer"
-                  },
-                  {
-                    type = "unlock-recipe",
-                    recipe = "aop-ammoniacal-iron-synthesis"
-                  },
-                  {
-                    type = "unlock-recipe",
-                    recipe = "aop-ammoniacal-copper-synthesis"
-                  },
-                },
-                prerequisites = {"cryogenic-science-pack", "aop-air-scrubbing"},
-                unit =
-                {
-                  count = 1500,
-                  ingredients =
-                  {
-                    {"automation-science-pack", 1},
-                    {"logistic-science-pack", 1},
-                    {"chemical-science-pack", 1},
-                    {"production-science-pack", 1},
-                    {"utility-science-pack", 1},
-                    {"space-science-pack", 1},
-                    {"cryogenic-science-pack", 1}
-                  },
-                  time = 60
-                }
-              }
-            }
-data:extend{
-              {
-                  type = "technology",
-                  name = "aop-biomass-reactor",
-                  icon = "__Age-of-Production-Graphics__/graphics/technology/biomass-reactor.png",
-                  icon_size = 256,
-                  effects =
-                  {
-                    {
-                      type = "unlock-recipe",
-                      recipe = "aop-biomass-reactor"
-                    },
-                  },
-                  prerequisites = {"aop-woodworking"},
-                  research_trigger =
-                  {
-                    type = "craft-item",
-                    item = "aop-biomass",
-                    count = 100
-                  },
-                }
-              }
-data:extend{
-                {
-                    type = "technology",
-                    name = "aop-smaller-beacons",
-                    icon = "__Age-of-Production-Graphics__/graphics/technology/smaller-beacons.png",
-                    icon_size = 256,
-                    effects =
-                    {
-                      {
-                        type = "unlock-recipe",
-                        recipe = "aop-transmitter"
-                      },
-                    },
-                    prerequisites = {"effect-transmission", "space-science-pack"},
-                    unit =
-    {
-      count = 400,
-      ingredients =
-      {
-        {"automation-science-pack", 1},
-        {"logistic-science-pack", 1},
-        {"chemical-science-pack", 1},
-        {"space-science-pack", 1},
-        {"production-science-pack", 1},
-      },
-      time = 45
-    }
-                  }
-                }
 
 if mods["maraxsis"] then 
                   if settings.startup["aop-merge-hydro"].value then

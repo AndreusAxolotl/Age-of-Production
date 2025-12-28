@@ -1,4 +1,12 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.8.0
+Date: 2025-12-28
+  About time:
+
+  Changes:
+    - Armory now recycles into itself.
+    - Reduced the number of main prototype files to just 4, readjusted all data:extend-s and tidied up everything.
+---------------------------------------------------------------------------------------------------
 Version: 1.7.8
 Date: 2025-12-18
   Christmas, just a week away:

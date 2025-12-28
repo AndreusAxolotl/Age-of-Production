@@ -421,8 +421,8 @@ if mods["maraxsis"] then
             show_amount_in_title = false,
             maximum_productivity = 1,
             surface_conditions = {{property = "deep-crustal-stability", min = 3300, max = 3300}},
-        }}
-        data:extend {{
+        },
+        {
             type = "recipe",
             name = "aop-prosephinan-crushing",
             icon = "__Age-of-Production-Graphics__/graphics/icons/prosephinan-crushing.png",
@@ -546,8 +546,8 @@ if mods["maraxsis"] then
             show_amount_in_title = false,
             maximum_productivity = 1,
             surface_conditions = {{property = "deep-crustal-stability", min = 6300, max = 6300}},
-        }}
-        data:extend {{
+        },
+        {
     type = "recipe",
     name = "aop-paracelsian-air-scrubbing",
     icon = "__Age-of-Production-Graphics__/graphics/icons/paracelsian-air-scrubbing.png",
