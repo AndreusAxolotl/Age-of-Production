@@ -1,6 +1,6 @@
 {
   "name": "Age-of-Production",
-  "version": "1.8.1",
+  "version": "1.8.2",
   "title": "Age of Production",
   "author": "AndreusAxolotl",
   "homepage": "https://github.com/AndreusAxolotl/Age-of-Production",
@@ -43,6 +43,7 @@
     "? atan-nuclear-science",
     "? aai-industry",
     "? bobassembly",
+    "? Better-Power-Armor-Grid",
     "! AoP-extended-planets"
 ],
 "space_travel_required": true
