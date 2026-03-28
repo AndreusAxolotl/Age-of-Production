@@ -102,3 +102,40 @@ if mods["Better-Power-Armor-Grid"] then
     "personal-backpack-mk3-equipment",
   }, "electromechanics-or-crafting")
 end
+
+local function sub_icons(main, sub)
+  local icons = {
+    {
+      icon = main.icon,
+      icon_size = main.icon_size or 64,
+      shift = { 2, 0 }
+    },
+    {
+      icon = sub.icon,
+      icon_size = sub.icon_size or 64,
+      scale = 0.25,
+      shift = { -8, -8 }
+    }
+  }
+  return icons
+end
+
+data.raw.recipe["aop-hydraulics-specialized-cryogenic-science-pack"].icons = sub_icons(
+  data.raw.tool["cryogenic-science-pack"],
+  data.raw.fluid["aop-lithium-fluoride"]
+)
+
+data.raw.recipe["aop-military-specialized-metallurgic-science-pack"].icons = sub_icons(
+  data.raw.tool["metallurgic-science-pack"],
+  data.raw.capsule["aop-explosive-core"]
+)
+
+data.raw.recipe["aop-hybridation-specialized-agricultural-science-pack"].icons = sub_icons(
+  data.raw.tool["agricultural-science-pack"],
+  data.raw.item["aop-hybrid-bacteria"]
+)
+
+data.raw.recipe["aop-petrochemistry-specialized-electromagnetic-science-pack"].icons = sub_icons(
+  data.raw.tool["electromagnetic-science-pack"],
+  data.raw.item["aop-magnetic-flow-meter"]
+)
