@@ -120,22 +120,24 @@ local function sub_icons(main, sub)
   return icons
 end
 
-data.raw.recipe["aop-hydraulics-specialized-cryogenic-science-pack"].icons = sub_icons(
-  data.raw.tool["cryogenic-science-pack"],
-  data.raw.fluid["aop-lithium-fluoride"]
-)
+if settings.startup["aop-specialized-science"].value then
+  data.raw.recipe["aop-hydraulics-specialized-cryogenic-science-pack"].icons = sub_icons(
+    data.raw.tool["cryogenic-science-pack"],
+    data.raw.fluid["aop-lithium-fluoride"]
+  )
 
-data.raw.recipe["aop-military-specialized-metallurgic-science-pack"].icons = sub_icons(
-  data.raw.tool["metallurgic-science-pack"],
-  data.raw.capsule["aop-explosive-core"]
-)
+  data.raw.recipe["aop-military-specialized-metallurgic-science-pack"].icons = sub_icons(
+    data.raw.tool["metallurgic-science-pack"],
+    data.raw.capsule["aop-explosive-core"]
+  )
 
-data.raw.recipe["aop-hybridation-specialized-agricultural-science-pack"].icons = sub_icons(
-  data.raw.tool["agricultural-science-pack"],
-  data.raw.item["aop-hybrid-bacteria"]
-)
+  data.raw.recipe["aop-hybridation-specialized-agricultural-science-pack"].icons = sub_icons(
+    data.raw.tool["agricultural-science-pack"],
+    data.raw.item["aop-hybrid-bacteria"]
+  )
 
-data.raw.recipe["aop-petrochemistry-specialized-electromagnetic-science-pack"].icons = sub_icons(
-  data.raw.tool["electromagnetic-science-pack"],
-  data.raw.item["aop-magnetic-flow-meter"]
-)
+  data.raw.recipe["aop-petrochemistry-specialized-electromagnetic-science-pack"].icons = sub_icons(
+    data.raw.tool["electromagnetic-science-pack"],
+    data.raw.item["aop-magnetic-flow-meter"]
+  )
+end
