@@ -120,7 +120,7 @@ local function sub_icons(main, sub)
   return icons
 end
 
-if settings.startup["aop-specialized-science"].value then
+if settings.startup["aop-specialized-science"].value and mods["alternate-science-packs"] then
   data.raw.recipe["aop-hydraulics-specialized-cryogenic-science-pack"].icons = sub_icons(
     data.raw.tool["cryogenic-science-pack"],
     data.raw.fluid["aop-lithium-fluoride"]

@@ -1510,7 +1510,7 @@ data:extend{
 {
     type = "recipe",
     name = "aop-hydraulics-specialized-cryogenic-science-pack",
-    icon = nil, -- set later in data-final-fixes stage
+    icon = "__Age-of-Production-Graphics__/graphics/icons/hydraulics-specialized-cryogenic-science-pack.png",
     subgroup = "aop-specialized-science-pack",
     enabled = false,
     energy_required = 18,
@@ -1539,7 +1539,7 @@ data:extend{
 {
     type = "recipe",
     name = "aop-military-specialized-metallurgic-science-pack",
-    icon = nil, -- set later in data-final-fixes stage
+    icon = "__Age-of-Production-Graphics__/graphics/icons/military-specialized-metallurgic-science-pack.png",
     subgroup = "aop-specialized-science-pack",
     enabled = false,
     energy_required = 12,
@@ -1568,7 +1568,7 @@ data:extend{
 {
     type = "recipe",
     name = "aop-petrochemistry-specialized-electromagnetic-science-pack",
-    icon = nil, -- set later in data-final-fixes stage
+    icon = "__Age-of-Production-Graphics__/graphics/icons/petrochemistry-specialized-electromagnetic-science-pack.png",
     subgroup = "aop-specialized-science-pack",
     enabled = false,
     energy_required = 8,
@@ -1598,7 +1598,7 @@ data:extend{
 {
     type = "recipe",
     name = "aop-hybridation-specialized-agricultural-science-pack",
-    icon = nil, -- set later in data-final-fixes stage
+    icon = "__Age-of-Production-Graphics__/graphics/icons/hybridation-specialized-agricultural-science-pack.png",
     subgroup = "aop-specialized-science-pack",
     enabled = false,
     energy_required = 5,
