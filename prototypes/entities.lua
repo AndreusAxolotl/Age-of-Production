@@ -63,16 +63,6 @@ circuit_connector_definitions["aop-atomic-enricher"] = circuit_connector_definit
     { variation = 31, main_offset = util.by_pixel( 6.625, -34.375), shadow_offset = util.by_pixel( 6.625, -34.375), show_shadow = true },
   }
 )
-circuit_connector_definitions["aop-biochemical-facility"] = circuit_connector_definitions.create_vector
-(
-  universal_connector_template,
-  {
-    { variation = 25, main_offset = util.by_pixel(-90.375,  79.875), shadow_offset = util.by_pixel(-90.375,  79.875), show_shadow = true },
-    { variation = 25, main_offset = util.by_pixel(-90.375,  79.875), shadow_offset = util.by_pixel(-90.375,  79.875), show_shadow = true },
-    { variation = 25, main_offset = util.by_pixel(-90.375,  79.875), shadow_offset = util.by_pixel(-90.375,  79.875), show_shadow = true },
-    { variation = 25, main_offset = util.by_pixel(-90.375,  79.875), shadow_offset = util.by_pixel(-90.375,  79.875), show_shadow = true },
-  }
-)
 circuit_connector_definitions["aop-core-miner"] = circuit_connector_definitions.create_vector
 (
   universal_connector_template,
@@ -81,16 +71,6 @@ circuit_connector_definitions["aop-core-miner"] = circuit_connector_definitions.
     { variation =  7, main_offset = util.by_pixel(-138.75,  98), shadow_offset = util.by_pixel(-138.75,  98), show_shadow = true },
     { variation =  7, main_offset = util.by_pixel(-138.75,  98), shadow_offset = util.by_pixel(-138.75,  98), show_shadow = true },
     { variation =  7, main_offset = util.by_pixel(-138.75,  98), shadow_offset = util.by_pixel(-138.75,  98), show_shadow = true },
-  }
-)
-circuit_connector_definitions["aop-electromechanic-facility"] = circuit_connector_definitions.create_vector
-(
-  universal_connector_template,
-  {
-    { variation = 32, main_offset = util.by_pixel( 92.875, -89.75), shadow_offset = util.by_pixel( 92.875, -89.75), show_shadow = true },
-    { variation = 32, main_offset = util.by_pixel( 92.875, -89.75), shadow_offset = util.by_pixel( 92.875, -89.75), show_shadow = true },
-    { variation = 32, main_offset = util.by_pixel( 92.875, -89.75), shadow_offset = util.by_pixel( 92.875, -89.75), show_shadow = true },
-    { variation = 32, main_offset = util.by_pixel( 92.875, -89.75), shadow_offset = util.by_pixel( 92.875, -89.75), show_shadow = true },
   }
 )
 circuit_connector_definitions["aop-greenhouse"] = circuit_connector_definitions.create_vector
@@ -123,7 +103,7 @@ circuit_connector_definitions["aop-lumber-mill"] = circuit_connector_definitions
     { variation = 18, main_offset = util.by_pixel( 85.25,  80.25), shadow_offset = util.by_pixel( 85.25,  80.25), show_shadow = true }, 
   }
 ) 
-circuit_connector_definitions["aop-mineral-synthesizer"] = circuit_connector_definitions.create_vector
+circuit_connector_definitions["aop-synthesizer"] = circuit_connector_definitions.create_vector
 (
   universal_connector_template,
   {
@@ -163,51 +143,6 @@ circuit_connector_definitions["aop-salvager"] = circuit_connector_definitions.cr
     { variation = 24, main_offset = util.by_pixel(-62.75,  6.25), shadow_offset = util.by_pixel(-62.75,  6.25), show_shadow = true }, 
   }
 )
-circuit_connector_definitions["aop-scrubber"] = circuit_connector_definitions.create_vector
-(
-  universal_connector_template,
-  {
-    { variation = 17, main_offset = util.by_pixel(-8.375,  18.25), shadow_offset = util.by_pixel(-8.375,  18.25), show_shadow = true }, 
-    { variation = 17, main_offset = util.by_pixel(-8.375,  18.25), shadow_offset = util.by_pixel(-8.375,  18.25), show_shadow = true }, 
-    { variation = 17, main_offset = util.by_pixel(-8.375,  18.25), shadow_offset = util.by_pixel(-8.375,  18.25), show_shadow = true }, 
-    { variation = 17, main_offset = util.by_pixel(-8.375,  18.25), shadow_offset = util.by_pixel(-8.375,  18.25), show_shadow = true }, 
-  }
-)
-circuit_connector_definitions["aop-smeltery"] = circuit_connector_definitions.create_vector
-(
-  universal_connector_template,
-  {
-    { variation = 27, main_offset = util.by_pixel( 113.75, -19.75), shadow_offset = util.by_pixel( 113.75, -19.75), show_shadow = true }, 
-    { variation = 27, main_offset = util.by_pixel( 113.75, -19.75), shadow_offset = util.by_pixel( 113.75, -19.75), show_shadow = true }, 
-    { variation = 27, main_offset = util.by_pixel( 113.75, -19.75), shadow_offset = util.by_pixel( 113.75, -19.75), show_shadow = true }, 
-    { variation = 27, main_offset = util.by_pixel( 113.75, -19.75), shadow_offset = util.by_pixel( 113.75, -19.75), show_shadow = true }, 
-  }
-)
-
-local function animationLayerSmeltery()
-  return {
-      priority = "high",
-      width = 540,
-      height = 580,
-      frame_count = 120,
-      lines_per_file = 8,
-      animation_speed = 0.15,
-      scale = 0.5,
-      shift = util.by_pixel(0, -16),
-      stripes = {
-          {
-              filename = "__Age-of-Production-Graphics__/graphics/entity/smeltery/smeltery-hr-animation-1.png",
-              width_in_frames = 8,
-              height_in_frames = 8
-          },
-          {
-              filename = "__Age-of-Production-Graphics__/graphics/entity/smeltery/smeltery-hr-animation-2.png",
-              width_in_frames = 8,
-              height_in_frames = 7
-          }
-      }
-  }
-end
 local function animationLayerCoreMiner()
   return {
       priority = "high",
@@ -228,30 +163,6 @@ local function animationLayerCoreMiner()
               filename = "__Age-of-Production-Graphics__/graphics/entity/core-miner/core-miner-hr-animation-2.png",
               width_in_frames = 8,
               height_in_frames = 7
-          }
-      }
-  }
-end
-local function animationLayerEMech()
-  return {
-      priority = "high",
-      width = 590,
-      height = 640,
-      frame_count = 80,
-      lines_per_file = 8,
-      animation_speed = 0.15,
-      scale = 0.5,
-      shift = util.by_pixel(0, -12),
-      stripes = {
-          {
-              filename = "__Age-of-Production-Graphics__/graphics/entity/electromechanic-facility/electromechanic-facility-hr-animation-1.png",
-              width_in_frames = 8,
-              height_in_frames = 8
-          },
-          {
-              filename = "__Age-of-Production-Graphics__/graphics/entity/electromechanic-facility/electromechanic-facility-hr-animation-2.png",
-              width_in_frames = 8,
-              height_in_frames = 2
           }
       }
   }
@@ -292,12 +203,12 @@ local function animationLayerSynth()
       scale = 0.5,
       stripes = {
           {
-              filename = "__Age-of-Production-Graphics__/graphics/entity/mineral-synthesizer/mineral-synthesizer-hr-animation-1.png",
+              filename = "__Age-of-Production-Graphics__/graphics/entity/synthesizer/synthesizer-hr-animation-1.png",
               width_in_frames = 8,
               height_in_frames = 8
           },
           {
-              filename = "__Age-of-Production-Graphics__/graphics/entity/mineral-synthesizer/mineral-synthesizer-hr-animation-2.png",
+              filename = "__Age-of-Production-Graphics__/graphics/entity/synthesizer/synthesizer-hr-animation-2.png",
               width_in_frames = 8,
               height_in_frames = 8
           }
@@ -363,7 +274,7 @@ data:extend {{
     allow_productivity = false,
     surface_conditions = {{property = "pressure", min = 4000, max = 4000}},
     main_product = "aop-arc-furnace",
-    category = "metallurgy-2-the-return",
+    category = "metallurgy",
     auto_recycle = true
 },
 {
@@ -397,80 +308,8 @@ data:extend {{
     allow_productivity = false,
     surface_conditions = {{property = "pressure", min = 1000, max = 1000}},
     main_product = "aop-atomic-enricher",
-    category = "advanced-centrifuging-or-centrifuging",
-    auto_recycle = false
-},
-{
-    type = "item",
-    name = "aop-biochemical-facility",
-    subgroup = "agriculture",
-    order = "h[aop-biochemical-facility]",
-    pick_sound = item_sounds.fluid_inventory_pickup,
-    drop_sound = item_sounds.fluid_inventory_move,
-    icon = "__Age-of-Production-Graphics__/graphics/icons/biochemical-facility.png",
-    icon_size = 64,
-    stack_size = 10,
-    default_import_location = "gleba",
-    weight = 200000,
-    place_result = "aop-biochemical-facility"
-},
-{
-    type = "recipe",
-    name = "aop-biochemical-facility",
-    enabled = false,
-    energy_required = 60,
-    ingredients = {
-        {type = "item", name = "quantum-processor",   amount = 50},
-        {type = "item", name = "steel-plate",       amount = 40},
-        {type = "item", name = "carbon-fiber", amount = 60},
-        {type = "item", name = "biochamber", amount = 2},
-        {type = "item", name = "nutrients", amount = 75},
-        {type = "item", name = "uranium-235", amount = 50},
-        {type = "item", name = "biter-egg", amount = 5},
-        {type = "item", name = "pentapod-egg", amount = 5},
-    },
-    results = {
-        {type = "item", name = "aop-biochemical-facility", amount = 1}
-    },
-    allow_productivity = false,
-    surface_conditions = {{property = "pressure", min = 1000, max = 2000}},
-    main_product = "aop-biochemical-facility",
-    category = "cryogenics",
-    auto_recycle = false
-},
-{
-    type = "item",
-    name = "aop-electromechanic-facility",
-    subgroup = "production-machine",
-    order = "h[aop-electromechanic-facility]",
-    pick_sound = item_sounds.electric_large_inventory_pickup,
-    drop_sound = item_sounds.electric_large_inventory_move,
-    icon = "__Age-of-Production-Graphics__/graphics/icons/electromechanic-facility.png",
-    icon_size = 64,
-    stack_size = 5,
-    default_import_location = "aquilo",
-    weight = 1000000,
-    place_result = "aop-electromechanic-facility"
-},
-{
-    type = "recipe",
-    name = "aop-electromechanic-facility",
-    enabled = false,
-    energy_required = 60,
-    ingredients = {
-        {type = "item", name = "quantum-processor",   amount = 100},
-        {type = "item", name = "lithium-plate",       amount = 50},
-        {type = "item", name = "refined-concrete", amount = 250},
-        {type = "item", name = "tungsten-plate", amount = 300},
-        {type = "fluid", name = "fluoroketone-cold", amount = 50},
-    },
-    results = {
-        {type = "item", name = "aop-electromechanic-facility", amount = 1}
-    },
-    allow_productivity = false,
-    surface_conditions = {{property = "pressure", min = 100, max = 600}},
-    main_product = "aop-electromechanic-facility",
-    category = "electromagnetics",
+    category = "advanced-centrifuging",
+    additional_categories = {"centrifuging"},
     auto_recycle = false
 },
 {
@@ -540,7 +379,8 @@ data:extend {{
     allow_productivity = false,
     surface_conditions = {{property = "pressure", min = 100, max = 600}},
     main_product = "aop-hydraulic-plant",
-    category = "hydraulics-or-chemistry",
+    category = "hydraulics",
+    additional_categories = {"chemistry"},
     crafting_machine_tint =
     {
         primary = {r = 0.433, g = 0.773, b = 1.000, a = 1.000},
@@ -581,7 +421,8 @@ data:extend {{
     allow_productivity = false,
     surface_conditions = {{property = "pressure", min = 1000, max = 1000}},
     main_product = "aop-lumber-mill",
-    category = "woodworking-or-crafting",
+    category = "woodworking",
+    additional_categories = {"crafting"},
     auto_recycle = true
 },
 {
@@ -616,7 +457,8 @@ data:extend {{
     allow_productivity = false,
     surface_conditions = {{property = "pressure", min = 300, max = 800}},
     main_product = "aop-petrochemical-facility",
-    category = "hydraulics-or-chemistry",
+    category = "chemistry",
+    additional_categories = {"petrochemistry"},
     crafting_machine_tint =
     {
       primary = {r = 1.000, g = 0.642, b = 0.261, a = 1.000}, 
@@ -662,7 +504,7 @@ data:extend {{
     allow_productivity = false,
     surface_conditions = {{property = "pressure", max = 600}},
     main_product = "aop-quantum-assembler",
-    category = "electromechanics",
+    category = "electromagnetics",
     auto_recycle = false
 },
 {
@@ -702,7 +544,7 @@ data:extend {{
     allow_productivity = false,
     surface_conditions = {{property = "pressure", max = 600}},
     main_product = "aop-quantum-computer",
-    category = "electromechanics",
+    category = "electromagnetics",
     auto_recycle = false
 },
 {
@@ -741,78 +583,7 @@ data:extend {{
     allow_productivity = false,
     surface_conditions = {{property = "pressure", max = 600}},
     main_product = "aop-quantum-stabilizer",
-    category = "electromechanics",
-    auto_recycle = false
-},
-{
-    type = "item",
-    name = "aop-scrubber",
-    subgroup = "production-machine",
-    order = "g[aop-scrubber]",
-    pick_sound = item_sounds.fluid_inventory_pickup,
-    drop_sound = item_sounds.fluid_inventory_move,
-    icon = "__Age-of-Production-Graphics__/graphics/icons/scrubber.png",
-    icon_size = 64,
-    stack_size = 20,
-    default_import_location = "gleba",
-    weight = 200000,
-    place_result = "aop-scrubber"
-},
-{
-    type = "recipe",
-    name = "aop-scrubber",
-    enabled = false,
-    energy_required = 20,
-    ingredients = {
-        {type = "item", name = "steel-plate",   amount = 20},
-        {type = "item", name = "iron-gear-wheel",       amount = 25},
-        {type = "item", name = "pipe", amount = 5},
-        {type = "item", name = "copper-cable", amount = 15},
-        {type = "item", name = "carbon-fiber", amount = 20},
-    },
-    results = {
-        {type = "item", name = "aop-scrubber", amount = 1}
-    },
-    allow_productivity = false,
-    main_product = "aop-scrubber",
-    category = "crafting",
-    auto_recycle = true
-},
-{
-    type = "item",
-    name = "aop-smeltery",
-    subgroup = "smelting-machine",
-    order = "f[aop-smeltery]",
-    pick_sound = item_sounds.steam_inventory_pickup,
-    drop_sound = item_sounds.steam_inventory_move,
-    icon = "__Age-of-Production-Graphics__/graphics/icons/smeltery.png",
-    icon_size = 64,
-    stack_size = 10,
-    default_import_location = "vulcanus",
-    weight = 1000000,
-    place_result = "aop-smeltery"
-},
-{
-    type = "recipe",
-    name = "aop-smeltery",
-    enabled = false,
-    energy_required = 30,
-    ingredients = {
-        {type = "item", name = "tungsten-plate",   amount = 100},
-        {type = "item", name = "iron-gear-wheel",       amount = 70},
-        {type = "item", name = "tungsten-carbide", amount = 60},
-        {type = "item", name = "refined-concrete", amount = 35},
-        {type = "item", name = "quantum-processor", amount = 20},
-        {type = "item", name = "foundry", amount = 1},
-        {type = "fluid", name = "lubricant", amount = 100},
-    },
-    results = {
-        {type = "item", name = "aop-smeltery", amount = 1}
-    },
-    allow_productivity = false,
-    surface_conditions = {{property = "pressure", min = 4000, max = 4000}},
-    main_product = "aop-smeltery",
-    category = "metallurgy-2-the-return",
+    category = "electromagnetics",
     auto_recycle = false
 },
 {
@@ -926,7 +697,7 @@ data:extend {{
     allow_productivity = false,
     surface_conditions = {{property = "pressure", min = 4000, max = 4000}},
     main_product = "aop-core-miner",
-    category = "electromechanics",
+    category = "electromagnetics",
     auto_recycle = false
 },
 {
@@ -962,26 +733,26 @@ data:extend {{
     allow_productivity = false,
     surface_conditions = {{property = "pressure", min = 4000, max = 4000}},
     main_product = "aop-armory",
-    category = "metallurgy-2-the-return",
+    category = "metallurgy",
     auto_recycle = false
 },
 {
     type = "item",
-    name = "aop-mineral-synthesizer",
+    name = "aop-synthesizer",
     subgroup = "production-machine",
-    order = "i[aop-mineral-synthesizer]",
+    order = "i[aop-synthesizer]",
     pick_sound = item_sounds.fluid_inventory_pickup,
     drop_sound = item_sounds.fluid_inventory_move,
-    icon = "__Age-of-Production-Graphics__/graphics/icons/mineral-synthesizer.png",
+    icon = "__Age-of-Production-Graphics__/graphics/icons/synthesizer.png",
     icon_size = 64,
     stack_size = 10,
     default_import_location = "aquilo",
     weight = 200000,
-    place_result = "aop-mineral-synthesizer"
+    place_result = "aop-synthesizer"
 },
 {
     type = "recipe",
-    name = "aop-mineral-synthesizer",
+    name = "aop-synthesizer",
     enabled = false,
     energy_required = 40,
     ingredients = {
@@ -993,11 +764,11 @@ data:extend {{
         {type = "item", name = "copper-plate", amount = 35},
     },
     results = {
-        {type = "item", name = "aop-mineral-synthesizer", amount = 1}
+        {type = "item", name = "aop-synthesizer", amount = 1}
     },
     allow_productivity = false,
     surface_conditions = {{property = "pressure", min = 300, max = 300}},
-    main_product = "aop-mineral-synthesizer",
+    main_product = "aop-synthesizer",
     category = "crafting",
     auto_recycle = true
 },
@@ -1366,154 +1137,6 @@ data:extend {{
         },
       },
       {
-        name = "aop-smeltery",
-        type = "assembling-machine",
-        icon = "__Age-of-Production-Graphics__/graphics/icons/smeltery.png",
-        icon_size = 64,
-        flags = {"placeable-neutral", "placeable-player", "player-creation"},
-        minable = {
-          mining_time = 0.5,
-          results = {{type="item", name="aop-smeltery", amount=1}}
-        },
-        max_health = 1000,
-        corpse = "big-remnants",
-        dying_explosion = "big-explosion",
-        circuit_wire_max_distance = assembling_machine_circuit_wire_max_distance,
-        circuit_connector = circuit_connector_definitions["aop-smeltery"],
-        collision_box = {{-3.6, -3.6}, {3.6, 3.6}},
-        selection_box = {{-4, -4}, {4, 4}},
-        
-        crafting_categories = {"advanced-metallurgy"},
-        fluid_boxes =
-    {
-      {
-        production_type = "input",
-        pipe_picture = assembler2pipepictures(),
-        pipe_covers = pipecoverspictures(),
-        secondary_draw_orders = { north = -1 },
-        volume = 1000,
-        pipe_connections = { { flow_direction = "input", direction = defines.direction.south, position = { -1.5, 3.5 } } }
-    },
-    {
-        production_type = "input",
-        pipe_picture = assembler2pipepictures(),
-        pipe_covers = pipecoverspictures(),
-        secondary_draw_orders = { north = -1 },
-        volume = 1000,
-        pipe_connections = { { flow_direction = "input", direction = defines.direction.south, position = { 1.5, 3.5 } } }
-    },
-    {
-        production_type = "output",
-        pipe_picture = assembler2pipepictures(),
-        pipe_covers = pipecoverspictures(),
-        secondary_draw_orders = { north = -1 },
-        volume = 100,
-        pipe_connections = { { flow_direction = "output", direction = defines.direction.north, position = { -1.5, -3.5 } } }
-    },
-    {
-        production_type = "output",
-        pipe_picture = assembler2pipepictures(),
-        pipe_covers = pipecoverspictures(),
-        secondary_draw_orders = { north = -1 },
-        volume = 100,
-        pipe_connections = { { flow_direction = "output", direction = defines.direction.north, position = { 1.5, -3.5 } } }
-    }
-    },
-        crafting_speed = 4,
-        energy_source =
-        {
-          type = "electric",
-          usage_priority = "secondary-input",
-          emissions_per_minute = { pollution = 45 },
-          drain = "160kW",
-        },
-        impact_category = "metal",
-        open_sound = sounds.metal_large_open,
-        close_sound = sounds.metal_large_close,
-        energy_usage = "8MW",
-        heating_energy = "500kW",
-        module_slots = 8,
-        source_inventory_size = 1,
-        allowed_effects = {"consumption", "speed", "productivity", "pollution", "quality"},
-        effect_receiver = {
-          base_effect = {
-            productivity = 0.25
-          }
-        },
-        graphics_set = {
-          animation = {
-              layers = {
-                  {
-                      filename = "__Age-of-Production-Graphics__/graphics/entity/smeltery/smeltery-hr-shadow.png",
-                      priority = "high",
-                      width = 900,
-                      height = 800,
-                      frame_count = 1,
-                      line_length = 1,
-                      repeat_count = 120,
-                      animation_speed = 0.15,
-                      draw_as_shadow = true,
-                      shift = util.by_pixel(0, -16),
-                      scale = 0.5
-                  },
-                  animationLayerSmeltery()
-              }
-          },
-          working_visualisations = {
-              {
-                  fadeout = true,
-                  animation = {
-                      layers = {
-                          animationLayerSmeltery(),
-                          {
-                              priority = "high",
-                              draw_as_glow = true,
-                              blend_mode = "additive",
-                              width = 540,
-                              height = 580,
-                              frame_count = 120,
-                              lines_per_file = 8,
-                              animation_speed = 0.15,
-                              scale = 0.5,
-                              shift = util.by_pixel(0, -16),
-                              stripes = {
-                                  {
-                                      filename = "__Age-of-Production-Graphics__/graphics/entity/smeltery/smeltery-hr-emission-1.png",
-                                      width_in_frames = 8,
-                                      height_in_frames = 8
-                                  },
-                                  {
-                                      filename = "__Age-of-Production-Graphics__/graphics/entity/smeltery/smeltery-hr-emission-2.png",
-                                      width_in_frames = 8,
-                                      height_in_frames = 7
-                                  }
-                              }
-                          }
-                      }
-                  }
-              }
-          }
-      },
-            
-        working_sound =
-        {
-          sound = {filename = "__space-age__/sound/entity/foundry/foundry.ogg", volume = 0.7},
-          apparent_volume = 0.3,
-        },
-        created_effect = {
-          type = "direct",
-          action_delivery = {
-            type = "instant",
-            source_effects = {
-              {
-                type = "script",
-                effect_id = "aop-smeltery-created",
-              },
-            }
-          }
-        },
-      },
-      {
         name = "aop-armory",
         type = "assembling-machine",
         icon = "__Age-of-Production-Graphics__/graphics/icons/armory.png",
@@ -1531,7 +1154,7 @@ data:extend {{
         collision_box = {{-2.1, -2.1}, {2.1, 2.1}},
         selection_box = {{-2.5, -2.5}, {2.5, 2.5}},
         
-        crafting_categories = {"ammunition", "ammunition-or-crafting", "ammunition-or-crafting-with-fluid"},
+        crafting_categories = {"ammunition"},
         fluid_boxes =
         {
           {
@@ -1963,171 +1586,6 @@ data:extend {{
         },
       },
       {
-        name = "aop-scrubber",
-        type = "assembling-machine",
-        icon = "__Age-of-Production-Graphics__/graphics/icons/scrubber.png",
-        icon_size = 64,
-        flags = {"placeable-neutral", "placeable-player", "player-creation"},
-        minable = {
-          mining_time = 0.5,
-          results = {{type="item", name="aop-scrubber", amount=1}}
-        },
-        max_health = 250,
-        corpse = "small-remnants",
-        dying_explosion = "medium-explosion",
-        circuit_wire_max_distance = assembling_machine_circuit_wire_max_distance,
-        circuit_connector = circuit_connector_definitions["aop-scrubber"],
-        collision_box = {{-1.1, -1.1}, {1.1, 1.1}},
-        selection_box = {{-1.5, -1.5}, {1.5, 1.5}},
-        
-        crafting_categories = {"scrubbing"},
-        fluid_boxes =
-        {
-          {
-            production_type = "input",
-            pipe_picture =                 biochamber_pictures.pipe_pictures_1,
-            mirrored_pipe_picture =        biochamber_pictures.pipe_pictures_2,
-            pipe_covers = pipecoverspictures(),
-            volume = 1000,
-            pipe_connections =
-            {
-              {
-                flow_direction="input",
-                direction = defines.direction.north,
-                position = {-1, -1}
-              }
-            }
-          },
-          {
-            production_type = "input",
-            pipe_picture =                 biochamber_pictures.pipe_pictures_2,
-            mirrored_pipe_picture =        biochamber_pictures.pipe_pictures_1,
-            pipe_covers = pipecoverspictures(),
-            volume = 1000,
-            pipe_connections =
-            {
-              {
-                flow_direction="input",
-                direction = defines.direction.north,
-                position = {1, -1}
-              }
-            }
-          },
-          {
-            production_type = "output",
-            pipe_picture =                 biochamber_pictures.pipe_pictures_1,
-            mirrored_pipe_picture =        biochamber_pictures.pipe_pictures_2,
-            pipe_covers = pipecoverspictures(),
-            volume = 1000,
-            pipe_connections =
-            {
-              {
-                flow_direction = "output",
-                direction = defines.direction.south,
-                position = {1, 1}
-              }
-            }
-          },
-          {
-            production_type = "output",
-            pipe_picture = require("__space-age__.prototypes.entity.electromagnetic-plant-pictures").pipe_pictures,
-            pipe_covers = pipecoverspictures(),
-            volume = 1000,
-            pipe_connections =
-            {
-              {
-                flow_direction = "output",
-                direction = defines.direction.south,
-                position = {0, 1}
-              }
-            }
-          },
-          {
-            production_type = "output",
-            pipe_picture =                 biochamber_pictures.pipe_pictures_2,
-            mirrored_pipe_picture =        biochamber_pictures.pipe_pictures_1,
-            pipe_covers = pipecoverspictures(),
-            volume = 1000,
-            pipe_connections =
-            {
-              {
-                flow_direction = "output",
-                direction = defines.direction.south,
-                position = {-1, 1}
-              }
-            }
-          }
-        },
-        crafting_speed = 1,
-        energy_source =
-        {
-          type = "electric",
-          usage_priority = "secondary-input",
-          emissions_per_minute = { pollution = -50, spores = -50 },
-          drain = "100kW",
-        },
-        impact_category = "metal",
-        open_sound = {filename = "__base__/sound/open-close/fluid-open.ogg", volume = 0.55},
-        close_sound = {filename = "__base__/sound/open-close/fluid-close.ogg", volume = 0.54},
-        energy_usage = "1MW",
-        heating_energy = "100kW",
-        module_slots = 0,
-        source_inventory_size = 1,
-        allowed_effects = {"consumption", "speed", "pollution"},
-        graphics_set = {
-          always_draw_idle_animation = true,
-          idle_animation = {
-            layers = {
-              {
-                filename = "__Age-of-Production-Graphics__/graphics/entity/scrubber/scrubber-hr-shadow.png",
-                size = {400, 350},
-                shift = util.by_pixel(0, -16),
-                scale = 0.5,
-                line_length = 1,
-                frame_count = 1,
-                repeat_count = 60,
-                draw_as_shadow = true,
-                animation_speed = 0.5,
-              },
-              {
-                filename = "__Age-of-Production-Graphics__/graphics/entity/scrubber/scrubber-hr-animation-1.png",
-                size = {210, 290},
-                shift = util.by_pixel(0, -16),
-                scale = 0.5,
-                line_length = 8,
-                lines_per_file = 8,
-                frame_count = 60,
-                animation_speed = 0.5,
-              },
-            },
-        },
-      },
-          
-        surface_conditions = {
-          {
-            property = "pressure",
-            min = 1,
-          }
-        },
-        working_sound =
-        {
-          sound = {filename = "__base__/sound/steam-turbine.ogg", volume = 0.7},
-          apparent_volume = 0.3,
-        },
-        created_effect = {
-          type = "direct",
-          action_delivery = {
-            type = "instant",
-            source_effects = {
-              {
-                type = "script",
-                effect_id = "aop-scrubber-created",
-              },
-            }
-          }
-        },
-      },
-      {
         name = "aop-salvager",
         type = "furnace",
         icon = "__Age-of-Production-Graphics__/graphics/icons/salvager.png",
@@ -2273,7 +1731,7 @@ data:extend {{
         collision_box = {{-2.6, -2.6}, {2.6, 2.6}},
         selection_box = {{-3, -3}, {3, 3}},
         
-        crafting_categories = {"centrifuging", "advanced-centrifuging", "advanced-centrifuging-or-centrifuging", "advanced-centrifuging-or-crafting", "advanced-centrifuging-or-crafting-or-electromechanics", "advanced-centrifuging-or-crafting-with-fluid"},
+        crafting_categories = {"centrifuging", "advanced-centrifuging"},
         fluid_boxes =
         {
           {
@@ -2447,127 +1905,6 @@ data:extend {{
         },
       },
       {
-        name = "aop-biochemical-facility",
-        type = "assembling-machine",
-        icon = "__Age-of-Production-Graphics__/graphics/icons/biochemical-facility.png",
-        icon_size = 64,
-        flags = {"placeable-neutral", "placeable-player", "player-creation"},
-        minable = {
-          mining_time = 0.5,
-          results = {{type="item", name="aop-biochemical-facility", amount=1}}
-        },
-        max_health = 500,
-        corpse = "big-remnants",
-        dying_explosion = "medium-explosion",
-        circuit_wire_max_distance = assembling_machine_circuit_wire_max_distance,
-        circuit_connector = circuit_connector_definitions["aop-biochemical-facility"],
-        collision_box = {{-3.1, -3.1}, {3.1, 3.1}},
-        selection_box = {{-3.5, -3.5}, {3.5, 3.5}},
-        
-        crafting_categories = {"biochemistry", "biochemistry-or-organic", "biochemistry-or-organic-or-hand-crafting", "biochemistry-or-organic-or-assembling", "organic-or-assembling-or-electromechanics"},
-        crafting_speed = 3,
-        energy_source =
-        {
-          type = "electric",
-          usage_priority = "secondary-input",
-          emissions_per_minute = { pollution = -5 },
-          drain = "160kW",
-        },
-        impact_category = "organic",
-        open_sound = {filename = "__base__/sound/open-close/fluid-open.ogg", volume = 0.55},
-        close_sound = {filename = "__base__/sound/open-close/fluid-close.ogg", volume = 0.54},
-        energy_usage = "5MW",
-        heating_energy = "1000kW",
-        module_slots = 5,
-        source_inventory_size = 1,
-        allowed_effects = {"consumption", "speed", "productivity", "pollution", "quality"},
-        effect_receiver = {
-          base_effect = {
-            productivity = 0.25
-          }
-        },
-        graphics_set = {
-          animation = {
-              layers = {
-                  {
-                      filename = "__Age-of-Production-Graphics__/graphics/entity/biochemical-facility/biochemical-facility-hr-shadow.png",
-                      priority = "high",
-                      width = 800,
-                      height = 700,
-                      frame_count = 1,
-                      line_length = 1,
-                      repeat_count = 60,
-                      animation_speed = 0.15,
-                      shift = util.by_pixel(0, -16),
-                      draw_as_shadow = true,
-                      scale = 0.5
-                  },
-                  {
-                      priority = "high",
-                      width = 500,
-                      height = 500,
-                      frame_count = 60,
-                      lines_per_file = 8,
-                      animation_speed = 0.15,
-                      shift = util.by_pixel(0, -16),
-                      scale = 0.5,
-                      stripes = {
-                          {
-                              filename = "__Age-of-Production-Graphics__/graphics/entity/biochemical-facility/biochemical-facility-hr-animation.png",
-                              width_in_frames = 8,
-                              height_in_frames = 8
-                          }
-                      }
-                  },
-              }
-          },
-          working_visualisations = {
-              {
-                  fadeout = true,
-                  animation = {
-                      layers = {
-                          {
-                              priority = "high",
-                              width = 500,
-                              height = 500,
-                              frame_count = 60,
-                              lines_per_file = 8,
-                              animation_speed = 0.15,
-                              shift = util.by_pixel(0, -16),
-                              scale = 0.5,
-                              stripes = {
-                                  {
-                                      filename = "__Age-of-Production-Graphics__/graphics/entity/biochemical-facility/biochemical-facility-hr-animation.png",
-                                      width_in_frames = 8,
-                                      height_in_frames = 8
-                                  }
-                              }
-                          },
-                      }
-                  }
-              }
-          },
-      },
-          
-        working_sound =
-        {
-          sound = {filename = "__Age-of-Production-Graphics__/sounds/biochemical-facility.ogg", volume = 0.9},
-          apparent_volume = 0.3,
-        },
-        created_effect = {
-          type = "direct",
-          action_delivery = {
-            type = "instant",
-            source_effects = {
-              {
-                type = "script",
-                effect_id = "aop-biochemical-facility-created",
-              },
-            }
-          }
-        },
-      },
-      {
         name = "aop-biomass-reactor",
         type = "burner-generator",
         icon = "__Age-of-Production-Graphics__/graphics/icons/biomass-reactor.png",
@@ -2716,155 +2053,6 @@ data:extend {{
               {
                 type = "script",
                 effect_id = "aop-biomass-reactor-created",
-              },
-            }
-          }
-        },
-      },
-      {
-        name = "aop-electromechanic-facility",
-        type = "assembling-machine",
-        icon = "__Age-of-Production-Graphics__/graphics/icons/electromechanic-facility.png",
-        icon_size = 64,
-        flags = {"placeable-neutral", "placeable-player", "player-creation"},
-        minable = {
-          mining_time = 0.5,
-          results = {{type="item", name="aop-electromechanic-facility", amount=1}}
-        },
-        max_health = 1300,
-        corpse = "big-remnants",
-        dying_explosion = "big-explosion",
-        circuit_wire_max_distance = assembling_machine_circuit_wire_max_distance,
-        circuit_connector = circuit_connector_definitions["aop-electromechanic-facility"],
-        collision_box = {{-4.1, -4.1}, {4.1, 4.1}},
-        selection_box = {{-4.5, -4.5}, {4.5, 4.5}},
-        
-        crafting_categories = {"electromechanics", "electromechanics-or-crafting", "electronics-or-electromechanics", "pressing-or-electromechanics", "organic-or-electromechanics", "advanced-centrifuging-or-crafting-or-electromechanics", "organic-or-assembling-or-electromechanics"},
-        fluid_boxes =
-        {
-          {
-            production_type = "input",
-            pipe_covers = pipecoverspictures(),
-            pipe_picture = assembler2pipepictures(),
-            secondary_draw_orders = { north = -1 },
-            volume = 1000,
-            pipe_connections = { { flow_direction = "input", direction = defines.direction.north, position = { -1, -4 } } }
-        },
-        {
-            production_type = "input",
-            pipe_covers = pipecoverspictures(),
-            pipe_picture = assembler2pipepictures(),
-            secondary_draw_orders = { north = -1 },
-            volume = 1000,
-            pipe_connections = { { flow_direction = "input", direction = defines.direction.north, position = { 1, -4 } } }
-        },
-        {
-            production_type = "output",
-            pipe_covers = pipecoverspictures(),
-            pipe_picture = assembler2pipepictures(),
-            secondary_draw_orders = { north = -1 },
-            volume = 500,
-            pipe_connections = { { flow_direction = "output", direction = defines.direction.south, position = { -1, 4 } } }
-        },
-        {
-            production_type = "output",
-            pipe_covers = pipecoverspictures(),
-            pipe_picture = assembler2pipepictures(),
-            secondary_draw_orders = { north = -1 },
-            volume = 500,
-            pipe_connections = { { flow_direction = "output", direction = defines.direction.south, position = { 1, 4 } } }
-        },
-      },
-        fluid_boxes_off_when_no_fluid_recipe = true,
-        crafting_speed = 5,
-        energy_source =
-        {
-          type = "electric",
-          usage_priority = "secondary-input",
-          emissions_per_minute = { pollution = 10 },
-          drain = "1MW",
-        },
-        impact_category = "metal",
-        open_sound = sounds.machine_open,
-    close_sound = sounds.machine_close,
-        energy_usage = "50MW",
-        heating_energy = "1000kW",
-        module_slots = 10,
-        source_inventory_size = 1,
-        allowed_effects = {"consumption", "speed", "productivity", "pollution", "quality"},
-        effect_receiver = {
-          base_effect = {
-            quality = 5
-          }
-        },
-        graphics_set = {
-          animation = {
-              layers = {
-                  {
-                      filename = "__Age-of-Production-Graphics__/graphics/entity/electromechanic-facility/electromechanic-facility-hr-shadow.png",
-                      priority = "high",
-                      width = 1200,
-                      height = 700,
-                      frame_count = 1,
-                      line_length = 1,
-                      repeat_count = 80,
-                      animation_speed = 0.15,
-                      draw_as_shadow = true,
-                      scale = 0.5,
-                      shift = util.by_pixel(0, -12),
-                  },
-                  animationLayerEMech()
-              }
-          },
-          working_visualisations = {
-              {
-                  fadeout = true,
-                  animation = {
-                      layers = {
-                          animationLayerEMech(),
-                          {
-                              priority = "high",
-                              draw_as_glow = true,
-                              blend_mode = "additive",
-                              width = 590,
-                              height = 640,
-                              frame_count = 80,
-                              lines_per_file = 8,
-                              animation_speed = 0.15,
-                              scale = 0.5,
-                              shift = util.by_pixel(0, -12),
-                              stripes = {
-                                  {
-                                      filename = "__Age-of-Production-Graphics__/graphics/entity/electromechanic-facility/electromechanic-facility-hr-emission-1.png",
-                                      width_in_frames = 8,
-                                      height_in_frames = 8
-                                  },
-                                  {
-                                      filename = "__Age-of-Production-Graphics__/graphics/entity/electromechanic-facility/electromechanic-facility-hr-emission-2.png",
-                                      width_in_frames = 8,
-                                      height_in_frames = 2
-                                  }
-                              }
-                          }
-                      }
-                  }
-              }
-          }
-      },
-          
-        working_sound =
-        {
-          sound = {filename = "__space-age__/sound/entity/electromagnetic-plant/electromagnetic-plant-loop.ogg", volume = 0.8},
-          apparent_volume = 0.3,
-        },
-        created_effect = {
-          type = "direct",
-          action_delivery = {
-            type = "instant",
-            source_effects = {
-              {
-                type = "script",
-                effect_id = "aop-electromechanic-facility-created",
               },
             }
           }
@@ -3070,7 +2258,7 @@ data:extend {{
         collision_box = {{-1.6, -1.6}, {1.6, 1.6}},
         selection_box = {{-2, -2}, {2, 2}},
         
-        crafting_categories = {"hydraulics", "hydraulics-or-chemistry", "hydraulics-or-organic", "hydraulics-or-chemistry-or-cryogenics"},
+        crafting_categories = {"hydraulics"},
         fluid_boxes = {
             {
                 production_type = "input",
@@ -3265,7 +2453,7 @@ data:extend {{
         collision_box = {{-3.1, -3.1}, {3.1, 3.1}},
         selection_box = {{-3.5, -3.5}, {3.5, 3.5}},
         
-        crafting_categories = {"woodworking", "woodworking-or-organic", "woodworking-or-crafting", "woodworking-or-organic-or-assembling"},
+        crafting_categories = {"woodworking"},
         fluid_boxes =
         {
           {
@@ -3439,24 +2627,24 @@ data:extend {{
         },
       },
       {
-        name = "aop-mineral-synthesizer",
+        name = "aop-synthesizer",
         type = "assembling-machine",
-        icon = "__Age-of-Production-Graphics__/graphics/icons/mineral-synthesizer.png",
+        icon = "__Age-of-Production-Graphics__/graphics/icons/synthesizer.png",
         icon_size = 64,
         flags = {"placeable-neutral", "placeable-player", "player-creation"},
         minable = {
           mining_time = 0.5,
-          results = {{type="item", name="aop-mineral-synthesizer", amount=1}}
+          results = {{type="item", name="aop-synthesizer", amount=1}}
         },
         max_health = 300,
         corpse = "medium-remnants",
         dying_explosion = "medium-explosion",
         circuit_wire_max_distance = assembling_machine_circuit_wire_max_distance,
-        circuit_connector = circuit_connector_definitions["aop-mineral-synthesizer"],
+        circuit_connector = circuit_connector_definitions["aop-synthesizer"],
         collision_box = {{-1.6, -1.6}, {1.6, 1.6}},
         selection_box = {{-2, -2}, {2, 2}},
         
-        crafting_categories = {"synthesis", "synthesis-or-chemistry", "synthesis-or-crafting-with-fluid", "synthesis-or-cryogenics-or-chemistry"},
+        crafting_categories = {"synthesis"},
         crafting_speed = 1.5,
         energy_source =
         {
@@ -3515,7 +2703,7 @@ data:extend {{
             animation = {
                 layers = {
                     {
-                        filename = "__Age-of-Production-Graphics__/graphics/entity/mineral-synthesizer/mineral-synthesizer-hr-shadow.png",
+                        filename = "__Age-of-Production-Graphics__/graphics/entity/synthesizer/synthesizer-hr-shadow.png",
                         priority = "high",
                         width = 500,
                         height = 350,
@@ -3549,12 +2737,12 @@ data:extend {{
                                 scale = 0.5,
                                 stripes = {
                                     {
-                                        filename = "__Age-of-Production-Graphics__/graphics/entity/mineral-synthesizer/mineral-synthesizer-hr-emission-1.png",
+                                        filename = "__Age-of-Production-Graphics__/graphics/entity/synthesizer/synthesizer-hr-emission-1.png",
                                         width_in_frames = 8,
                                         height_in_frames = 8
                                     },
                                     {
-                                        filename = "__Age-of-Production-Graphics__/graphics/entity/mineral-synthesizer/mineral-synthesizer-hr-emission-2.png",
+                                        filename = "__Age-of-Production-Graphics__/graphics/entity/synthesizer/synthesizer-hr-emission-2.png",
                                         width_in_frames = 8,
                                         height_in_frames = 8
                                     }
@@ -3573,12 +2761,12 @@ data:extend {{
                               scale = 0.5,
                               stripes = {
                                   {
-                                      filename = "__Age-of-Production-Graphics__/graphics/entity/mineral-synthesizer/mineral-synthesizer-hr-color2-1.png",
+                                      filename = "__Age-of-Production-Graphics__/graphics/entity/synthesizer/synthesizer-hr-color2-1.png",
                                       width_in_frames = 8,
                                       height_in_frames = 8
                                   },
                                   {
-                                      filename = "__Age-of-Production-Graphics__/graphics/entity/mineral-synthesizer/mineral-synthesizer-hr-color2-2.png",
+                                      filename = "__Age-of-Production-Graphics__/graphics/entity/synthesizer/synthesizer-hr-color2-2.png",
                                       width_in_frames = 8,
                                       height_in_frames = 8
                                   }
@@ -3602,7 +2790,7 @@ data:extend {{
             source_effects = {
               {
                 type = "script",
-                effect_id = "aop-mineral-synthesizer-created",
+                effect_id = "aop-synthesizer-created",
               },
             }
           }
@@ -3626,7 +2814,7 @@ data:extend {{
         collision_box = {{-2.1, -2.1}, {2.1, 2.1}},
         selection_box = {{-2.5, -2.5}, {2.5, 2.5}},
         
-        crafting_categories = {"oil-processing", "petrochemistry", "petrochemistry-or-oil-processing", "petrochemistry-or-organic-or-chemistry", "petrochemistry-or-chemistry", "petrochemistry-or-organic-or-assembling", "petrochemistry-or-chemistry-or-cryogenics", "petrochemistry-or-organic"},
+        crafting_categories = {"oil-processing", "petrochemistry"},
         fluid_boxes =
     {
         {
@@ -3808,7 +2996,7 @@ data:extend {{
         collision_box = {{-2.1, -2.1}, {2.1, 2.1}},
         selection_box = {{-2.5, -2.5}, {2.5, 2.5}},
         
-        crafting_categories = {"quantum-assembling", "quantum-assembling-or-crafting", "quantum-assembling-or-crafting-with-fluid"},
+        crafting_categories = {"quantum-assembling"},
         fluid_boxes =
         {
           {

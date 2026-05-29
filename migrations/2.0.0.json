@@ -1,0 +1,18 @@
+{
+    "entity": 
+    [
+        ["aop-mineral-synthesizer", "aop-synthesizer"]
+    ],
+    "item": 
+    [
+        ["aop-mineral-synthesizer", "aop-synthesizer"]
+    ],
+    "recipe": 
+    [
+        ["aop-mineral-synthesizer", "aop-synthesizer"]
+    ],
+    "technology": 
+    [
+        ["aop-mineral-synthesis", "aop-synthesis"]
+    ]
+    }

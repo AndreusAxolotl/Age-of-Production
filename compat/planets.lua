@@ -29,21 +29,18 @@ local function add_tech_effect(tech_name, effect)
     end
   end
 
+local function add_additional_categories(recipe_name, categories)
+    local recipe = data.raw.recipe[recipe_name]
+    if recipe and categories then
+        recipe.additional_categories = recipe.additional_categories or {}
+        for _, cat in pairs(categories) do
+            table.insert(recipe.additional_categories, cat)
+        end
+    end
+end
+
+
 if mods["maraxsis"] then 
-    data:extend(
-{
-  {
-    type = "recipe-category",
-    name = "scrubbing-or-chemistry",
-  },
-  {
-    type = "recipe-category",
-    name = "hydro-or-synthesis",
-  },
-})
-    data.raw.recipe["maraxsis-atmosphere"].category = "scrubbing-or-chemistry"
-    add_crafting_categories("assembling-machine", "aop-scrubber", {"scrubbing-or-chemistry"})
-    add_crafting_categories("assembling-machine", "chemical-plant", {"scrubbing-or-chemistry", "hydro-or-synthesis"}) 
     add_science_pack("aop-greenhouse", {"hydraulic-science-pack", 1})
     add_tech_prerequisites("aop-greenhouse", "hydraulic-science-pack")
 
@@ -55,23 +52,16 @@ if mods["maraxsis"] then
         data.raw["recipe"]["aop-hydraulic-plant-recycling"] = nil
         data.raw["technology"]["aop-hydraulics"].hidden = true
         data.raw["assembling-machine"]["maraxsis-hydro-plant"].effect_receiver = { base_effect = { productivity = 0.25, quality = 2.5 }}
+        data.raw["assembling-machine"]["maraxsis-hydro-plant-extra-module-slots"].effect_receiver = { base_effect = { productivity = 0.25, quality = 2.5 }}
         if mods["Krastorio2-spaced-out"] then 
-            data.raw.technology["aop-core-mining"].prerequisites = { "aop-electromechanics", "promethium-science-pack", "maraxsis-research-vessel" }
+            data.raw.technology["aop-core-mining"].prerequisites = {"promethium-science-pack", "maraxsis-research-vessel" }
         else
-            data.raw.technology["aop-core-mining"].prerequisites = { "aop-electromechanics", "promethium-science-pack", "maraxsis-deepsea-research" }
+            data.raw.technology["aop-core-mining"].prerequisites = {"promethium-science-pack", "maraxsis-deepsea-research" }
         end
-        if settings.startup["aop-specialized-science"].value then
-            if mods["Krastorio2-spaced-out"] then 
-                data.raw.technology["aop-specialized-science"].prerequisites = { "aop-armory", "aop-petrochemistry", "aop-hybridation", "maraxsis-research-vessel" }
-            else    
-                data.raw.technology["aop-specialized-science"].prerequisites = { "aop-armory", "aop-petrochemistry", "aop-hybridation", "maraxsis-deepsea-research" }
-            end 
         end
-    end
-    data.raw.recipe["coal-synthesis"].category = "hydro-or-synthesis"
-    add_crafting_categories("assembling-machine", "maraxsis-hydro-plant", {"hydro-or-synthesis", "hydraulics", "hydraulics-or-chemistry", "hydraulics-or-organic", "hydraulics-or-chemistry-or-cryogenics", "synthesis-or-chemistry"})
-    add_crafting_categories("assembling-machine", "aop-hydraulic-plant", {"hydro-or-synthesis", "maraxsis-hydro-plant", "maraxsis-hydro-plant-or-assembling", "maraxsis-hydro-plant-or-advanced-crafting", "maraxsis-hydro-plant-or-biochamber", "maraxsis-hydro-plant-or-chemistry", "maraxsis-hydro-plant-or-foundry"})
-    add_crafting_categories("assembling-machine", "aop-mineral-synthesizer", {"hydro-or-synthesis"})
+    add_crafting_categories("assembling-machine", "maraxsis-hydro-plant", {"hydraulics"})
+    add_crafting_categories("assembling-machine", "maraxsis-hydro-plant-extra-module-slots", {"hydraulics"})
+    add_crafting_categories("assembling-machine", "aop-hydraulic-plant", {"maraxsis-hydro-plant", "maraxsis-hydro-plant-or-assembling", "maraxsis-hydro-plant-or-advanced-crafting", "maraxsis-hydro-plant-or-biochamber", "maraxsis-hydro-plant-or-chemistry", "maraxsis-hydro-plant-or-foundry"})
     add_science_pack("aop-core-mining", {"hydraulic-science-pack", 1})
     add_tech_prerequisites("aop-core-mining", "maraxsis-sonar")
     data.raw.recipe["aop-core-miner"].surface_conditions = {{property = "pressure", min = 400000, max = 400000}}
@@ -155,8 +145,6 @@ if mods["maraxsis"] then
     end
     
     if mods["secretas"] then 
-    add_tech_prerequisites("aop-electromechanics", "planet-discovery-secretas")
-    add_science_pack("aop-electromechanics", {"golden-science-pack", 1})
     add_tech_prerequisites("aop-advanced-recycling", "steam-recycler")
     add_science_pack("aop-advanced-recycling", {"golden-science-pack", 1})
     
@@ -226,19 +214,6 @@ if mods["maraxsis"] then
     end
     
     if mods["terrapalus"] then 
-    add_tech_prerequisites("aop-hybridation", "inhibitor-lamp")
-    data.raw.recipe["aop-biochemical-facility"].ingredients = {
-        {type = "item", name = "quantum-processor",   amount = 50},
-        {type = "item", name = "steel-plate",       amount = 40},
-        {type = "item", name = "carbon-fiber", amount = 60},
-        {type = "item", name = "biochamber", amount = 2},
-        {type = "item", name = "nutrients", amount = 75},
-        {type = "item", name = "uranium-235", amount = 50},
-        {type = "item", name = "biter-egg", amount = 5},
-        {type = "item", name = "pentapod-egg", amount = 5},
-            {type = "item", name = "palusium-plate", amount = 25},
-        }
-    data.raw.item["aop-biochemical-facility"].default_import_location = "terrapalus"
     data.raw.planet["terrapalus"].surface_properties["deep-crustal-stability"] = 2200
     end
     
@@ -358,9 +333,6 @@ if mods["maraxsis"] then
             end
             end
         end
-        add_crafting_categories("assembling-machine", "burner-assembling-machine", {"advanced-centrifuging-or-crafting", "advanced-centrifuging-or-crafting-or-electromechanics", "quantum-assembling-or-crafting", "woodworking-or-crafting", "electromechanics-or-crafting", "electronics-or-electromechanics", "pressing-or-electromechanics", "ammunition-or-crafting", "woodworking-or-organic-or-assembling", "organic-or-assembling-or-electromechanics"})
-        add_crafting_categories("assembling-machine", "steam-assembling-machine", {"advanced-centrifuging-or-crafting", "advanced-centrifuging-or-crafting-or-electromechanics", "quantum-assembling-or-crafting", "woodworking-or-crafting", "electromechanics-or-crafting", "electronics-or-electromechanics", "pressing-or-electromechanics", "ammunition-or-crafting", "woodworking-or-organic-or-assembling", "organic-or-assembling-or-electromechanics"})
-        add_crafting_categories("assembling-machine", "lumber-mill", {"woodworking", "woodworking-or-organic", "woodworking-or-crafting", "woodworking-or-organic-or-assembling"})
         add_crafting_categories("assembling-machine", "aop-lumber-mill", {"wood-processing"})
         data.raw.planet["lignumis"].surface_properties["deep-crustal-stability"] = 2000
     end
@@ -546,34 +518,9 @@ if mods["maraxsis"] then
             show_amount_in_title = false,
             maximum_productivity = 1,
             surface_conditions = {{property = "deep-crustal-stability", min = 6300, max = 6300}},
-        },
-        {
-    type = "recipe",
-    name = "aop-paracelsian-air-scrubbing",
-    icon = "__Age-of-Production-Graphics__/graphics/icons/paracelsian-air-scrubbing.png",
-    subgroup = "aop-scrubbing",
-    enabled = false,
-    energy_required = 5,
-    ingredients = {
-        {type = "item", name = "vaterite",      amount = 2},
-        {type = "fluid", name = "water",      amount = 100},
-    },
-    results = {
-        {type = "fluid", name = "water", amount = 10},
-        {type = "fluid", name = "nitrogen", amount = 10, probability = 0.50}, 
-        {type = "fluid", name = "steam", amount = 5, probability = 0.10}, 
-        {type = "item", name = "ice", amount = 2, probability = 0.10},
-    },
-    allow_productivity = false,
-    allow_quality = false,
-    category = "scrubbing",
-    auto_recycle = false,
-    show_amount_in_title = false,
-    surface_conditions = {{property = "pressure", min = 5300, max = 5300}}
 }}
         add_tech_effect("aop-core-mining", {type = "unlock-recipe", recipe = "aop-paracelsian-crushing"})
         add_tech_effect("aop-deep-mineral-refining-productivity", {type = "change-recipe-productivity", recipe = "aop-paracelsian-crushing", change = 0.05})
-        add_tech_effect("aop-additional-air-scrubbing", {type = "unlock-recipe", recipe = "aop-paracelsian-air-scrubbing"})
     end    
 
     if mods["rubia"] then 

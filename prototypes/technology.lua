@@ -1,83 +1,6 @@
 data:extend{
 {
     type = "technology",
-    name = "aop-air-scrubbing",
-    icon = "__Age-of-Production-Graphics__/graphics/technology/air-scrubbing.png",
-    icon_size = 256,
-    effects =
-    {
-      {
-        type = "unlock-recipe",
-        recipe = "aop-scrubber"
-      },
-      {
-        type = "unlock-recipe",
-        recipe = "aop-nauvitian-air-scrubbing"
-      },
-      {
-        type = "unlock-recipe",
-        recipe = "aop-gleban-air-scrubbing",
-      },
-      {
-        type = "unlock-recipe",
-        recipe = "aop-calcite-synthesis",
-      },
-      {
-        type = "unlock-recipe",
-        recipe = "aop-stone-synthesis",
-      },
-    },
-    prerequisites = {"carbon-fiber"},
-    unit =
-    {
-      count = 500,
-      ingredients =
-      {
-        {"automation-science-pack", 1},
-        {"logistic-science-pack", 1},
-        {"chemical-science-pack", 1},
-        {"space-science-pack", 1},
-        {"agricultural-science-pack", 1},
-      },
-      time = 60
-    }
-  },
-{
-    type = "technology",
-    name = "aop-additional-air-scrubbing",
-    icon = "__Age-of-Production-Graphics__/graphics/technology/additional-air-scrubbing.png",
-    icon_size = 256,
-    effects =
-    {
-      {
-        type = "unlock-recipe",
-        recipe = "aop-vulcanusian-air-scrubbing"
-      },
-      {
-        type = "unlock-recipe",
-        recipe = "aop-fulgoran-air-scrubbing",
-      },
-      {
-        type = "unlock-recipe",
-        recipe = "aop-aquiloan-air-scrubbing",
-      },
-    },
-    prerequisites = {"aop-mineral-synthesis", "cryogenic-science-pack"},
-    unit =
-    {
-      count = 100,
-      ingredients =
-      {
-        {"metallurgic-science-pack", 1},
-        {"agricultural-science-pack", 1},
-        {"electromagnetic-science-pack", 1},
-        {"cryogenic-science-pack", 1},
-      },
-      time = 60
-    }
-  },
-{
-    type = "technology",
     name = "aop-arc-furnace",
     icon = "__Age-of-Production-Graphics__/graphics/technology/arc-furnace.png",
     icon_size = 256,
@@ -140,38 +63,6 @@ data:extend{
   },
 {
     type = "technology",
-    name = "aop-electromechanics",
-    icon = "__Age-of-Production-Graphics__/graphics/technology/electromechanics.png",
-    icon_size = 256,
-    effects =
-    {
-      {
-        type = "unlock-recipe",
-        recipe = "aop-electromechanic-facility"
-      },
-    },
-    prerequisites = {"quantum-processor"},
-    unit =
-    {
-      count = 5000,
-      ingredients =
-      {
-        {"automation-science-pack", 1},
-        {"logistic-science-pack", 1},
-        {"chemical-science-pack", 1},
-        {"production-science-pack", 1},
-        {"utility-science-pack", 1},
-        {"space-science-pack", 1},
-        {"metallurgic-science-pack", 1},
-        {"agricultural-science-pack", 1},
-        {"electromagnetic-science-pack", 1},
-        {"cryogenic-science-pack", 1}
-      },
-      time = 60
-    }
-  },
-{
-    type = "technology",
     name = "aop-greenhouse",
     icon = "__Age-of-Production-Graphics__/graphics/technology/greenhouse.png",
     icon_size = 256,
@@ -217,38 +108,6 @@ data:extend{
         {"space-science-pack", 1},
         {"agricultural-science-pack", 1},
         {"cryogenic-science-pack", 1},
-      },
-      time = 60
-    }
-  },
-{
-    type = "technology",
-    name = "aop-hybridation",
-    icon = "__Age-of-Production-Graphics__/graphics/technology/hybridation.png",
-    icon_size = 256,
-    effects =
-    {
-      {
-        type = "unlock-recipe",
-        recipe = "aop-biochemical-facility"
-      },
-    },
-    prerequisites = {"captive-biter-spawner", "quantum-processor"},
-    unit =
-    {
-      count = 3000,
-      ingredients =
-      {
-        {"automation-science-pack", 1},
-        {"logistic-science-pack", 1},
-        {"chemical-science-pack", 1},
-        {"production-science-pack", 1},
-        {"utility-science-pack", 1},
-        {"space-science-pack", 1},
-        {"metallurgic-science-pack", 1},
-        {"agricultural-science-pack", 1},
-        {"electromagnetic-science-pack", 1},
-        {"cryogenic-science-pack", 1}
       },
       time = 60
     }
@@ -345,7 +204,7 @@ data:extend{
         recipe = "aop-quantum-computer"
       }
     },
-    prerequisites = {"aop-electromechanics", "promethium-science-pack", "aop-automation-4", "biolab"},
+    prerequisites = { "promethium-science-pack", "aop-automation-4", "biolab"},
     unit =
     {
       count = 7500,
@@ -362,80 +221,6 @@ data:extend{
         {"electromagnetic-science-pack", 1},
         {"cryogenic-science-pack", 1},
         {"promethium-science-pack", 1}
-      },
-      time = 90
-    }
-  },
-{
-    type = "technology",
-    name = "aop-smeltery",
-    icon = "__Age-of-Production-Graphics__/graphics/technology/smeltery.png",
-    icon_size = 256,
-    effects =
-    {
-      {
-        type = "unlock-recipe",
-        recipe = "aop-smeltery"
-      },
-      {
-        type = "unlock-recipe",
-        recipe = "aop-direct-molten-copper-from-lava"
-      },
-      {
-        type = "unlock-recipe",
-        recipe = "aop-direct-molten-iron-from-lava"
-      },
-      {
-        type = "unlock-recipe",
-        recipe = "aop-lava-demineralization"
-      },
-      {
-        type = "unlock-recipe",
-        recipe = "aop-direct-molten-copper"
-      },
-      {
-        type = "unlock-recipe",
-        recipe = "aop-direct-molten-iron"
-      },
-      {
-        type = "unlock-recipe",
-        recipe = "aop-copper-plate-melting"
-      },
-      {
-        type = "unlock-recipe",
-        recipe = "aop-iron-plate-melting"
-      },
-      {
-        type = "unlock-recipe",
-        recipe = "aop-steel-plate-melting"
-      },
-      {
-        type = "unlock-recipe",
-        recipe = "aop-copper-cable-melting"
-      },
-      {
-        type = "unlock-recipe",
-        recipe = "aop-iron-gear-wheel-melting"
-      },
-      {
-        type = "unlock-recipe",
-        recipe = "aop-iron-stick-melting"
-      },
-    },
-    prerequisites = {"quantum-processor"},
-    unit =
-    {
-      count = 5000,
-      ingredients =
-      {
-        {"automation-science-pack", 1},
-        {"logistic-science-pack", 1},
-        {"chemical-science-pack", 1},
-        {"production-science-pack", 1},
-        {"utility-science-pack", 1},
-        {"space-science-pack", 1},
-        {"metallurgic-science-pack", 1},
-        {"cryogenic-science-pack", 1},
       },
       time = 90
     }
@@ -636,7 +421,7 @@ data:extend{
               recipe = "aop-fulgoran-crushing"
             },
           },
-          prerequisites = {"aop-electromechanics", "promethium-science-pack", "aop-hydraulics"},
+          prerequisites = {"promethium-science-pack", "aop-hydraulics"},
           unit =
           {
             count = 10000,
@@ -780,14 +565,14 @@ data:extend{
           },
             {
                 type = "technology",
-                name = "aop-mineral-synthesis",
-                icon = "__Age-of-Production-Graphics__/graphics/technology/mineral-synthesis.png",
+                name = "aop-synthesis",
+                icon = "__Age-of-Production-Graphics__/graphics/technology/synthesis.png",
                 icon_size = 256,
                 effects =
                 {
                   {
                     type = "unlock-recipe",
-                    recipe = "aop-mineral-synthesizer"
+                    recipe = "aop-synthesizer"
                   },
                   {
                     type = "unlock-recipe",
@@ -798,7 +583,7 @@ data:extend{
                     recipe = "aop-ammoniacal-copper-synthesis"
                   },
                 },
-                prerequisites = {"cryogenic-science-pack", "aop-air-scrubbing"},
+                prerequisites = {"cryogenic-science-pack"},
                 unit =
                 {
                   count = 1500,
@@ -863,82 +648,6 @@ data:extend{
     }
                   }
                 }
-
-if settings.startup["aop-specialized-science"].value then
-data:extend{
-          {
-              type = "technology",
-              name = "aop-specialized-science",
-              icon = "__Age-of-Production-Graphics__/graphics/technology/specialized-science.png",
-              icon_size = 256,
-              effects =
-              {
-                {
-                  type = "unlock-recipe",
-                  recipe = "aop-lithium-fluoride"
-                },
-                {
-                  type = "unlock-recipe",
-                  recipe = "aop-lithium-fluoride-casting"
-                },
-                {
-                  type = "unlock-recipe",
-                  recipe = "aop-explosive-core"
-                },
-                {
-                  type = "unlock-recipe",
-                  recipe = "aop-advanced-artillery-shell-manufacturing"
-                },
-                {
-                  type = "unlock-recipe",
-                  recipe = "aop-magnetic-flow-meter"
-                },
-                {
-                  type = "unlock-recipe",
-                  recipe = "aop-magnetic-thruster"
-                },
-                {
-                  type = "unlock-recipe",
-                  recipe = "aop-hybrid-bacteria"
-                },
-                {
-                  type = "unlock-recipe",
-                  recipe = "aop-hybrid-bacteria-cultivation"
-                },
-                {
-                  type = "unlock-recipe",
-                  recipe = "aop-hydraulics-specialized-cryogenic-science-pack"
-                },
-                {
-                  type = "unlock-recipe",
-                  recipe = "aop-military-specialized-metallurgic-science-pack"
-                },
-                {
-                  type = "unlock-recipe",
-                  recipe = "aop-petrochemistry-specialized-electromagnetic-science-pack"
-                },
-                {
-                  type = "unlock-recipe",
-                  recipe = "aop-hybridation-specialized-agricultural-science-pack"
-                },
-              },
-              prerequisites = {"aop-armory", "aop-petrochemistry", "aop-hybridation", "aop-hydraulics"},
-              unit =
-              {
-                count = 5000,
-                ingredients =
-                {
-                  {"space-science-pack", 1},
-                  {"metallurgic-science-pack", 1},
-                  {"agricultural-science-pack", 1},
-                  {"electromagnetic-science-pack", 1},
-                  {"cryogenic-science-pack", 1},
-                },
-                time = 90
-              }
-            }
-          }
-        end
 
 if mods["maraxsis"] then 
                   if settings.startup["aop-merge-hydro"].value then

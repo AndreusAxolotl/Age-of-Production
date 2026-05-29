@@ -1,4 +1,21 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.9.0
+Date: 2026-05-29
+  Starting over part 1:
+
+  Removals:
+    - Smeltery.
+    - Electromechanic Facility.
+    - Biochemical Facility.
+    - Scrubber. (The entity and its recipes have been moved to Muria, yeah odd but dont look at it too deeply.)
+    - Specialized Sciences and all their intermediates
+
+  Changes:
+    - Revamped all recipe categories for easier implementation of recipes and such + preparations for the eventual release of Factorio 2.1.
+
+  Notes:
+    - A major update is coming. This will implement new science packs and intermediates to make the AoP buildings fit more into the game.
+---------------------------------------------------------------------------------------------------
 Version: 1.8.2
 Date: 2026-02-03
   Better and better:

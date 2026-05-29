@@ -37,7 +37,6 @@ local function add_tech_effect(tech_name, effect)
     end
   end
 
-add_crafting_categories("assembling-machine", "burner-assembling-machine", {"advanced-centrifuging-or-crafting", "advanced-centrifuging-or-crafting-or-electromechanics", "quantum-assembling-or-crafting", "woodworking-or-crafting", "electromechanics-or-crafting", "electronics-or-electromechanics", "pressing-or-electromechanics", "ammunition-or-crafting", "woodworking-or-organic-or-assembling", "organic-or-assembling-or-electromechanics"})
 data.raw.recipe["aop-arc-furnace"].ingredients = {
   {type = "item", name = "steel-plate",   amount = 200},
   {type = "item", name = "copper-cable",       amount = 150},
