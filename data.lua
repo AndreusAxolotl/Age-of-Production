@@ -1,10 +1,19 @@
+table.insert(data.raw.lab["lab"].inputs, "aop-fission-science-pack")
+table.insert(data.raw.lab["biolab"].inputs, "aop-fission-science-pack")
+table.insert(data.raw.lab["lab"].inputs, "aop-thermal-science-pack")
+table.insert(data.raw.lab["biolab"].inputs, "aop-thermal-science-pack")
+table.insert(data.raw.lab["lab"].inputs, "aop-forestry-science-pack")
+table.insert(data.raw.lab["biolab"].inputs, "aop-forestry-science-pack")
+table.insert(data.raw.lab["lab"].inputs, "aop-petrochemical-science-pack")
+table.insert(data.raw.lab["biolab"].inputs, "aop-petrochemical-science-pack")
+table.insert(data.raw.lab["lab"].inputs, "aop-quantistic-science-pack")
+table.insert(data.raw.lab["biolab"].inputs, "aop-quantistic-science-pack")
+
 local function add_tech_effect(tech_name, effect)
     local tech = data.raw.technology[tech_name]
     tech.effects = tech.effects or {}
     table.insert(tech.effects, effect)
   end
-
-  add_tech_effect("cryogenic-plant", {type = "unlock-recipe", recipe = "aop-water-freezing"})
 
   local function add_crafting_categories(entity_type, entity_name, categories)
     local entity = data.raw[entity_type][entity_name]
@@ -34,7 +43,7 @@ local function add_additional_categories(recipe_name, categories)
 end
 add_additional_categories("automation-science-pack", {"quantum-assembling"})
 add_additional_categories("logistic-science-pack", {"quantum-assembling"})
-add_additional_categories("chemical-science-pack", {"quantum-assembling"})
+add_additional_categories("chemical-science-pack", {"quantum-assembling", "chemistry"})
 add_additional_categories("military-science-pack", {"quantum-assembling", "ammunition"})
 add_additional_categories("production-science-pack", {"quantum-assembling", "advanced-centrifuging"})
 add_additional_categories("utility-science-pack", {"quantum-assembling", "advanced-centrifuging"})
@@ -129,5 +138,7 @@ data.raw.planet["aquilo"].surface_properties["deep-crustal-stability"] = 2000
 
 require "prototypes.recipe-categories"
 require "prototypes.entities"
+require "prototypes.items"
+require "prototypes.tiles"
 require "prototypes.recipes"
 require "prototypes.technology"

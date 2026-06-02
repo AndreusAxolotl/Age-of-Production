@@ -14,7 +14,13 @@ local function add_crafting_categories(entity_type, entity_name, categories)
 end
 
 if settings.startup["aop-prevent-loops"].value then
-    data.raw["recipe"]["ice-melting"].allow_productivity = false
     data.raw["recipe"]["aop-calcite-synthesis"].allow_productivity = false
     data.raw["recipe"]["aop-stone-synthesis"].allow_productivity = false
     end
+if data.raw.fluid["hydrogen"] == true then
+
+data.raw.recipe["aop-petroleum-gas-dehydrogenation"].results = {
+                {type = "item", name = "carbon", amount = 2},
+                {type = "fluid", name = "hydrogen", amount = 4},
+         }    
+end

@@ -131,12 +131,12 @@ local function add_tech_effect(tech_name, effect)
     table.insert(tech.effects, effect)
   end
   
-  add_tech_effect("aop-woodworking", {type = "unlock-recipe", recipe = "vgal-wood-electronic-circuit"})
-  add_tech_effect("aop-woodworking", {type = "unlock-recipe", recipe = "vgal-wood-heavy-oil-electronic-circuit"})
-  add_tech_effect("aop-petrochemistry", {type = "unlock-recipe", recipe = "vgal-steam-crude-oil-sulfur"})
-  add_tech_effect("aop-petrochemistry", {type = "unlock-recipe", recipe = "vgal-steam-advanced-oil-processing"})
-  add_tech_effect("aop-petrochemistry", {type = "unlock-recipe", recipe = "vgal-steam-heavy-oil-light-oil"})
-  add_tech_effect("aop-petrochemistry", {type = "unlock-recipe", recipe = "vgal-steam-light-oil-petroleum-gas"})
+  add_tech_effect("aop-lumber-mill", {type = "unlock-recipe", recipe = "vgal-wood-electronic-circuit"})
+  add_tech_effect("aop-lumber-mill", {type = "unlock-recipe", recipe = "vgal-wood-heavy-oil-electronic-circuit"})
+  add_tech_effect("aop-petrochemical-facility", {type = "unlock-recipe", recipe = "vgal-steam-crude-oil-sulfur"})
+  add_tech_effect("aop-petrochemical-facility", {type = "unlock-recipe", recipe = "vgal-steam-advanced-oil-processing"})
+  add_tech_effect("aop-petrochemical-facility", {type = "unlock-recipe", recipe = "vgal-steam-heavy-oil-light-oil"})
+  add_tech_effect("aop-petrochemical-facility", {type = "unlock-recipe", recipe = "vgal-steam-light-oil-petroleum-gas"})
   add_tech_effect("aop-atomic-enricher", {type = "unlock-recipe", recipe = "vgal-coal-uranium-235-nuclear-fuel"})
 
   local tech = data.raw.technology["cryogenic-plant"]

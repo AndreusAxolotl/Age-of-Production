@@ -36,15 +36,7 @@ local function add_tech_effect(tech_name, effect)
       table.insert(entity.crafting_categories, category)
     end
   end
-
-data.raw.recipe["aop-arc-furnace"].ingredients = {
-  {type = "item", name = "steel-plate",   amount = 200},
-  {type = "item", name = "copper-cable",       amount = 150},
-  {type = "item", name = "tungsten-carbide", amount = 100},
-  {type = "item", name = "refined-concrete", amount = 50},
-  {type = "item", name = "advanced-circuit", amount = 50},
-  {type = "item", name = "industrial-furnace", amount = 1},
-}
+table.insert(data.raw.recipe["aop-arc-furnace"].ingredients, {type = "item", name = "industrial-furnace",       amount = 1})
 add_tech_prerequisites("aop-arc-furnace", "industrial-furnace")
 if mods["corrundum"] then 
     add_tech_prerequisites("aop-arc-furnace", "electrochemical-science-pack")

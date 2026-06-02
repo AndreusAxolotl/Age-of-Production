@@ -1,4 +1,40 @@
 ---------------------------------------------------------------------------------------------------
+Version: 2.0.0
+Date: 2026-06-02
+  Starting over part 2:
+
+  Additions:
+    - Fission Science Pack, Radiation cladding and Uranium-233 on Nauvis-Space.
+    - Thermal Science Pack, Quicklime and Hot tungsten plate on Vulcanus.
+    - Petrochemical Science Pack, Bitumen, Rubber sheet and Asphalt on Fulgora.
+    - Forestry Science Pack, Wood planks and (Growing) Biocircuits on Gleba.
+    - Quantistic Science Pack, Metallic traces, Deuterium, Tritium and Unstable matter on Aquilo-Deep space.
+
+  Changes:
+    - Most of the Vanilla Spage tech tree has been changed to fit the new science packs and recipe chains.
+    - For more details check the new mod description.
+    - Renamed from AoP techs.
+
+  Removals:
+    - Water Freezing, Yumako Seed Removal and Jellynut Seed Removal recipes.
+    - Maraxsis Hydro Plant merging, as it no longer makes sense with the new progression position of the Hydraulic Plant.
+    - Same as above for the merging of the Lignumis Lumber Mill. As ugly as it looks, Lignumis compat will have to be entirely overhauled and I will ask its dev to move it to their side of developing.
+
+  Notes:
+    - There's the major update! For anyone who doesn't like the new overhaul-ish vision of the mod, you're free to play versions 1.9.1 and 1.8.2 as they're fully stable as far as I'm aware. They will not be maintained so if you want to fix compat problems with it, make a fork or ask the other devs for version specific compat.
+    - While no new machines will EVER be added, I wholeheartedly accept suggestions for new alternative recipes or minor unlocks!
+    - As always, report bugs, weird behaviours, compat issues and recipe ratios you find odd!
+---------------------------------------------------------------------------------------------------
+Version: 1.9.1
+Date: 2026-06-01
+  Happy pride month:
+
+  Fixes:
+    - Fixed Calcite and Stone synthesis not being unlockabele.
+
+  Notes:
+    - This will be the LAST PATCH before the 2.0.0 major update. I hope there's no other bugs in the mod cuz if there are, they'll only be addressed in 2.0.0.
+---------------------------------------------------------------------------------------------------
 Version: 1.9.0
 Date: 2026-05-29
   Starting over part 1:

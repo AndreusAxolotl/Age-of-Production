@@ -259,13 +259,12 @@ data:extend {{
     type = "recipe",
     name = "aop-arc-furnace",
     enabled = false,
-    energy_required = 30,
+    energy_required = 10,
     ingredients = {
         {type = "item", name = "steel-plate",   amount = 20},
         {type = "item", name = "copper-cable",       amount = 35},
         {type = "item", name = "tungsten-carbide", amount = 30},
         {type = "item", name = "refined-concrete", amount = 20},
-        {type = "item", name = "advanced-circuit", amount = 20},
         {type = "item", name = "electric-furnace", amount = 1},
     },
     results = {
@@ -297,10 +296,11 @@ data:extend {{
     enabled = false,
     energy_required = 20,
     ingredients = {
-        {type = "item", name = "quantum-processor",   amount = 50},
-        {type = "item", name = "tungsten-plate",       amount = 40},
-        {type = "item", name = "refined-concrete", amount = 40},
-        {type = "item", name = "centrifuge", amount = 5},
+        {type = "item", name = "aop-radiation-cladding",   amount = 5},
+        {type = "item", name = "steel-plate",       amount = 20},
+        {type = "item", name = "aop-uranium-233",   amount = 2},
+        {type = "item", name = "refined-concrete", amount = 20},
+        {type = "item", name = "centrifuge", amount = 1},
     },
     results = {
         {type = "item", name = "aop-atomic-enricher", amount = 1}
@@ -334,9 +334,9 @@ data:extend {{
     ingredients = {
         {type = "item", name = "agricultural-tower",   amount = 1},
         {type = "item", name = "landfill",       amount = 20},
-        {type = "item", name = "steel-plate", amount = 30},
-        {type = "item", name = "processing-unit", amount = 20},
-        {type = "item", name = "iron-gear-wheel", amount = 20},
+        {type = "item", name = "steel-plate", amount = 20},
+        {type = "item", name = "aop-biocircuit", amount = 10},
+        {type = "item", name = "iron-gear-wheel", amount = 10},
     },
     results = {
         {type = "item", name = "aop-greenhouse", amount = 1}
@@ -367,20 +367,20 @@ data:extend {{
     enabled = false,
     energy_required = 20,
     ingredients = {
-        {type = "item", name = "pump",   amount = 5},
-        {type = "item", name = "tungsten-plate",       amount = 30},
-        {type = "item", name = "lithium-plate",       amount = 30},
-        {type = "item", name = "processing-unit", amount = 40},
-        {type = "fluid", name = "water", amount = 300},
+        {type = "item", name = "pump",   amount = 2},
+        {type = "item", name = "aop-rubber-sheet",       amount = 10},
+        {type = "item", name = "lithium-plate",       amount = 10},
+        {type = "item", name = "processing-unit", amount = 10},
+        {type = "fluid", name = "water", amount = 50},
     },
     results = {
         {type = "item", name = "aop-hydraulic-plant", amount = 1}
     },
     allow_productivity = false,
-    surface_conditions = {{property = "pressure", min = 100, max = 600}},
+    surface_conditions = {{property = "pressure", min = 300, max = 300}},
     main_product = "aop-hydraulic-plant",
-    category = "hydraulics",
-    additional_categories = {"chemistry"},
+    category = "crafting-with-fluid",
+    additional_categories = {"chemistry", "hydraulics"},
     crafting_machine_tint =
     {
         primary = {r = 0.433, g = 0.773, b = 1.000, a = 1.000},
@@ -410,10 +410,10 @@ data:extend {{
     enabled = false,
     energy_required = 30,
     ingredients = {
-        {type = "item", name = "steel-plate",   amount = 30},
-        {type = "item", name = "iron-gear-wheel",       amount = 20},
-        {type = "item", name = "wood", amount = 50},
-        {type = "item", name = "landfill", amount = 20},
+        {type = "item", name = "steel-plate",   amount = 10},
+        {type = "item", name = "iron-gear-wheel",       amount = 10},
+        {type = "item", name = "aop-wood-planks", amount = 10},
+        {type = "item", name = "landfill", amount = 5},
     },
     results = {
         {type = "item", name = "aop-lumber-mill", amount = 1}
@@ -445,20 +445,20 @@ data:extend {{
     enabled = false,
     energy_required = 30,
     ingredients = {
-        {type = "item", name = "pump",   amount = 5},
-        {type = "item", name = "pipe",       amount = 20},
-        {type = "item", name = "processing-unit", amount = 30},
+        {type = "item", name = "pump",   amount = 2},
+        {type = "item", name = "pipe",       amount = 30},
+        {type = "item", name = "processing-unit", amount = 50},
         {type = "item", name = "steel-plate", amount = 50},
-        {type = "fluid", name = "heavy-oil", amount = 300},
+        {type = "fluid", name = "heavy-oil", amount = 100},
     },
     results = {
         {type = "item", name = "aop-petrochemical-facility", amount = 1}
     },
     allow_productivity = false,
-    surface_conditions = {{property = "pressure", min = 300, max = 800}},
+    surface_conditions = {{property = "magnetic-field", min = 99, max = 99}},
     main_product = "aop-petrochemical-facility",
     category = "chemistry",
-    additional_categories = {"petrochemistry"},
+    additional_categories = {"petrochemistry", "oil-processing"},
     crafting_machine_tint =
     {
       primary = {r = 1.000, g = 0.642, b = 0.261, a = 1.000}, 
@@ -489,12 +489,12 @@ data:extend {{
     energy_required = 60,
     ingredients = {
         {type = "item", name = "quantum-processor",   amount = 100},
-        {type = "item", name = "tungsten-plate",       amount = 200},
+        {type = "item", name = "tungsten-plate",       amount = 100},
         {type = "item", name = "refined-concrete", amount = 100},
         {type = "item", name = "superconductor", amount = 75},
         {type = "item", name = "supercapacitor",   amount = 50},
         {type = "item", name = "aop-advanced-assembling-machine",       amount = 2},
-        {type = "item", name = "promethium-asteroid-chunk", amount = 1},
+        {type = "item", name = "aop-unstable-matter", amount = 5},
         {type = "item", name = "raw-fish", amount = 1},
         {type = "fluid", name = "fluoroketone-cold", amount = 50},
     },
@@ -533,7 +533,7 @@ data:extend {{
         {type = "item", name = "superconductor", amount = 500},
         {type = "item", name = "supercapacitor",   amount = 200},
         {type = "item", name = "tungsten-plate",       amount = 500},
-        {type = "item", name = "promethium-asteroid-chunk", amount = 15},
+        {type = "item", name = "aop-unstable-matter", amount = 20},
         {type = "item", name = "carbon-fiber", amount = 100},
         {type = "item", name = "electric-engine-unit", amount = 100},
         {type = "fluid", name = "fluoroketone-cold", amount = 200},
@@ -572,7 +572,7 @@ data:extend {{
         {type = "item", name = "superconductor", amount = 500},
         {type = "item", name = "supercapacitor",   amount = 250},
         {type = "item", name = "tungsten-plate",       amount = 1000},
-        {type = "item", name = "promethium-asteroid-chunk", amount = 15},
+        {type = "item", name = "aop-unstable-matter", amount = 50},
         {type = "item", name = "carbon-fiber", amount = 800},
         {type = "item", name = "electric-engine-unit", amount = 300},
         {type = "fluid", name = "fluoroketone-cold", amount = 300},
@@ -609,7 +609,7 @@ data:extend {{
     ingredients = {
         {type = "item", name = "recycler",   amount = 1},
         {type = "item", name = "quality-module-3",       amount = 4},
-        {type = "item", name = "carbon-fiber", amount = 20},
+        {type = "item", name = "aop-rubber-sheet", amount = 20},
         {type = "item", name = "refined-concrete", amount = 30},
     },
     results = {
@@ -646,9 +646,9 @@ data:extend {{
         {type = "item", name = "efficiency-module-3",       amount = 3},
         {type = "item", name = "productivity-module-3", amount = 3},
         {type = "item", name = "speed-module-3", amount = 3},
-        {type = "item", name = "refined-concrete", amount = 30},
+        {type = "item", name = "refined-concrete", amount = 20},
         {type = "item", name = "supercapacitor", amount = 15},
-        {type = "item", name = "steel-plate", amount = 50},
+        {type = "item", name = "aop-rubber-sheet", amount = 10},
     },
     results = {
         {type = "item", name = "aop-advanced-assembling-machine", amount = 1}
@@ -686,7 +686,7 @@ data:extend {{
         {type = "item", name = "superconductor", amount = 500},
         {type = "item", name = "supercapacitor",   amount = 200},
         {type = "item", name = "tungsten-plate",       amount = 1000},
-        {type = "item", name = "promethium-asteroid-chunk", amount = 15},
+        {type = "item", name = "aop-uranium-233",   amount = 5},
         {type = "item", name = "carbon-fiber", amount = 300},
         {type = "fluid", name = "molten-iron", amount = 500},
         {type = "fluid", name = "molten-copper", amount = 500},
@@ -697,7 +697,7 @@ data:extend {{
     allow_productivity = false,
     surface_conditions = {{property = "pressure", min = 4000, max = 4000}},
     main_product = "aop-core-miner",
-    category = "electromagnetics",
+    category = "metallurgy",
     auto_recycle = false
 },
 {
@@ -719,12 +719,13 @@ data:extend {{
     type = "recipe",
     name = "aop-armory",
     enabled = false,
-    energy_required = 60,
+    energy_required = 20,
     ingredients = {
         {type = "item", name = "assembling-machine-2",   amount = 1},
         {type = "item", name = "advanced-circuit",   amount = 25},
         {type = "item", name = "refined-concrete", amount = 20},
         {type = "item", name = "tungsten-plate", amount = 35},
+        {type = "item", name = "aop-quicklime", amount = 10},
         {type = "fluid", name = "molten-copper",   amount = 100},
     },
     results = {
@@ -756,12 +757,10 @@ data:extend {{
     enabled = false,
     energy_required = 40,
     ingredients = {
-        {type = "item", name = "electric-furnace",   amount = 1},
-        {type = "item", name = "chemical-plant",   amount = 1},
-        {type = "item", name = "tungsten-plate",       amount = 20},
-        {type = "item", name = "lithium-plate",       amount = 30},
-        {type = "item", name = "processing-unit", amount = 40},
-        {type = "item", name = "copper-plate", amount = 35},
+        {type = "item", name = "aop-rubber-sheet",       amount = 20},
+        {type = "item", name = "lithium-plate",       amount = 20},
+        {type = "item", name = "processing-unit", amount = 20},
+        {type = "item", name = "copper-plate", amount = 25},
     },
     results = {
         {type = "item", name = "aop-synthesizer", amount = 1}
@@ -796,8 +795,7 @@ data:extend {{
         {type = "item", name = "steel-plate",   amount = 20},
         {type = "item", name = "heating-tower",       amount = 1},
         {type = "item", name = "refined-concrete", amount = 25},
-        {type = "item", name = "steam-turbine", amount = 2},
-        {type = "item", name = "heat-pipe", amount = 10},
+        {type = "item", name = "pipe", amount = 10},
         {type = "item", name = "advanced-circuit", amount = 20},
     },
     results = {
@@ -829,7 +827,8 @@ data:extend {{
     enabled = false,
     energy_required = 20,
     ingredients = {
-        {type = "item", name = "steel-plate",   amount = 10},
+        {type = "item", name = "aop-radiation-cladding",   amount = 5},
+        {type = "item", name = "aop-uranium-233",   amount = 1},
         {type = "item", name = "processing-unit",       amount = 5},
         {type = "item", name = "copper-cable", amount = 10},
         {type = "item", name = "iron-stick", amount = 5},
@@ -1046,7 +1045,7 @@ data:extend {{
         collision_box = {{-2.1, -2.1}, {2.1, 2.1}},
         selection_box = {{-2.5, -2.5}, {2.5, 2.5}},
         
-        crafting_categories = {"smelting"},
+        crafting_categories = {"smelting", "advanced-smelting"},
         crafting_speed = 5,
         energy_source =
         {

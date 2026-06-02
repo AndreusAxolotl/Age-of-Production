@@ -31,7 +31,6 @@ if mods["atan-nuclear-science"] then
         end
         end
     end
-    data.raw.technology["aop-atomic-enricher"].prerequisites = {"atomic-bomb", "quantum-processor"}
     data.raw["assembling-machine"]["atan-atom-forge"].fluid_boxes =
     {
       {

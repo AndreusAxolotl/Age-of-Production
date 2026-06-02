@@ -36,5 +36,9 @@ data:extend(
     type = "recipe-category",
     name = "ammunition"
   },
+  {
+    type = "recipe-category",
+    name = "advanced-smelting"
+  },
 }
 )

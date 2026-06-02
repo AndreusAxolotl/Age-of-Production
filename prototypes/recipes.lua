@@ -45,6 +45,12 @@ data:extend {
   },
   {
     type = "item-subgroup",
+    name = "aop-synthesis",
+    group = "intermediate-products",
+    order = "p-2"
+  },
+  {
+    type = "item-subgroup",
     name = "aop-specialized-science-pack",
     group = "intermediate-products",
     order = "z"
@@ -128,71 +134,6 @@ data:extend {
 },
 {
     type = "recipe",
-    name = "aop-yumako-seed-removal",
-    icon = "__Age-of-Production-Graphics__/graphics/icons/yumako-seed-removal.png",
-    subgroup = "agriculture-processes",
-    enabled = false,
-    energy_required = 5,
-    ingredients = {
-        {type = "item", name = "yumako",      amount = 5},
-    },
-    results = {
-        {type = "item", name = "yumako-seed", amount = 5, probability = 0.5},
-    },
-    allow_productivity = false,
-    category = "organic-or-hand-crafting",
-    auto_recycle = false,
-    show_amount_in_title = false,
-    surface_conditions = {{property = "pressure", min = 2000, max = 2000}},
-    crafting_machine_tint =
-    {
-      primary = {r = 0.976, g = 0.006, b = 0.310, a = 1.000},
-      secondary = {r = 0.805, g = 0.701, b = 0.293, a = 1.000},
-
-    }
-},
-{
-    type = "recipe",
-    name = "aop-jellynut-seed-removal",
-    icon = "__Age-of-Production-Graphics__/graphics/icons/jellynut-seed-removal.png",
-    subgroup = "agriculture-processes",
-    enabled = false,
-    energy_required = 5,
-    ingredients = {
-        {type = "item", name = "jellynut",      amount = 5},
-    },
-    results = {
-        {type = "item", name = "jellynut-seed", amount = 5, probability = 0.5},
-    },
-    allow_productivity = false,
-    category = "organic-or-hand-crafting",
-    auto_recycle = false,
-    show_amount_in_title = false,
-    surface_conditions = {{property = "pressure", min = 2000, max = 2000}},
-    crafting_machine_tint =
-    {
-      primary = {r = 0.405, g = 0.701, b = 0.693, a = 1.000},
-      secondary = {r = 0.876, g = 0.406, b = 0.710, a = 1.000},
-    }
-},
-{
-        type = "item",
-        name = "aop-biomass",
-        icon = "__Age-of-Production-Graphics__/graphics/icons/biomass.png",
-        subgroup = "aop-biomass",
-        inventory_move_sound = space_age_item_sounds.agriculture_inventory_move,
-        pick_sound = space_age_item_sounds.agriculture_inventory_pickup,
-        drop_sound = space_age_item_sounds.agriculture_inventory_move,
-        fuel_category = "nutrients",
-        fuel_value = "0.75MJ",
-        stack_size = 100,
-        default_import_location = "nauvis",
-        spoil_ticks = 36000,
-        spoil_result = "spoilage",
-        weight = 100 
-},
-{
-    type = "recipe",
     name = "aop-biomass-from-wood",
     icon = "__Age-of-Production-Graphics__/graphics/icons/biomass-from-wood.png",
     subgroup = "aop-biomass",
@@ -245,54 +186,6 @@ data:extend {
     category = "woodworking",
     auto_recycle = false
 },
-{
-    type = "fluid",
-    name = "aop-mineral-slurry",
-    subgroup = "aop-core-mining",
-    default_temperature = 50,
-    max_temperature = 200,
-    heat_capacity = "10kJ",
-    base_color = {0.35, 0.15, 0.07},
-    flow_color = {0.35, 0.15, 0.07},
-    icon = "__Age-of-Production-Graphics__/graphics/icons/mineral-slurry.png",
-    auto_barrel = false
-},
-{
-        type = "item",
-        name = "aop-deep-mineral",
-        icon = "__Age-of-Production-Graphics__/graphics/icons/deep-mineral-1.png",
-        pictures =
-        {
-          { size = 64, filename = "__Age-of-Production-Graphics__/graphics/icons/deep-mineral-1.png",   scale = 0.5},
-          { size = 64, filename = "__Age-of-Production-Graphics__/graphics/icons/deep-mineral-2.png", scale = 0.5},
-          { size = 64, filename = "__Age-of-Production-Graphics__/graphics/icons/deep-mineral-3.png", scale = 0.5}
-        },
-        subgroup = "aop-core-mining",
-        inventory_move_sound = item_sounds.resource_inventory_move,
-        pick_sound = item_sounds.resource_inventory_pickup,
-        drop_sound = item_sounds.resource_inventory_move,
-        stack_size = 50,
-        default_import_location = "nauvis",
-        weight = 100000000 
-    },
-    {
-        type = "item",
-        name = "aop-refined-mineral",
-        icon = "__Age-of-Production-Graphics__/graphics/icons/refined-mineral-1.png",
-        pictures =
-        {
-          { size = 64, filename = "__Age-of-Production-Graphics__/graphics/icons/refined-mineral-1.png",   scale = 0.5},
-          { size = 64, filename = "__Age-of-Production-Graphics__/graphics/icons/refined-mineral-2.png", scale = 0.5},
-          { size = 64, filename = "__Age-of-Production-Graphics__/graphics/icons/refined-mineral-3.png", scale = 0.5}
-        },
-        subgroup = "aop-core-mining",
-        inventory_move_sound = item_sounds.resource_inventory_move,
-        pick_sound = item_sounds.resource_inventory_pickup,
-        drop_sound = item_sounds.resource_inventory_move,
-        stack_size = 50,
-        default_import_location = "nauvis",
-        weight = 100000000 
-    },
     {
     type = "recipe",
     name = "aop-core-mining",
@@ -468,27 +361,6 @@ data:extend {
 },
 {
     type = "recipe",
-    name = "aop-water-freezing",
-    icon = "__Age-of-Production-Graphics__/graphics/icons/water-freezing.png",
-    subgroup = "fluid-recipes",
-    enabled = false,
-    energy_required = 2,
-    ingredients = {
-        {type = "fluid", name = "water", amount = 25},
-    },
-    results = {
-        {type = "item", name = "ice", amount = 1},
-    },
-    allow_productivity = false,
-    category = "cryogenics",
-    order = "e",
-    auto_recycle = false,
-    allow_quality = false,
-    show_amount_in_title = false,
-    surface_conditions = {{property = "temperature", max = 320}}
-},
-{
-    type = "recipe",
     name = "aop-uranium-sifting",
     icon = "__Age-of-Production-Graphics__/graphics/icons/uranium-sifting.png",
     subgroup = "uranium-processing",
@@ -509,7 +381,7 @@ data:extend {
     type = "recipe",
     name = "aop-calcite-synthesis",
     icon = "__Age-of-Production-Graphics__/graphics/icons/calcite-synthesis.png",
-    subgroup = "raw-material",
+    subgroup = "aop-synthesis",
     enabled = false,
     energy_required = 2,
     ingredients = {
@@ -522,7 +394,6 @@ data:extend {
     },
     allow_productivity = true,
     category = "synthesis",
-    additional_categories = {"chemistry"},
     order = "n",
     auto_recycle = false,
     show_amount_in_title = false,
@@ -539,7 +410,7 @@ data:extend {
     type = "recipe",
     name = "aop-stone-synthesis",
     icon = "__Age-of-Production-Graphics__/graphics/icons/stone-synthesis.png",
-    subgroup = "raw-material",
+    subgroup = "aop-synthesis",
     enabled = false,
     energy_required = 2,
     ingredients = {
@@ -552,7 +423,6 @@ data:extend {
     },
     allow_productivity = true,
     category = "synthesis",
-    additional_categories = {"chemistry"},
     order = "n",
     auto_recycle = false,
     show_amount_in_title = false,
@@ -562,64 +432,6 @@ data:extend {
         secondary = {r = 0.65, g = 0.53, b = 0.31, a = 1.000},
         tertiary = {r = 0.65, g = 0.53, b = 0.31, a = 1.000},
         quaternary = {r = 0.65, g = 0.53, b = 0.31, a = 1.000}
-    }
-},
-{
-    type = "recipe",
-    name = "aop-ammoniacal-iron-synthesis",
-    icon = "__Age-of-Production-Graphics__/graphics/icons/ammoniacal-iron-synthesis.png",
-    subgroup = "raw-material",
-    enabled = false,
-    energy_required = 15,
-    ingredients = {
-        {type = "item", name = "carbon",      amount = 5},
-        {type = "fluid", name = "ammoniacal-solution", amount = 100},
-        {type = "fluid", name = "petroleum-gas", amount = 25},
-    },
-    results = {
-        {type = "item", name = "iron-ore", amount = 5},
-    },
-    allow_productivity = true,
-    category = "synthesis",
-    order = "n",
-    auto_recycle = false,
-    show_amount_in_title = false,
-    surface_conditions = {{property = "pressure", min = 300, max = 300}},
-    crafting_machine_tint =
-    {
-        primary = {r = 0.43, g = 0.60, b = 0.69, a = 1.000},
-        secondary = {r = 0.43, g = 0.60, b = 0.69, a = 1.000},
-        tertiary = {r = 0.43, g = 0.60, b = 0.69, a = 1.000},
-        quaternary = {r = 0.43, g = 0.60, b = 0.69, a = 1.000}
-    }
-},
-{
-    type = "recipe",
-    name = "aop-ammoniacal-copper-synthesis",
-    icon = "__Age-of-Production-Graphics__/graphics/icons/ammoniacal-copper-synthesis.png",
-    subgroup = "raw-material",
-    enabled = false,
-    energy_required = 15,
-    ingredients = {
-        {type = "item", name = "carbon",      amount = 5},
-        {type = "fluid", name = "ammoniacal-solution", amount = 100},
-        {type = "fluid", name = "petroleum-gas", amount = 25},
-    },
-    results = {
-        {type = "item", name = "copper-ore", amount = 5},
-    },
-    allow_productivity = true,
-    category = "synthesis",
-    order = "n",
-    auto_recycle = false,
-    show_amount_in_title = false,
-    surface_conditions = {{property = "pressure", min = 300, max = 300}},
-    crafting_machine_tint =
-    {
-        primary = {r = 0.86, g = 0.46, b = 0.29, a = 1.000},
-        secondary = {r = 0.86, g = 0.46, b = 0.29, a = 1.000},
-        tertiary = {r = 0.86, g = 0.46, b = 0.29, a = 1.000},
-        quaternary = {r = 0.86, g = 0.46, b = 0.29, a = 1.000}
     }
 },
 {
@@ -720,7 +532,10 @@ data:extend {
 {
     type = "recipe",
     name = "aop-wooden-rails",
-    icon = "__Age-of-Production-Graphics__/graphics/icons/wooden-rails.png",
+    icons = {
+            { icon = "__base__/graphics/icons/rail.png", icon_size = 64 },
+            { icon = "__Age-of-Production-Graphics__/graphics/icons/wood-planks.png", icon_size = 64, scale = 0.25, shift = { 8, -8 } },
+        },
     subgroup = "aop-woodworking",
     enabled = false,
     energy_required = 0.5,
@@ -728,7 +543,7 @@ data:extend {
         {type = "item", name = "steel-plate",      amount = 1},
         {type = "item", name = "iron-stick",      amount = 1},
         {type = "item", name = "stone",      amount = 1},
-        {type = "item", name = "wood",      amount = 2},
+        {type = "item", name = "aop-wood-planks",      amount = 2},
     },
     results = {
         {type = "item", name = "rail", amount = 4},
@@ -737,5 +552,575 @@ data:extend {
     category = "woodworking",
     auto_recycle = false,
     show_amount_in_title = false,
+},
+{
+    type = "recipe",
+    name = "aop-wood-planks",
+    icon = "__Age-of-Production-Graphics__/graphics/icons/wood-planks.png",
+    subgroup = "aop-woodworking",
+    enabled = false,
+    energy_required = 2,
+    ingredients = {
+        {type = "item", name = "wood",      amount = 4},
+    },
+    results = {
+        {type = "item", name = "aop-wood-planks", amount = 2},
+    },
+    allow_productivity = true,
+    category = "crafting",
+    additional_categories = {"woodworking"},
+    auto_recycle = false,
+    show_amount_in_title = false,
+},
+{
+    type = "recipe",
+    name = "aop-tungsten-plate-heating",
+    icon = "__Age-of-Production-Graphics__/graphics/icons/tungsten-plate-heating.png",
+    subgroup = "vulcanus-processes",
+    enabled = false,
+    energy_required = 1,
+    ingredients = {
+        {type = "item", name = "tungsten-plate",      amount = 1},
+    },
+    results = {
+        {type = "item", name = "aop-hot-tungsten-plate", amount = 1},
+    },
+    allow_productivity = false,
+    category = "advanced-smelting",
+    auto_recycle = false,
+    show_amount_in_title = false,
+},
+{
+    type = "recipe",
+    name = "aop-quicklime",
+    icon = "__Age-of-Production-Graphics__/graphics/icons/quicklime.png",
+    subgroup = "vulcanus-processes",
+    enabled = false,
+    energy_required = 1,
+    ingredients = {
+        {type = "item", name = "calcite",      amount = 1},
+    },
+    results = {
+        {type = "item", name = "aop-quicklime", amount = 1},
+    },
+    allow_productivity = true,
+    category = "smelting",
+    auto_recycle = false,
+    show_amount_in_title = false,
+},
+{
+    type = "recipe",
+    name = "aop-bitumen",
+    icon = "__Age-of-Production-Graphics__/graphics/icons/bitumen.png",
+    enabled = false,
+    energy_required = 2,
+    ingredients = {
+        {type = "item", name = "stone",      amount = 2},
+        {type = "fluid", name = "heavy-oil",      amount = 20},
+    },
+    results = {
+        {type = "fluid", name = "aop-bitumen", amount = 20},
+    },
+    allow_productivity = true,
+    category = "oil-processing",
+    auto_recycle = false,
+    show_amount_in_title = false,
+},
+{
+    type = "recipe",
+    name = "aop-rubber-sheet",
+    icon = "__Age-of-Production-Graphics__/graphics/icons/rubber-sheet.png",
+    enabled = false,
+    energy_required = 4,
+    ingredients = {
+        {type = "item", name = "plastic-bar",      amount = 2},
+        {type = "fluid", name = "aop-bitumen",      amount = 10},
+        {type = "fluid", name = "light-oil",      amount = 20},
+    },
+    results = {
+        {type = "item", name = "aop-rubber-sheet", amount = 2},
+    },
+    allow_productivity = true,
+    category = "petrochemistry",
+    auto_recycle = false,
+    show_amount_in_title = false,
+},
+{
+    type = "recipe",
+    name = "aop-radiation-cladding",
+    icon = "__Age-of-Production-Graphics__/graphics/icons/radiation-cladding.png",
+    enabled = false,
+    energy_required = 10,
+    ingredients = {
+        {type = "item", name = "uranium-238",      amount = 2},
+        {type = "item", name = "low-density-structure",      amount = 1},
+        {type = "item", name = "carbon",      amount = 5},
+    },
+    results = {
+        {type = "item", name = "aop-radiation-cladding", amount = 1},
+    },
+    surface_conditions = {{property = "pressure", min = 0, max = 0}},
+    allow_productivity = true,
+    category = "centrifuging",
+    auto_recycle = false,
+    show_amount_in_title = false,
+    subgroup = "uranium-processing",
+},
+{
+    type = "recipe",
+    name = "aop-uranium-233-breeding",
+    icon = "__Age-of-Production-Graphics__/graphics/icons/uranium-233-breeding.png",
+    enabled = false,
+    energy_required = 60,
+    ingredients = {
+        {type = "item", name = "uranium-235",      amount = 1},
+        {type = "item", name = "stone",      amount = 20},
+        {type = "fluid", name = "sulfuric-acid",      amount = 20},
+    },
+    results = {
+        {type = "item", name = "aop-uranium-233", amount = 1},
+    },
+    allow_productivity = true,
+    category = "centrifuging",
+    auto_recycle = false,
+    show_amount_in_title = false,
+    subgroup = "uranium-processing",
+},
+{
+    type = "recipe",
+    name = "aop-growing-biocircuit",
+    icon = "__Age-of-Production-Graphics__/graphics/icons/growing-biocircuit.png",
+    enabled = false,
+    energy_required = 10,
+    ingredients = {
+        {type = "item", name = "aop-wood-planks",   amount = 2},
+        {type = "item", name = "iron-bacteria",   amount = 5},
+        {type = "item", name = "copper-bacteria",   amount = 5},
+        {type = "item", name = "bioflux",   amount = 2},
+        {type = "fluid", name = "water",   amount = 10},
+    },
+    results = {
+        {type = "item", name = "aop-growing-biocircuit", amount = 1},
+    },
+    allow_productivity = true,
+    reset_freshness_on_craft = true,
+    category = "organic",
+    additional_categories = {"woodworking"},
+    auto_recycle = false,
+    show_amount_in_title = false,
+},
+{
+    type = "recipe",
+    name = "aop-ammoniacal-solution-sifting",
+    icon = "__Age-of-Production-Graphics__/graphics/icons/ammoniacal-solution-sifting.png",
+    category = "hydraulics",
+    subgroup = "aop-synthesis",
+    order = "a",
+    auto_recycle = false,
+    energy_required = 1,
+    ingredients =
+    {
+      {type = "fluid", name = "ammoniacal-solution", amount = 50},
+    },
+    results =
+    {
+      {type = "item", name = "ice", amount = 2},
+      {type = "item", name = "aop-metallic-traces", amount = 2},
+      {type = "fluid", name = "ammoniacal-solution", amount = 40, ignored_by_stats = 40, ignored_by_productivity = 40},
+    },
+    allow_productivity = true,
+    enabled = false,
+    always_show_made_in = true,
+    always_show_products = true,
+    allow_decomposition = false,
+    crafting_machine_tint =
+    {
+      primary = {r = 0.596, g = 0.764, b = 0.780, a = 1.000},
+      secondary = {r = 0.551, g = 0.762, b = 0.844, a = 1.000},
+      tertiary = {r = 0.596, g = 0.773, b = 0.895, a = 1.000},
+      quaternary = {r = 0.290, g = 0.734, b = 1, a = 1.000},
+    }
+  },
+  {
+    type = "recipe",
+    name = "aop-copper-ore-from-metallic-traces",
+    icon = "__Age-of-Production-Graphics__/graphics/icons/copper-ore-from-metallic-traces.png",
+    category = "synthesis",
+    subgroup = "aop-synthesis",
+    order = "a",
+    auto_recycle = false,
+    energy_required = 2,
+    ingredients =
+    {
+      {type = "fluid", name = "fluorine", amount = 10},
+      {type = "item", name = "aop-metallic-traces", amount = 10},
+      {type = "item", name = "copper-ore", amount = 1},
+    },
+    results =
+    {
+      {type = "item", name = "copper-ore", amount = 3},
+    },
+    allow_productivity = true,
+    enabled = false,
+    always_show_made_in = true,
+    always_show_products = true,
+  },
+  {
+    type = "recipe",
+    name = "aop-iron-ore-from-metallic-traces",
+    icon = "__Age-of-Production-Graphics__/graphics/icons/iron-ore-from-metallic-traces.png",
+    category = "synthesis",
+    subgroup = "aop-synthesis",
+    order = "a",
+    auto_recycle = false,
+    energy_required = 2,
+    ingredients =
+    {
+      {type = "fluid", name = "fluorine", amount = 10},
+      {type = "item", name = "aop-metallic-traces", amount = 10},
+      {type = "item", name = "iron-ore", amount = 1},
+    },
+    results =
+    {
+      {type = "item", name = "iron-ore", amount = 3},
+    },
+    allow_productivity = true,
+    enabled = false,
+    always_show_made_in = true,
+    always_show_products = true,
+  },
+  {
+    type = "recipe",
+    name = "aop-water-rectification",
+    icon = "__Age-of-Production-Graphics__/graphics/icons/water-rectification.png",
+    category = "cryogenics",
+    subgroup = "aquilo-processes",
+    order = "z",
+    auto_recycle = false,
+    energy_required = 1,
+    ingredients =
+    {
+      {type = "fluid", name = "water", amount = 50},
+      {type = "fluid", name = "fluoroketone-hot", amount = 5},
+    },
+    results =
+    {
+      {type = "fluid", name = "water", amount = 10},
+      {type = "fluid", name = "aop-deuterium", amount = 25, probability = 0.1},
+      {type = "fluid", name = "aop-tritium", amount = 5, probability = 0.01},
+    },
+    allow_productivity = false,
+    enabled = false,
+    always_show_made_in = true,
+    always_show_products = true,
+  },
+  {
+    type = "recipe",
+    name = "aop-tritium-synthesis",
+    icon = "__Age-of-Production-Graphics__/graphics/icons/tritium-synthesis.png",
+    category = "advanced-centrifuging",
+    subgroup = "aquilo-processes",
+    order = "z",
+    auto_recycle = false,
+    energy_required = 20,
+    ingredients =
+    {
+      {type = "fluid", name = "aop-deuterium", amount = 10},
+      {type = "item", name = "lithium-plate", amount = 5},
+      {type = "item", name = "aop-uranium-233", amount = 1},
+      {type = "fluid", name = "fluoroketone-cold", amount = 20},
+    },
+    results =
+    {
+      {type = "fluid", name = "aop-tritium", amount = 10},
+      {type = "fluid", name = "fluoroketone-hot", amount = 20, ignored_by_stats = 20, ignored_by_productivity = 20},
+    },
+    allow_productivity = false,
+    enabled = false,
+    always_show_made_in = true,
+    always_show_products = true,
+  },
+  {
+    type = "recipe",
+    name = "aop-unstable-matter",
+    icon = "__Age-of-Production-Graphics__/graphics/icons/unstable-matter.png",
+    category = "advanced-centrifuging",
+    subgroup = "aquilo-processes",
+    order = "z",
+    auto_recycle = false,
+    energy_required = 10,
+    ingredients =
+    {
+     {type = "item", name = "tungsten-plate", amount = 5},
+      {type = "item", name = "lithium-plate", amount = 2},
+      {type = "item", name = "promethium-asteroid-chunk", amount = 2},
+      {type = "fluid", name = "aop-tritium", amount = 5},
+    },
+    results =
+    {
+      {type = "item", name = "aop-unstable-matter", amount = 1},
+    },
+    allow_productivity = false,
+    enabled = false,
+    always_show_made_in = true,
+    always_show_products = true,
+  },
+  {
+    type = "recipe",
+    name = "aop-unheated-thermal-science-pack",
+    category = "metallurgy",
+    surface_conditions =
+    {
+      {
+        property = "pressure",
+        min = 4000,
+        max = 4000
+      }
+    },
+    enabled = false,
+    ingredients =
+    {
+      {type = "item", name = "aop-quicklime", amount = 10},
+      {type = "item", name = "heat-pipe", amount = 2},
+      {type = "fluid", name = "molten-iron", amount = 200},
+    },
+    energy_required = 10,
+    results = {{type="item", name="aop-unheated-thermal-science-pack", amount=1}},
+    allow_productivity = true
+  },
+  {
+    type = "recipe",
+    name = "aop-thermal-science-pack-heating",
+    icon = "__Age-of-Production-Graphics__/graphics/icons/thermal-science-pack-heating.png",
+    category = "advanced-smelting",
+    surface_conditions =
+    {
+      {
+        property = "pressure",
+        min = 4000,
+        max = 4000
+      }
+    },
+    enabled = false,
+    ingredients =
+    {
+      {type = "item", name = "aop-unheated-thermal-science-pack", amount = 1},
+    },
+    energy_required = 2,
+    results = {{type="item", name="aop-thermal-science-pack", amount=1}},
+    allow_productivity = true
+  },
+    {
+    type = "recipe",
+    name = "aop-asphalt",
+    icon = "__Age-of-Production-Graphics__/graphics/icons/asphalt.png",
+    category = "petrochemistry",
+    enabled = false,
+    ingredients =
+    {
+      {type = "fluid", name = "aop-bitumen", amount = 100},
+      {type = "item", name = "aop-rubber-sheet", amount = 2},
+      {type = "item", name = "stone", amount = 2},
+    },
+    energy_required = 4,
+    results = {{type="item", name="aop-asphalt", amount=10}},
+    allow_productivity = false
+  },
+  {
+    type = "recipe",
+    name = "aop-petrochemical-science-pack",
+    category = "petrochemistry",
+    surface_conditions =
+    {
+      {
+        property = "magnetic-field",
+        min = 99,
+        max = 99
+      }
+    },
+    enabled = false,
+    ingredients =
+    {
+      {type = "item", name = "aop-rubber-sheet", amount = 5},
+      {type = "item", name = "holmium-plate", amount = 5},
+      {type = "fluid", name = "aop-bitumen", amount = 20},
+      {type = "fluid", name = "petroleum-gas", amount = 20},
+    },
+    energy_required = 10,
+    results = {{type="item", name="aop-petrochemical-science-pack", amount=1}},
+    allow_productivity = true
+  },
+  {
+    type = "recipe",
+    name = "aop-forestry-science-pack",
+    category = "woodworking",
+    subgroup = "science-pack",
+    surface_conditions =
+    {
+      {
+        property = "pressure",
+        min = 1000,
+        max = 1000
+      }
+    },
+    enabled = false,
+    ingredients =
+    {
+      {type = "item", name = "aop-wood-planks", amount = 5},
+      {type = "item", name = "tree-seed", amount = 2},
+      {type = "item", name = "spoilage", amount = 10}
+
+    },
+    energy_required = 10,
+    results = {{type="item", name="aop-forestry-science-pack", amount=1}},
+    allow_productivity = true,
+  },
+  {
+    type = "recipe",
+    name = "aop-quantistic-science-pack",
+    category = "advanced-centrifuging",
+    surface_conditions =
+    {
+      {
+        property = "pressure",
+        min = 0,
+        max = 0
+      }
+    },
+    enabled = false,
+    ingredients =
+    {
+      {type = "item", name = "fusion-power-cell", amount = 1},
+      {type = "item", name = "quantum-processor", amount = 1},
+      {type = "item", name = "low-density-structure", amount = 5}
+    },
+    energy_required = 20,
+    results =
+    {
+      {type = "item", name = "aop-quantistic-science-pack", amount = 5, probability = 0.5},
+    },
+    allow_productivity = true,
+},
+{
+    type = "recipe",
+    name = "aop-fission-science-pack",
+    category = "centrifuging",
+    surface_conditions =
+    {
+      {
+        property = "pressure",
+        min = 0,
+        max = 0
+      }
+    },
+    enabled = false,
+    ingredients =
+    {
+      {type = "item", name = "aop-radiation-cladding", amount = 2},
+      {type = "item", name = "aop-uranium-233", amount = 1},
+      {type = "item", name = "carbon", amount = 5},
+      {type = "fluid", name = "water", amount = 10},
+    },
+    energy_required = 10,
+    results =
+    {
+      {type = "item", name = "aop-fission-science-pack", amount = 2},
+    },
+    allow_productivity = true,
+},
+{
+    type = "recipe",
+    name = "aop-explosives-from-quicklime",
+    icons = {
+            { icon = "__base__/graphics/icons/explosives.png", icon_size = 64 },
+            { icon = "__Age-of-Production-Graphics__/graphics/icons/quicklime.png", icon_size = 64, scale = 0.25, shift = { 8, -8 } },
+        },
+    category = "chemistry",
+    crafting_machine_tint =
+    {
+      primary = {r = 0.968, g = 0.381, b = 0.259, a = 1.000}, -- #f66142ff
+      secondary = {r = 0.892, g = 0.664, b = 0.534, a = 1.000}, -- #e3a988ff
+      tertiary = {r = 1.000, g = 0.978, b = 0.513, a = 1.000}, -- #fff982ff
+      quaternary = {r = 0.210, g = 0.170, b = 0.013, a = 1.000}, -- #352b03ff
+    },
+    energy_required = 2,
+    enabled = false,
+    ingredients =
+    {
+      {type = "item", name = "aop-quicklime", amount = 2},
+      {type = "item", name = "coal", amount = 1},
+      {type = "fluid", name = "water", amount = 10}
+    },
+    results = {{type="item", name="explosives", amount=2}},
+    allow_productivity = true
+},
 }
-}
+
+table.insert(data.raw.recipe["big-mining-drill"].ingredients, {type = "item", name = "aop-quicklime",       amount = 10})
+table.insert(data.raw.recipe["supercapacitor"].ingredients, {type = "item", name = "aop-rubber-sheet", amount = 2})
+data.raw.recipe["superconductor"].ingredients = {
+      {type = "item", name = "holmium-plate", amount = 1},
+      {type = "item", name = "copper-plate", amount = 1},
+      {type = "item", name = "plastic-bar", amount = 1},
+      {type = "fluid", name = "aop-bitumen", amount = 5},
+    }
+data.raw.recipe["cliff-explosives"].ingredients = {
+      {type = "item", name = "explosives", amount = 10},
+      {type = "item", name = "aop-quicklime", amount = 10},
+      {type = "item", name = "grenade", amount = 1},
+      {type = "item", name = "barrel", amount = 1}
+    }
+data.raw.recipe["metallurgic-science-pack"].ingredients = {
+      {type = "item", name = "tungsten-carbide", amount = 3},
+      {type = "item", name = "aop-hot-tungsten-plate", amount = 2},
+      {type = "fluid", name = "molten-copper", amount = 200},
+    }
+data.raw.recipe["artillery-shell"].ingredients = {
+      {type = "item", name = "radar", amount = 1},
+      {type = "item", name = "calcite", amount = 1},
+      {type = "item", name = "aop-hot-tungsten-plate", amount = 4},
+      {type = "item", name = "explosives", amount = 8}
+    }
+data.raw.recipe["nuclear-reactor"].ingredients = {
+      {type = "item", name = "concrete", amount = 500},
+      {type = "item", name = "aop-radiation-cladding", amount = 250},
+      {type = "item", name = "advanced-circuit", amount = 500},
+      {type = "item", name = "copper-plate", amount = 500}
+    }
+data.raw.recipe["atomic-bomb"].ingredients = {
+      {type = "item", name = "processing-unit", amount = 10},
+      {type = "item", name = "explosives", amount = 10},
+      {type = "item", name = "uranium-235", amount = 80},
+      {type = "item", name = "aop-uranium-233", amount = 5}
+    }
+data.raw.recipe["fission-reactor-equipment"].ingredients = {
+      {type = "item", name = "processing-unit", amount = 200},
+      {type = "item", name = "aop-radiation-cladding", amount = 50},
+      {type = "item", name = "uranium-fuel-cell", amount = 4}
+    }
+table.insert(data.raw.recipe["fusion-reactor"].ingredients, {type = "item", name = "aop-radiation-cladding",       amount = 200})
+table.insert(data.raw.recipe["fusion-generator"].ingredients, {type = "item", name = "aop-radiation-cladding",       amount = 100})
+table.insert(data.raw.recipe["fusion-power-cell"].ingredients, {type = "fluid", name = "aop-deuterium",       amount = 20})
+table.insert(data.raw.recipe["fusion-power-cell"].ingredients, {type = "fluid", name = "aop-tritium",       amount = 5})
+data.raw.recipe["capture-robot-rocket"].ingredients = {
+      {type = "item", name = "flying-robot-frame", amount = 1},
+      {type = "item", name = "steel-plate", amount = 2},
+      {type = "item", name = "bioflux", amount = 10},
+      {type = "item", name = "processing-unit", amount = 2},
+      {type = "item", name = "aop-biocircuit", amount = 5},
+    }
+data.raw.recipe["biolab"].ingredients = {
+      {type = "item", name = "lab", amount = 1},
+      {type = "item", name = "biter-egg", amount = 10},
+      {type = "item", name = "refined-concrete", amount = 25},
+      {type = "item", name = "capture-robot-rocket", amount = 2},
+      {type = "item", name = "aop-biocircuit", amount = 10},
+      {type = "item", name = "aop-uranium-233", amount = 1}
+    }
+data.raw.recipe["captive-biter-spawner"].ingredients = {
+      {type = "item", name = "biter-egg", amount = 10},
+      {type = "item", name = "capture-robot-rocket", amount = 1},
+      {type = "item", name = "uranium-235", amount = 15},
+      {type = "item", name = "aop-biocircuit", amount = 5},
+      {type = "fluid", name = "fluoroketone-cold", amount = 100},
+    }
