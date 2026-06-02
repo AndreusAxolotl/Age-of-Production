@@ -218,7 +218,6 @@ if mods["maraxsis"] then
         }}
         add_tech_effect("aop-core-mining", {type = "unlock-recipe", recipe = "aop-mulunan-crushing"})
         add_tech_effect("aop-deep-mineral-refining-productivity", {type = "change-recipe-productivity", recipe = "aop-mulunan-crushing", change = 0.05})
-        data.raw.technology["aop-woodworking"].prerequisites = {"production-science-pack", "agricultural-science-pack"}
     end
 
     if mods["Cerys-Moon-of-Fulgora"] then 
