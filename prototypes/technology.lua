@@ -787,6 +787,7 @@ data:extend{
     name = "aop-quantistic-science-pack",
     icon = "__Age-of-Production-Graphics__/graphics/technology/quantistic-science-pack.png",
     icon_size = 256,
+    essential = true,
     effects =
     {
       {
@@ -823,6 +824,7 @@ data:extend{
     name = "aop-forestry-science-pack",
     icon = "__Age-of-Production-Graphics__/graphics/technology/forestry-science-pack.png",
     icon_size = 256,
+    essential = true,
     effects =
     {
       {
@@ -842,6 +844,7 @@ data:extend{
     name = "aop-petrochemical-science-pack",
     icon = "__Age-of-Production-Graphics__/graphics/technology/petrochemical-science-pack.png",
     icon_size = 256,
+    essential = true,
     effects =
     {
       {
@@ -861,6 +864,7 @@ data:extend{
     name = "aop-fission-science-pack",
     icon = "__Age-of-Production-Graphics__/graphics/technology/fission-science-pack.png",
     icon_size = 256,
+    essential = true,
     effects =
     {
       {
@@ -880,6 +884,7 @@ data:extend{
     name = "aop-thermal-science-pack",
     icon = "__Age-of-Production-Graphics__/graphics/technology/thermal-science-pack.png",
     icon_size = 256,
+    essential = true,
     effects =
     {
       {
@@ -1182,6 +1187,7 @@ add_tech_prerequisites("fusion-reactor", "aop-tritium-synthesis")
 add_tech_prerequisites("electromagnetic-plant", "aop-bitumen-processing")
 add_tech_effect("metallurgic-science-pack", {type = "unlock-recipe", recipe = "aop-tungsten-plate-heating"})
 add_tech_effect("calcite-processing", {type = "unlock-recipe", recipe = "aop-quicklime"})
+add_tech_effect("tree-seeding", {type = "unlock-recipe", recipe = "aop-wood-planks"})
 data.raw.technology["uranium-ammo"].prerequisites = {"aop-fission-science-pack", "military-4", "tank"}
 data.raw.technology["biolab"].prerequisites = {"biter-egg-handling", "utility-science-pack", "aop-fission-science-pack"}
 add_science_pack("uranium-ammo", { "aop-fission-science-pack", 1 })
@@ -1206,7 +1212,6 @@ add_science_pack("research-productivity", { "aop-fission-science-pack", 1 })
 add_science_pack("research-productivity", { "aop-thermal-science-pack", 1 })
 add_science_pack("research-productivity", { "aop-forestry-science-pack", 1 })
 add_science_pack("research-productivity", { "aop-petrochemical-science-pack", 1 })
-add_science_pack("research-productivity", { "aop-quantistic-science-pack", 1 })
 add_science_pack("foundation", { "aop-fission-science-pack", 1 })
 add_science_pack("foundation", { "aop-thermal-science-pack", 1 })
 add_science_pack("foundation", { "aop-forestry-science-pack", 1 })

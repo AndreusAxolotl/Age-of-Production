@@ -103,7 +103,8 @@ This mod wouldn't be possible without the help of these amazing people!
 - Talandar
 
 #### Wood Planks and Asphalt Sprites
-- [Factorio free raphics for modders](https://github.com/snouz/factorio_free_graphics_for_modders)
+- [Factorio free graphics for modders](https://github.com/snouz/factorio_free_graphics_for_modders)
+
 #### Various other help and inspiration
 - [SpeckledFleebeedoo](https://mods.factorio.com/user/SpeckledFleebeedoo)
 - [O5MO](https://mods.factorio.com/user/O5MO)

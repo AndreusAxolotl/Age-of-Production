@@ -1,6 +1,5 @@
 require "compat.galore"
 require "compat.5dim"
-require "compat.wood-universe"
 require "compat.planets"
 require "compat.qualitybiolab"
 require "compat.nuclear-science"
@@ -17,10 +16,14 @@ if settings.startup["aop-prevent-loops"].value then
     data.raw["recipe"]["aop-calcite-synthesis"].allow_productivity = false
     data.raw["recipe"]["aop-stone-synthesis"].allow_productivity = false
     end
-if data.raw.fluid["hydrogen"] == true then
+if data.raw.fluid["hydrogen"] then
 
 data.raw.recipe["aop-petroleum-gas-dehydrogenation"].results = {
                 {type = "item", name = "carbon", amount = 2},
                 {type = "fluid", name = "hydrogen", amount = 4},
          }    
+end
+
+if mods["scraptk"] then 
+    ScrapIndustry.categories["advanced-smelting"] = {ignore=true}
 end

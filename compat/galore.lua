@@ -156,6 +156,6 @@ end
     add_tech_effect("maraxsis-hydro-plant", {type = "unlock-recipe", recipe = "vgal-crude-oil-thruster-fuel"})
     add_tech_effect("maraxsis-hydro-plant", {type = "unlock-recipe", recipe = "vgal-ammonia-thruster-oxidizer"})
   else
-    add_tech_effect("aop-hydraulics", {type = "unlock-recipe", recipe = "vgal-crude-oil-thruster-fuel"})
-    add_tech_effect("aop-hydraulics", {type = "unlock-recipe", recipe = "vgal-ammonia-thruster-oxidizer"})
+    add_tech_effect("aop-hydraulic-plant", {type = "unlock-recipe", recipe = "vgal-crude-oil-thruster-fuel"})
+    add_tech_effect("aop-hydraulic-plant", {type = "unlock-recipe", recipe = "vgal-ammonia-thruster-oxidizer"})
   end

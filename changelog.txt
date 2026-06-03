@@ -1,4 +1,29 @@
 ---------------------------------------------------------------------------------------------------
+Version: 2.0.4
+Date: 2026-06-03
+  hotfixes upon hotfixed upon hotfix:
+
+  Fixes:
+    - Fixed changelog errors.
+    - Fixed wood planks not being unlockable.
+    - Fixed science pack techs not being essential.
+---------------------------------------------------------------------------------------------------
+Version: 2.0.3
+Date: 2026-06-02
+  hotfixes upon hotfixed upon hotfix:
+
+  Fixes:
+    - Removed wooden universe compat cuz it breaks stuff. May return in the future.
+    - Fixed issues with Scrappy Industries.
+    - Removed Productivity from Thermal Science heating
+---------------------------------------------------------------------------------------------------
+Version: 2.0.2
+Date: 2026-06-02
+  hotfixes upon hotfixed:
+
+  Fixes:
+    - Fixed Crash with the Galore mods.
+---------------------------------------------------------------------------------------------------
 Version: 2.0.1
 Date: 2026-06-01
   whoooopss:
