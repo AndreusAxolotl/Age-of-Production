@@ -893,14 +893,6 @@ data:extend {
     name = "aop-thermal-science-pack-heating",
     icon = "__Age-of-Production-Graphics__/graphics/icons/thermal-science-pack-heating.png",
     category = "advanced-smelting",
-    surface_conditions =
-    {
-      {
-        property = "pressure",
-        min = 4000,
-        max = 4000
-      }
-    },
     enabled = false,
     ingredients =
     {
