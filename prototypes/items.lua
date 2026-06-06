@@ -239,7 +239,7 @@ data:extend {
     drop_sound = item_sounds.nuclear_inventory_move,
     stack_size = 100,
     weight = 50*kg,
-    spoil_ticks = 5*minute,
+    spoil_ticks = 45*minute,
     spoil_result = "uranium-238",
   },
   {

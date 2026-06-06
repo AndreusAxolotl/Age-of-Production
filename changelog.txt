@@ -1,4 +1,14 @@
 ---------------------------------------------------------------------------------------------------
+Version: 2.0.7
+Date: 2026-06-06
+  today is 6-6-6 scary:
+
+  Changes:
+    - Rebalanced U233 spoil time and U233 breeding, U235 catalyst may now return.
+    - Increased amount of science packs per batch made by Fission Science (again).
+    - Reduced amount of science needed for Kovarex, due to the increased use of Uranium.
+    - Added steam turbines as an unlock for discovering Vulcanus, i swear it makes sense.
+---------------------------------------------------------------------------------------------------
 Version: 2.0.6
 Date: 2026-06-04
   How did that happen:

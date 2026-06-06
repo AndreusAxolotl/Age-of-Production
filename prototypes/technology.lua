@@ -1010,7 +1010,7 @@ data.raw.technology["nuclear-power"].unit =
 data.raw.technology["kovarex-enrichment-process"].prerequisites = {"aop-fission-science-pack"}
 data.raw.technology["kovarex-enrichment-process"].unit =
 {
-  count = 1000,
+  count = 500,
   ingredients =
   {
     {"automation-science-pack", 1},
@@ -1020,7 +1020,7 @@ data.raw.technology["kovarex-enrichment-process"].unit =
     {"production-science-pack", 1},
     {"aop-fission-science-pack", 1},
   },
-  time = 30
+  time = 60
 }
 data.raw.technology["atomic-bomb"].prerequisites = {"aop-fission-science-pack", "military-4", "rocketry"}
 data.raw.technology["atomic-bomb"].unit =
@@ -1188,6 +1188,7 @@ add_tech_prerequisites("electromagnetic-plant", "aop-bitumen-processing")
 add_tech_effect("metallurgic-science-pack", {type = "unlock-recipe", recipe = "aop-tungsten-plate-heating"})
 add_tech_effect("calcite-processing", {type = "unlock-recipe", recipe = "aop-quicklime"})
 add_tech_effect("tree-seeding", {type = "unlock-recipe", recipe = "aop-wood-planks"})
+add_tech_effect("planet-discovery-vulcanus", {type = "unlock-recipe", recipe = "steam-turbine"})
 data.raw.technology["uranium-ammo"].prerequisites = {"aop-fission-science-pack", "military-4", "tank"}
 data.raw.technology["biolab"].prerequisites = {"biter-egg-handling", "utility-science-pack", "aop-fission-science-pack"}
 add_science_pack("uranium-ammo", { "aop-fission-science-pack", 1 })

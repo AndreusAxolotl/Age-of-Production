@@ -679,6 +679,7 @@ data:extend {
     },
     results = {
         {type = "item", name = "aop-uranium-233", amount = 1},
+        {type = "item", name = "uranium-235", amount = 1, probability = 0.75, ignored_by_stats = 1, ignored_by_productivity = 1},
     },
     allow_productivity = true,
     category = "centrifuging",
@@ -1010,13 +1011,13 @@ data:extend {
     {
       {type = "item", name = "aop-radiation-cladding", amount = 2},
       {type = "item", name = "aop-uranium-233", amount = 1},
-      {type = "item", name = "carbon", amount = 5},
-      {type = "fluid", name = "water", amount = 10},
+      {type = "item", name = "carbon", amount = 10},
+      {type = "fluid", name = "water", amount = 20},
     },
-    energy_required = 10,
+    energy_required = 20,
     results =
     {
-      {type = "item", name = "aop-fission-science-pack", amount = 2},
+      {type = "item", name = "aop-fission-science-pack", amount = 5},
     },
     allow_productivity = true,
 },
