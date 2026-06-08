@@ -38,7 +38,3 @@ local function add_tech_effect(tech_name, effect)
   end
 table.insert(data.raw.recipe["aop-arc-furnace"].ingredients, {type = "item", name = "industrial-furnace",       amount = 1})
 add_tech_prerequisites("aop-arc-furnace", "industrial-furnace")
-if mods["corrundum"] then 
-    add_tech_prerequisites("aop-arc-furnace", "electrochemical-science-pack")
-    add_tech_prerequisites("aop-arc-furnace",  "industrial-furnace")
-end

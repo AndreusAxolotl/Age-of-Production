@@ -1,4 +1,11 @@
 ---------------------------------------------------------------------------------------------------
+Version: 2.0.8
+Date: 2026-06-07
+  lmaoo:
+
+  Fixes:
+    - Fixed crash with AAI Industries and Corrundum, I can't believe i thought that wasnt happening from my side at all im crying
+---------------------------------------------------------------------------------------------------
 Version: 2.0.7
 Date: 2026-06-06
   today is 6-6-6 scary:
