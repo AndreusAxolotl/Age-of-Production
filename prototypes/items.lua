@@ -92,7 +92,7 @@ data:extend {
         default_import_location = "gleba",
         spoil_ticks = 10*minute,
         spoil_result = "aop-biocircuit",
-        weight = 20 
+        weight = 1*kg
 },
 {
         type = "item",
@@ -105,7 +105,7 @@ data:extend {
         drop_sound = item_sounds.wood_inventory_move,
         stack_size = 100,
         default_import_location = "gleba",
-        weight = 100 
+        weight = 1*kg
 },
 {
         type = "item",
@@ -118,7 +118,7 @@ data:extend {
         drop_sound = item_sounds.wood_inventory_move,
         stack_size = 100,
         default_import_location = "nauvis",
-        weight = 100 
+        weight = 500 * grams
 },
 {
     type = "fluid",
