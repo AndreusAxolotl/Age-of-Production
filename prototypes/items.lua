@@ -198,7 +198,6 @@ data:extend {
     type = "item",
     name = "aop-radiation-cladding",
     icon = "__Age-of-Production-Graphics__/graphics/icons/radiation-cladding.png",
-    auto_recycle = false,
     subgroup = "uranium-processing",
     order = "d",
     inventory_move_sound = item_sounds.mechanical_inventory_move,
