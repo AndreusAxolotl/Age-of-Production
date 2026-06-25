@@ -12,7 +12,9 @@ for _, recipe in pairs(data.raw.recipe) do
             end
         end
         if not exclude then
-            recipe.additional_categories = {"quantum-assembling"}
+            recipe.categories = recipe.categories or (recipe.category and {recipe.category}) or {"crafting"}
+            recipe.category = nil
+            table.insert(recipe.categories, "quantum-assembling")
         end
     end
 end
@@ -20,7 +22,8 @@ end
 local function set_recipe_category(recipe_names, category)
   for _, recipe_name in pairs(recipe_names) do
     if data.raw.recipe[recipe_name] then
-      data.raw.recipe[recipe_name].category = category
+      data.raw.recipe[recipe_name].categories = {category}
+      data.raw.recipe[recipe_name].category = nil
     end
   end
 end
@@ -38,9 +41,10 @@ set_recipe_category({"vgal-ammonia-thruster-oxidizer"}, "hydraulics")
 local function add_additional_categories(recipe_name, categories)
     local recipe = data.raw.recipe[recipe_name]
     if recipe and categories then
-        recipe.additional_categories = recipe.additional_categories or {}
+        recipe.categories = recipe.categories or (recipe.category and {recipe.category}) or {"crafting"}
+        recipe.category = nil
         for _, cat in pairs(categories) do
-            table.insert(recipe.additional_categories, cat)
+            table.insert(recipe.categories, cat)
         end
     end
 end

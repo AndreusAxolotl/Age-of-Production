@@ -35,9 +35,10 @@ data.raw["assembling-machine"]["crusher"].surface_conditions = nil
 local function add_additional_categories(recipe_name, categories)
     local recipe = data.raw.recipe[recipe_name]
     if recipe and categories then
-        recipe.additional_categories = recipe.additional_categories or {}
+        recipe.categories = recipe.categories or (recipe.category and {recipe.category}) or {"crafting"}
+        recipe.category = nil
         for _, cat in pairs(categories) do
-            table.insert(recipe.additional_categories, cat)
+            table.insert(recipe.categories, cat)
         end
     end
 end
@@ -59,7 +60,7 @@ add_additional_categories("shotgun", {"woodworking"})
 add_additional_categories("combat-shotgun", {"woodworking"})
 add_additional_categories("agricultural-tower", {"woodworking"})
 add_additional_categories("nutrients-from-spoilage", {"woodworking"})
-add_additional_categories("wood-processing", {"woodworking"})
+add_additional_categories("tree-seed", {"woodworking"})
 add_additional_categories("burnt-spoilage", {"woodworking"})
 add_additional_categories("lubricant", {"hydraulics"})
 add_additional_categories("thruster-fuel", {"hydraulics"})
@@ -119,7 +120,7 @@ data.raw.recipe["carbon"].crafting_machine_tint =
     tertiary = {r = 0.0, g = 0.0, b = 0.0, a = 1.000},
     quaternary = {r = 0.0, g = 0.0, b = 0.0, a = 1.000}
 }
-data.raw.recipe["wood-processing"].surface_conditions = nil
+data.raw.recipe["tree-seed"].surface_conditions = nil
 data.raw.item["spoilage"].fuel_category = "aop-spoilage"
 
 data:extend({

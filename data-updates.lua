@@ -1,3 +1,24 @@
+-- PlanetsLib 1.19.2's science-pack name sorter (lib/technology.lua) indexes
+-- data.raw[subtype] for every subtype in defines.prototypes.item with no nil
+-- guard. Under Factorio 2.1.8 several item subtypes (item-with-inventory,
+-- item-with-label, item-with-tags) have zero prototypes, so data.raw[subtype]
+-- is nil and PlanetsLib crashes in data-final-fixes. Ensure the tables exist so
+-- the lookup returns nil cleanly. Runs in data-updates, before any
+-- data-final-fixes. (Upstream fix belongs in PlanetsLib.)
+do
+  local subtypes = {
+    "item-with-inventory", "item-with-label", "item-with-tags", "tool",
+  }
+  if defines and defines.prototypes and defines.prototypes.item then
+    for subtype in pairs(defines.prototypes.item) do
+      subtypes[#subtypes + 1] = subtype
+    end
+  end
+  for _, subtype in pairs(subtypes) do
+    data.raw[subtype] = data.raw[subtype] or {}
+  end
+end
+
 require "compat.galore"
 require "compat.5dim"
 require "compat.planets"

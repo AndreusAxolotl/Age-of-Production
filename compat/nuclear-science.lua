@@ -1,3 +1,5 @@
+local assembler_pictures = require("__base__/prototypes/entity/assembler-pictures")
+
 local function add_tech_effect(tech_name, effect)
     local tech = data.raw.technology[tech_name]
     tech.effects = tech.effects or {}
@@ -36,7 +38,7 @@ if mods["atan-nuclear-science"] then
       {
         production_type = "input",
         pipe_covers = pipecoverspictures(),
-        pipe_picture = assembler2pipepictures(),
+        pipe_picture = assembler_pictures.assembler2pipepictures,
         secondary_draw_orders = { north = -1 },
         volume = 1000,
         pipe_connections = { { flow_direction = "input", direction = defines.direction.north, position = { -1.5, -2.5 } } }
@@ -44,7 +46,7 @@ if mods["atan-nuclear-science"] then
     {
         production_type = "input",
         pipe_covers = pipecoverspictures(),
-        pipe_picture = assembler2pipepictures(),
+        pipe_picture = assembler_pictures.assembler2pipepictures,
         secondary_draw_orders = { north = -1 },
         volume = 1000,
         pipe_connections = { { flow_direction = "input", direction = defines.direction.north, position = { 1.5, -2.5 } } }
@@ -52,7 +54,7 @@ if mods["atan-nuclear-science"] then
     {
         production_type = "output",
         pipe_covers = pipecoverspictures(),
-        pipe_picture = assembler2pipepictures(),
+        pipe_picture = assembler_pictures.assembler2pipepictures,
         secondary_draw_orders = { north = -1 },
         volume = 500,
         pipe_connections = { { flow_direction = "output", direction = defines.direction.south, position = { -1.5, 2.5 } } }
@@ -60,7 +62,7 @@ if mods["atan-nuclear-science"] then
     {
         production_type = "output",
         pipe_covers = pipecoverspictures(),
-        pipe_picture = assembler2pipepictures(),
+        pipe_picture = assembler_pictures.assembler2pipepictures,
         secondary_draw_orders = { north = -1 },
         volume = 500,
         pipe_connections = { { flow_direction = "output", direction = defines.direction.south, position = { 1.5, 2.5 } } }

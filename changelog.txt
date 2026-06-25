@@ -1,4 +1,24 @@
 ---------------------------------------------------------------------------------------------------
+Version: 2.0.11
+Date: 2026-06-25
+  welcome to 2.1:
+
+  Changes:
+    - Updated for Factorio 2.1
+    - Migrated recipes from single category to the new categories list, splitting combined categories (e.g. chemistry-or-cryogenics into chemistry and cryogenics)
+    - Merged additional_categories into the unified categories list on recipes and machine entities
+    - Switched multi-output recipes from probability to independent_probability per product
+    - Moved freshness flags onto individual products (result_is_always_fresh became always_fresh, reset_freshness_on_craft now per-product)
+    - Updated to the new assembler-pictures API (assembler2pipepictures)
+    - Renamed the wood-processing recipe reference to tree-seed
+    - Updated module inventory access to use crafter_modules
+
+  Compatibility:
+    - Added a defensive PlanetsLib shim in data-updates.lua so missing item subtype tables in data.raw do not crash its science-pack sorter
+    - Self-define the electronics recipe-category when no optional dependency provides it
+    - Pointed recycler sounds at the recycler mod and dropped recycling-or-hand-crafting from recycler categories
+    - Added a hard dependency on the recycler mod (recycler >= 2.1), which 2.1 split out of quality and this mod references
+---------------------------------------------------------------------------------------------------
 Version: 2.0.10
 Date: 2026-06-22
   now this was a pickle:
