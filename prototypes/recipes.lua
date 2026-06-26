@@ -68,13 +68,11 @@ data:extend {
         {type = "fluid", name = "water", amount = 50},
     },
     results = {
-        {type = "item", name = "yumako", amount = 200},
+        {type = "item", name = "yumako", amount = 200, reset_freshness_on_craft = true,},
     },
     allow_productivity = false,
-    category = "agriculture",
+    categories = {"agriculture"},
     auto_recycle = false,
-    show_amount_in_title = false,
-    result_is_always_fresh= true,
     preserve_products_in_machine_output= true,
     surface_conditions = {{property = "pressure", min = 2000, max = 2000}},
     crafting_machine_tint =
@@ -97,13 +95,11 @@ data:extend {
         {type = "fluid", name = "water", amount = 50},
     },
     results = {
-        {type = "item", name = "jellynut", amount = 200},
+        {type = "item", name = "jellynut", amount = 200, reset_freshness_on_craft = true,},
     },
     allow_productivity = false,
-    category = "agriculture",
+    categories = {"agriculture"},
     auto_recycle = false,
-    show_amount_in_title = false,
-    result_is_always_fresh= true,
     preserve_products_in_machine_output= true,
     surface_conditions = {{property = "pressure", min = 2000, max = 2000}},
     crafting_machine_tint =
@@ -128,9 +124,8 @@ data:extend {
         {type = "item", name = "wood", amount = 16},
     },
     allow_productivity = false,
-    category = "agriculture",
+    categories = {"agriculture"},
     auto_recycle = false,
-    show_amount_in_title = false,
 },
 {
     type = "recipe",
@@ -147,7 +142,7 @@ data:extend {
         {type = "item", name = "aop-biomass", amount = 5},
     },
     allow_productivity = true,
-    category = "woodworking",
+    categories = {"woodworking"},
     auto_recycle = false
 },
 {
@@ -166,7 +161,7 @@ data:extend {
         {type = "item", name = "aop-biomass", amount = 5},
     },
     allow_productivity = true,
-    category = "woodworking",
+    categories = {"woodworking"},
     auto_recycle = false
 },
 {
@@ -183,7 +178,7 @@ data:extend {
         {type = "item", name = "nutrients", amount = 2, percent_spoiled=0.75},
     },
     allow_productivity = true,
-    category = "woodworking",
+    categories = {"woodworking"},
     auto_recycle = false
 },
     {
@@ -203,9 +198,8 @@ data:extend {
         {type = "fluid", name = "fluoroketone-hot", amount = 5, ignored_by_stats = 5, ignored_by_productivity = 5},
     },
     allow_productivity = true,
-    category = "core-mining",
+    categories = {"core-mining"},
     auto_recycle = false,
-    show_amount_in_title = false,
 },
 {
     type = "recipe",
@@ -222,10 +216,8 @@ data:extend {
         {type = "fluid", name = "aop-mineral-slurry", amount = 20},
     },
     allow_productivity = false,
-    category = "hydraulics",
-    additional_categories = {"chemistry", "cryogenics"},
+    categories = {"hydraulics", "chemistry", "cryogenics"},
     auto_recycle = false,
-    show_amount_in_title = false,
     crafting_machine_tint =
     {
         primary = {r = 0.35, g = 0.15, b = 0.07, a = 1.000},
@@ -250,9 +242,8 @@ data:extend {
         {type = "item", name = "stone", amount = 25, ignored_by_stats = 25, ignored_by_productivity = 25},
     },
     allow_productivity = true,
-    category = "chemistry-or-cryogenics",
+    categories = {"chemistry", "cryogenics"},
     auto_recycle = false,
-    show_amount_in_title = false,
     crafting_machine_tint =
     {
         primary = {r = 0.35, g = 0.15, b = 0.07, a = 1.000},
@@ -272,17 +263,16 @@ data:extend {
         {type = "item", name = "aop-refined-mineral",      amount = 1},
     },
     results = {
-        {type = "item", name = "iron-ore", amount = 2, probability = 0.5},
-        {type = "item", name = "copper-ore", amount = 2, probability = 0.5}, 
-        {type = "item", name = "tungsten-ore", amount = 1, probability = 0.35}, 
-        {type = "item", name = "sulfur", amount = 1, probability = 0.4}, 
-        {type = "item", name = "coal", amount = 3, probability = 0.6}, 
-        {type = "item", name = "calcite", amount = 1, probability = 0.35},
+        {type = "item", name = "iron-ore", amount = 2, independent_probability = 0.5},
+        {type = "item", name = "copper-ore", amount = 2, independent_probability = 0.5}, 
+        {type = "item", name = "tungsten-ore", amount = 1, independent_probability = 0.35}, 
+        {type = "item", name = "sulfur", amount = 1, independent_probability = 0.4}, 
+        {type = "item", name = "coal", amount = 3, independent_probability = 0.6}, 
+        {type = "item", name = "calcite", amount = 1, independent_probability = 0.35},
     },
     allow_productivity = true,
-    category = "crushing",
+    categories = {"crushing"},
     auto_recycle = false,
-    show_amount_in_title = false,
     maximum_productivity = 1,
     surface_conditions = {{property = "deep-crustal-stability", min = 5200, max = 5200}},
 },
@@ -297,15 +287,14 @@ data:extend {
         {type = "item", name = "aop-refined-mineral",      amount = 1},
     },
     results = {
-        {type = "item", name = "iron-ore", amount = 1, probability = 0.8},
-        {type = "item", name = "copper-ore", amount = 1, probability = 0.8}, 
-        {type = "item", name = "uranium-ore", amount = 1, probability = 0.25}, 
-        {type = "item", name = "coal", amount = 2, probability = 0.3}, 
+        {type = "item", name = "iron-ore", amount = 1, independent_probability = 0.8},
+        {type = "item", name = "copper-ore", amount = 1, independent_probability = 0.8}, 
+        {type = "item", name = "uranium-ore", amount = 1, independent_probability = 0.25}, 
+        {type = "item", name = "coal", amount = 2, independent_probability = 0.3}, 
     },
     allow_productivity = true,
-    category = "crushing",
+    categories =  {"crushing"},
     auto_recycle = false,
-    show_amount_in_title = false,
     maximum_productivity = 1,
     surface_conditions = {{property = "deep-crustal-stability", min = 5500, max = 5500}},
 },
@@ -320,19 +309,18 @@ data:extend {
         {type = "item", name = "aop-refined-mineral",      amount = 1},
     },
     results = {
-        {type = "item", name = "iron-bacteria", amount = 1, probability = 0.5},
-        {type = "item", name = "copper-bacteria", amount = 1, probability = 0.5}, 
-        {type = "item", name = "iron-ore", amount = 1, probability = 0.2},
-        {type = "item", name = "copper-ore", amount = 1, probability = 0.2},
-        {type = "item", name = "spoilage", amount = 2, probability = 0.8}, 
-        {type = "item", name = "carbon", amount = 1, probability = 0.3}, 
-        {type = "item", name = "yumako-seed", amount = 1, probability = 0.001}, 
-        {type = "item", name = "jellynut-seed", amount = 1, probability = 0.001}, 
+        {type = "item", name = "iron-bacteria", amount = 1, independent_probability = 0.5},
+        {type = "item", name = "copper-bacteria", amount = 1, independent_probability = 0.5}, 
+        {type = "item", name = "iron-ore", amount = 1, independent_probability = 0.2},
+        {type = "item", name = "copper-ore", amount = 1, independent_probability = 0.2},
+        {type = "item", name = "spoilage", amount = 2, independent_probability = 0.8}, 
+        {type = "item", name = "carbon", amount = 1, independent_probability = 0.3}, 
+        {type = "item", name = "yumako-seed", amount = 1, independent_probability = 0.001}, 
+        {type = "item", name = "jellynut-seed", amount = 1, independent_probability = 0.001}, 
     },
     allow_productivity = true,
-    category = "crushing",
+    categories = {"crushing"},
     auto_recycle = false,
-    show_amount_in_title = false,
     maximum_productivity = 1,
     surface_conditions = {{property = "deep-crustal-stability", min = 5300, max = 5300}},
 },
@@ -347,15 +335,14 @@ data:extend {
         {type = "item", name = "aop-refined-mineral",      amount = 1},
     },
     results = {
-        {type = "item", name = "iron-ore", amount = 1, probability = 0.3},
-        {type = "item", name = "copper-ore", amount = 1, probability = 0.3}, 
-        {type = "item", name = "holmium-ore", amount = 1, probability = 0.15}, 
-        {type = "item", name = "scrap", amount = 2, probability = 0.05}, 
+        {type = "item", name = "iron-ore", amount = 1, independent_probability = 0.3},
+        {type = "item", name = "copper-ore", amount = 1, independent_probability = 0.3}, 
+        {type = "item", name = "holmium-ore", amount = 1, independent_probability = 0.15}, 
+        {type = "item", name = "scrap", amount = 2, independent_probability = 0.05}, 
     },
     allow_productivity = true,
-    category = "crushing",
+    categories = {"crushing"},
     auto_recycle = false,
-    show_amount_in_title = false,
     maximum_productivity = 1,
     surface_conditions = {{property = "deep-crustal-stability", min = 3900, max = 3900}},
 },
@@ -370,11 +357,11 @@ data:extend {
         {type = "item", name = "stone",      amount = 10},
     },
     results = {
-        {type = "item", name = "uranium-238", amount = 1, probability = 0.049},
-        {type = "item", name = "uranium-235", amount = 1, probability = 0.0001},
+        {type = "item", name = "uranium-238", amount = 1, independent_probability = 0.049},
+        {type = "item", name = "uranium-235", amount = 1, independent_probability = 0.0001},
         },
     allow_productivity = true,
-    category = "advanced-centrifuging",
+    categories = {"advanced-centrifuging"},
     auto_recycle = false
 },
 {
@@ -393,10 +380,9 @@ data:extend {
         {type = "item", name = "calcite", amount = 2},
     },
     allow_productivity = true,
-    category = "synthesis",
+    categories = {"synthesis"},
     order = "n",
     auto_recycle = false,
-    show_amount_in_title = false,
     surface_conditions = {{property = "pressure", min = 1, max = 3999}},
     crafting_machine_tint =
     {
@@ -422,10 +408,9 @@ data:extend {
         {type = "item", name = "stone", amount = 5},
     },
     allow_productivity = true,
-    category = "synthesis",
+    categories = {"synthesis"},
     order = "n",
     auto_recycle = false,
-    show_amount_in_title = false,
     crafting_machine_tint =
     {
         primary = {r = 0.65, g = 0.53, b = 0.31, a = 1.000},
@@ -448,9 +433,8 @@ data:extend {
         {type = "fluid", name = "crude-oil", amount = 10},
     },
     allow_productivity = false,
-    category = "petrochemistry",
+    categories = {"petrochemistry"},
     auto_recycle = false,
-    show_amount_in_title = false,
 },
 {
     type = "recipe",
@@ -468,9 +452,8 @@ data:extend {
         {type = "fluid", name = "heavy-oil", amount = 25},
     },
     allow_productivity = true,
-    category = "petrochemistry",
+    categories = {"petrochemistry"},
     auto_recycle = false,
-    show_amount_in_title = false,
 },
 {
     type = "recipe",
@@ -488,9 +471,8 @@ data:extend {
         {type = "item", name = "carbon", amount = 2},
     },
     allow_productivity = false,
-    category = "petrochemistry",
+    categories = {"petrochemistry"},
     auto_recycle = false,
-    show_amount_in_title = false,
 },
 {
     type = "recipe",
@@ -506,9 +488,8 @@ data:extend {
         {type = "item", name = "carbon", amount = 2},
     },
     allow_productivity = true,
-    category = "woodworking",
+    categories = {"woodworking"},
     auto_recycle = false,
-    show_amount_in_title = false,
 },
 {
     type = "recipe",
@@ -525,9 +506,9 @@ data:extend {
         {type = "item", name = "spoilage", amount = 12},
     },
     allow_productivity = true,
-    category = "woodworking",
+    categories = {"woodworking"},
     auto_recycle = false,
-    show_amount_in_title = false,
+    
 },
 {
     type = "recipe",
@@ -549,9 +530,9 @@ data:extend {
         {type = "item", name = "rail", amount = 4},
     },
     allow_productivity = false,
-    category = "woodworking",
+    categories = {"woodworking"},
     auto_recycle = false,
-    show_amount_in_title = false,
+    
 },
 {
     type = "recipe",
@@ -567,10 +548,9 @@ data:extend {
         {type = "item", name = "aop-wood-planks", amount = 2},
     },
     allow_productivity = true,
-    category = "crafting",
-    additional_categories = {"woodworking"},
+    categories = {"crafting", "woodworking"},
     auto_recycle = false,
-    show_amount_in_title = false,
+    
 },
 {
     type = "recipe",
@@ -586,9 +566,9 @@ data:extend {
         {type = "item", name = "aop-hot-tungsten-plate", amount = 1, ignored_by_stats = 1, ignored_by_productivity = 1},
     },
     allow_productivity = false,
-    category = "advanced-smelting",
+    categories = {"advanced-smelting"},
     auto_recycle = false,
-    show_amount_in_title = false,
+    
 },
 {
     type = "recipe",
@@ -604,9 +584,9 @@ data:extend {
         {type = "item", name = "aop-quicklime", amount = 1},
     },
     allow_productivity = true,
-    category = "smelting",
+    categories = {"smelting"},
     auto_recycle = false,
-    show_amount_in_title = false,
+    
 },
 {
     type = "recipe",
@@ -622,9 +602,15 @@ data:extend {
         {type = "fluid", name = "aop-bitumen", amount = 20},
     },
     allow_productivity = true,
-    category = "oil-processing",
+    categories = {"oil-processing"},
     auto_recycle = false,
-    show_amount_in_title = false,
+    crafting_machine_tint =
+    {
+      primary = {r = 0.889, g = 0.628, b = 0.566, a = 1.000},
+      secondary = {r = 0.803, g = 0.668, b = 0.644, a = 1.000}, 
+      tertiary = {r = 0.854, g = 0.659, b = 0.576, a = 1.000},
+      quaternary = {r = 1.000, g = 0.395, b = 0.127, a = 1.000},
+    }
 },
 {
     type = "recipe",
@@ -641,9 +627,9 @@ data:extend {
         {type = "item", name = "aop-rubber-sheet", amount = 2},
     },
     allow_productivity = true,
-    category = "petrochemistry",
+    categories = {"petrochemistry"},
     auto_recycle = false,
-    show_amount_in_title = false,
+    
 },
 {
     type = "recipe",
@@ -661,9 +647,9 @@ data:extend {
     },
     surface_conditions = {{property = "pressure", min = 0, max = 0}},
     allow_productivity = true,
-    category = "centrifuging",
+    categories = {"centrifuging"},
     auto_recycle = false,
-    show_amount_in_title = false,
+    
     subgroup = "uranium-processing",
 },
 {
@@ -679,12 +665,12 @@ data:extend {
     },
     results = {
         {type = "item", name = "aop-uranium-233", amount = 1},
-        {type = "item", name = "uranium-235", amount = 1, probability = 0.75, ignored_by_stats = 1, ignored_by_productivity = 1},
+        {type = "item", name = "uranium-235", amount = 1, independent_probability = 0.75, ignored_by_stats = 1, ignored_by_productivity = 1},
     },
     allow_productivity = true,
-    category = "centrifuging",
+    categories = {"centrifuging"},
     auto_recycle = false,
-    show_amount_in_title = false,
+    
     subgroup = "uranium-processing",
 },
 {
@@ -701,20 +687,18 @@ data:extend {
         {type = "fluid", name = "water",   amount = 10},
     },
     results = {
-        {type = "item", name = "aop-growing-biocircuit", amount = 1},
+        {type = "item", name = "aop-growing-biocircuit", amount = 1, reset_freshness_on_craft = true,},
     },
     allow_productivity = true,
-    reset_freshness_on_craft = true,
-    category = "organic",
-    additional_categories = {"woodworking"},
+    categories = {"organic", "woodworking"},
     auto_recycle = false,
-    show_amount_in_title = false,
+    
 },
 {
     type = "recipe",
     name = "aop-ammoniacal-solution-sifting",
     icon = "__Age-of-Production-Graphics__/graphics/icons/ammoniacal-solution-sifting.png",
-    category = "hydraulics",
+    categories = {"hydraulics"},
     subgroup = "aop-synthesis",
     order = "a",
     auto_recycle = false,
@@ -732,7 +716,6 @@ data:extend {
     allow_productivity = true,
     enabled = false,
     always_show_made_in = true,
-    always_show_products = true,
     allow_decomposition = false,
     crafting_machine_tint =
     {
@@ -746,7 +729,7 @@ data:extend {
     type = "recipe",
     name = "aop-copper-ore-from-metallic-traces",
     icon = "__Age-of-Production-Graphics__/graphics/icons/copper-ore-from-metallic-traces.png",
-    category = "synthesis",
+    categories = {"synthesis"},
     subgroup = "aop-synthesis",
     order = "a",
     auto_recycle = false,
@@ -764,13 +747,12 @@ data:extend {
     allow_productivity = true,
     enabled = false,
     always_show_made_in = true,
-    always_show_products = true,
   },
   {
     type = "recipe",
     name = "aop-iron-ore-from-metallic-traces",
     icon = "__Age-of-Production-Graphics__/graphics/icons/iron-ore-from-metallic-traces.png",
-    category = "synthesis",
+    categories = {"synthesis"},
     subgroup = "aop-synthesis",
     order = "a",
     auto_recycle = false,
@@ -788,13 +770,12 @@ data:extend {
     allow_productivity = true,
     enabled = false,
     always_show_made_in = true,
-    always_show_products = true,
   },
   {
     type = "recipe",
     name = "aop-water-rectification",
     icon = "__Age-of-Production-Graphics__/graphics/icons/water-rectification.png",
-    category = "cryogenics",
+    categories = {"cryogenics"},
     subgroup = "aquilo-processes",
     order = "z",
     auto_recycle = false,
@@ -807,19 +788,18 @@ data:extend {
     results =
     {
       {type = "fluid", name = "water", amount = 10},
-      {type = "fluid", name = "aop-deuterium", amount = 25, probability = 0.1},
-      {type = "fluid", name = "aop-tritium", amount = 5, probability = 0.01},
+      {type = "fluid", name = "aop-deuterium", amount = 25, independent_probability = 0.1},
+      {type = "fluid", name = "aop-tritium", amount = 5, independent_probability = 0.01},
     },
     allow_productivity = false,
     enabled = false,
     always_show_made_in = true,
-    always_show_products = true,
   },
   {
     type = "recipe",
     name = "aop-tritium-synthesis",
     icon = "__Age-of-Production-Graphics__/graphics/icons/tritium-synthesis.png",
-    category = "advanced-centrifuging",
+    categories = {"advanced-centrifuging"},
     subgroup = "aquilo-processes",
     order = "z",
     auto_recycle = false,
@@ -839,13 +819,12 @@ data:extend {
     allow_productivity = false,
     enabled = false,
     always_show_made_in = true,
-    always_show_products = true,
   },
   {
     type = "recipe",
     name = "aop-unstable-matter",
     icon = "__Age-of-Production-Graphics__/graphics/icons/unstable-matter.png",
-    category = "advanced-centrifuging",
+    categories = {"advanced-centrifuging"},
     subgroup = "aquilo-processes",
     order = "z",
     auto_recycle = false,
@@ -864,12 +843,11 @@ data:extend {
     allow_productivity = false,
     enabled = false,
     always_show_made_in = true,
-    always_show_products = true,
   },
   {
     type = "recipe",
     name = "aop-unheated-thermal-science-pack",
-    category = "metallurgy",
+    categories = {"metallurgy"},
     surface_conditions =
     {
       {
@@ -893,7 +871,7 @@ data:extend {
     type = "recipe",
     name = "aop-thermal-science-pack-heating",
     icon = "__Age-of-Production-Graphics__/graphics/icons/thermal-science-pack-heating.png",
-    category = "advanced-smelting",
+    categories = {"advanced-smelting"},
     enabled = false,
     ingredients =
     {
@@ -907,7 +885,7 @@ data:extend {
     type = "recipe",
     name = "aop-asphalt",
     icon = "__Age-of-Production-Graphics__/graphics/icons/asphalt.png",
-    category = "petrochemistry",
+    categories = {"petrochemistry"},
     enabled = false,
     ingredients =
     {
@@ -922,7 +900,7 @@ data:extend {
   {
     type = "recipe",
     name = "aop-petrochemical-science-pack",
-    category = "petrochemistry",
+    categories = {"petrochemistry"},
     surface_conditions =
     {
       {
@@ -946,7 +924,7 @@ data:extend {
   {
     type = "recipe",
     name = "aop-forestry-science-pack",
-    category = "woodworking",
+    categories = {"woodworking"},
     subgroup = "science-pack",
     surface_conditions =
     {
@@ -971,7 +949,7 @@ data:extend {
   {
     type = "recipe",
     name = "aop-quantistic-science-pack",
-    category = "advanced-centrifuging",
+    categories = {"advanced-centrifuging"},
     surface_conditions =
     {
       {
@@ -990,14 +968,14 @@ data:extend {
     energy_required = 20,
     results =
     {
-      {type = "item", name = "aop-quantistic-science-pack", amount = 5, probability = 0.5},
+      {type = "item", name = "aop-quantistic-science-pack", amount = 5, independent_probability = 0.5},
     },
     allow_productivity = true,
 },
 {
     type = "recipe",
     name = "aop-fission-science-pack",
-    category = "centrifuging",
+    categories = {"centrifuging"},
     surface_conditions =
     {
       {
@@ -1028,7 +1006,7 @@ data:extend {
             { icon = "__base__/graphics/icons/explosives.png", icon_size = 64 },
             { icon = "__Age-of-Production-Graphics__/graphics/icons/quicklime.png", icon_size = 64, scale = 0.25, shift = { 8, -8 } },
         },
-    category = "chemistry",
+    categories = {"chemistry"},
     crafting_machine_tint =
     {
       primary = {r = 0.968, g = 0.381, b = 0.259, a = 1.000}, -- #f66142ff

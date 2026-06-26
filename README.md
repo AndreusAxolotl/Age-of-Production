@@ -102,6 +102,9 @@ This mod wouldn't be possible without the help of these amazing people!
 #### Biocircuit Texture
 - Talandar
 
+#### Add_crafting_categories function
+- Xorimuth
+
 #### Wood Planks and Asphalt Sprites
 - [Factorio free graphics for modders](https://github.com/snouz/factorio_free_graphics_for_modders)
 

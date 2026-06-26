@@ -29,12 +29,12 @@ local function add_tech_effect(tech_name, effect)
     end
   end
 
-local function add_additional_categories(recipe_name, categories)
+local function add_crafting_categories(recipe_name, categories)
     local recipe = data.raw.recipe[recipe_name]
     if recipe and categories then
-        recipe.additional_categories = recipe.additional_categories or {}
+        recipe.categories = recipe.categories or {}
         for _, cat in pairs(categories) do
-            table.insert(recipe.additional_categories, cat)
+            table.insert(recipe.categories, cat)
         end
     end
 end
@@ -57,16 +57,16 @@ if mods["maraxsis"] then
                 {type = "item", name = "aop-refined-mineral",      amount = 1},
             },
             results = {
-                {type = "item", name = "iron-ore", amount = 1, probability = 0.4},
-                {type = "item", name = "copper-ore", amount = 1, probability = 0.4}, 
-                {type = "item", name = "limestone", amount = 5, probability = 0.5}, 
-                {type = "item", name = "sulfur", amount = 2, probability = 0.3}, 
-                {type = "item", name = "salt", amount = 3, probability = 0.25}, 
+                {type = "item", name = "iron-ore", amount = 1, independent_probability = 0.4},
+                {type = "item", name = "copper-ore", amount = 1, independent_probability = 0.4}, 
+                {type = "item", name = "limestone", amount = 5, independent_probability = 0.5}, 
+                {type = "item", name = "sulfur", amount = 2, independent_probability = 0.3}, 
+                {type = "item", name = "salt", amount = 3, independent_probability = 0.25}, 
             },
             allow_productivity = true,
-            category = "crushing",
+            categories = {"crushing"},
             auto_recycle = false,
-            show_amount_in_title = false,
+            
             maximum_productivity = 1,
             surface_conditions = {{property = "deep-crustal-stability", min = 4700, max = 4700}},
         }}
@@ -87,15 +87,15 @@ if mods["maraxsis"] then
             {type = "item", name = "aop-refined-mineral",      amount = 1},
         },
         results = {
-            {type = "item", name = "sulfur", amount = 3, probability = 0.9},
-            {type = "item", name = "chalcopyrite-ore", amount = 2, probability = 0.5}, 
-            {type = "item", name = "platinum-ore", amount = 1, probability = 0.5}, 
-            {type = "item", name = "calcite", amount = 2, probability = 0.6}, 
+            {type = "item", name = "sulfur", amount = 3, independent_probability = 0.9},
+            {type = "item", name = "chalcopyrite-ore", amount = 2, independent_probability = 0.5}, 
+            {type = "item", name = "platinum-ore", amount = 1, independent_probability = 0.5}, 
+            {type = "item", name = "calcite", amount = 2, independent_probability = 0.6}, 
         },
         allow_productivity = true,
-        category = "crushing",
+        categories = {"crushing"},
         auto_recycle = false,
-        show_amount_in_title = false,
+        
         maximum_productivity = 1,
         surface_conditions = {{property = "deep-crustal-stability", min = 4000, max = 4000}},
     }}
@@ -117,13 +117,13 @@ if mods["maraxsis"] then
             {type = "item", name = "aop-refined-mineral",      amount = 1},
         },
         results = {
-            {type = "item", name = "ice", amount = 6, probability = 0.9},
-            {type = "item", name = "gold-ore", amount = 2, probability = 0.5}, 
+            {type = "item", name = "ice", amount = 6, independent_probability = 0.9},
+            {type = "item", name = "gold-ore", amount = 2, independent_probability = 0.5}, 
         },
         allow_productivity = true,
-        category = "crushing",
+        categories = {"crushing"},
         auto_recycle = false,
-        show_amount_in_title = false,
+        
         maximum_productivity = 1,
         surface_conditions = {{property = "deep-crustal-stability", min = 3100, max = 3100}},
     }}
@@ -144,14 +144,14 @@ if mods["maraxsis"] then
             {type = "item", name = "aop-refined-mineral",      amount = 1},
         },
         results = {
-        {type = "item", name = "iron-ore", amount = 1, probability = 0.8},
-        {type = "item", name = "copper-ore", amount = 1, probability = 0.8}, 
-        {type = "item", name = "quartz-ore", amount = 1, probability = 0.25},
+        {type = "item", name = "iron-ore", amount = 1, independent_probability = 0.8},
+        {type = "item", name = "copper-ore", amount = 1, independent_probability = 0.8}, 
+        {type = "item", name = "quartz-ore", amount = 1, independent_probability = 0.25},
         },
         allow_productivity = true,
-        category = "crushing",
+        categories = {"crushing"},
         auto_recycle = false,
-        show_amount_in_title = false,
+        
         maximum_productivity = 1,
         surface_conditions = {{property = "deep-crustal-stability", min = 5100, max = 5100}},
     }}
@@ -176,15 +176,15 @@ if mods["maraxsis"] then
             {type = "item", name = "aop-refined-mineral",      amount = 1},
         },
         results = {
-        {type = "item", name = "gunpowder", amount = 2, probability = 0.4},
-        {type = "item", name = "copper-ore", amount = 1, probability = 0.8}, 
-        {type = "item", name = "uranium-ore", amount = 1, probability = 0.25}, 
-        {type = "item", name = "millerite", amount = 3, probability = 0.4}, 
+        {type = "item", name = "gunpowder", amount = 2, independent_probability = 0.4},
+        {type = "item", name = "copper-ore", amount = 1, independent_probability = 0.8}, 
+        {type = "item", name = "uranium-ore", amount = 1, independent_probability = 0.25}, 
+        {type = "item", name = "millerite", amount = 3, independent_probability = 0.4}, 
         },
         allow_productivity = true,
-        category = "crushing",
+        categories = {"crushing"},
         auto_recycle = false,
-        show_amount_in_title = false,
+        
         maximum_productivity = 1,
         surface_conditions = {{property = "deep-crustal-stability", min = 5000, max = 5000}},
     }}
@@ -204,15 +204,15 @@ if mods["maraxsis"] then
                 {type = "item", name = "aop-refined-mineral",      amount = 1},
             },
             results = {
-            {type = "item", name = "oxide-asteroid-chunk", amount = 1, probability = 0.05},
-            {type = "item", name = "carbonic-asteroid-chunk", amount = 1, probability = 0.05}, 
-            {type = "item", name = "metallic-asteroid-chunk", amount = 1, probability = 0.05}, 
-            {type = "item", name = "anorthite-chunk", amount = 1, probability = 0.025}, 
+            {type = "item", name = "oxide-asteroid-chunk", amount = 1, independent_probability = 0.05},
+            {type = "item", name = "carbonic-asteroid-chunk", amount = 1, independent_probability = 0.05}, 
+            {type = "item", name = "metallic-asteroid-chunk", amount = 1, independent_probability = 0.05}, 
+            {type = "item", name = "anorthite-chunk", amount = 1, independent_probability = 0.025}, 
             },
             allow_productivity = true,
-            category = "crushing",
+            categories = {"crushing"},
             auto_recycle = false,
-            show_amount_in_title = false,
+            
             maximum_productivity = 1,
             surface_conditions = {{property = "deep-crustal-stability", min = 3400, max = 3400}},
         }}
@@ -269,14 +269,14 @@ if mods["maraxsis"] then
                 {type = "item", name = "aop-refined-mineral",      amount = 1},
             },
             results = {
-                {type = "item", name = "iron-ore", amount = 1, probability = 0.6},
-                {type = "item", name = "copper-ore", amount = 1, probability = 0.6},
-                {type = "item", name = "coal", amount = 1, probability = 0.3}, 
+                {type = "item", name = "iron-ore", amount = 1, independent_probability = 0.6},
+                {type = "item", name = "copper-ore", amount = 1, independent_probability = 0.6},
+                {type = "item", name = "coal", amount = 1, independent_probability = 0.3}, 
             },
             allow_productivity = true,
-            category = "crushing",
+            categories = {"crushing"},
             auto_recycle = false,
-            show_amount_in_title = false,
+            
             maximum_productivity = 1,
             surface_conditions = {{property = "deep-crustal-stability", min = 3600, max = 3600}},
         }}
@@ -299,15 +299,15 @@ if mods["maraxsis"] then
                 {type = "item", name = "aop-refined-mineral",      amount = 1},
             },
             results = {
-                {type = "item", name = "iron-ore", amount = 1, probability = 0.6},
-                {type = "item", name = "copper-ore", amount = 1, probability = 0.6},
-                {type = "item", name = "ice", amount = 3, probability = 0.5}, 
-                {type = "item", name = "fossil", amount = 1, probability = 0.2}, 
+                {type = "item", name = "iron-ore", amount = 1, independent_probability = 0.6},
+                {type = "item", name = "copper-ore", amount = 1, independent_probability = 0.6},
+                {type = "item", name = "ice", amount = 3, independent_probability = 0.5}, 
+                {type = "item", name = "fossil", amount = 1, independent_probability = 0.2}, 
             },
             allow_productivity = true,
-            category = "crushing",
+            categories = {"crushing"},
             auto_recycle = false,
-            show_amount_in_title = false,
+            
             maximum_productivity = 1,
             surface_conditions = {{property = "deep-crustal-stability", min = 3300, max = 3300}},
         },
@@ -322,14 +322,14 @@ if mods["maraxsis"] then
                 {type = "item", name = "aop-refined-mineral",      amount = 1},
             },
             results = {
-                {type = "item", name = "iron-ore", amount = 1, probability = 0.6},
-                {type = "item", name = "copper-ore", amount = 1, probability = 0.6},
-                {type = "item", name = "sulfur", amount = 1, probability = 0.3}, 
+                {type = "item", name = "iron-ore", amount = 1, independent_probability = 0.6},
+                {type = "item", name = "copper-ore", amount = 1, independent_probability = 0.6},
+                {type = "item", name = "sulfur", amount = 1, independent_probability = 0.3}, 
             },
             allow_productivity = true,
-            category = "crushing",
+            categories = {"crushing"},
             auto_recycle = false,
-            show_amount_in_title = false,
+            
             maximum_productivity = 1,
             surface_conditions = {{property = "deep-crustal-stability", min = 3350, max = 3350}},
         }}
@@ -352,17 +352,17 @@ if mods["maraxsis"] then
                 {type = "item", name = "aop-refined-mineral",      amount = 1},
             },
             results = {
-                {type = "item", name = "sand", amount = 1, probability = 0.28},
-                {type = "item", name = "sulfur", amount = 1, probability = 0.6},
-                {type = "item", name = "iron-ore", amount = 1, probability = 0.08}, 
-                {type = "item", name = "copper-ore", amount = 1, probability = 0.09}, 
-                {type = "item", name = "coal", amount = 1, probability = 0.12}, 
-                {type = "item", name = "neodymium", amount = 32, probability = 0.01}, 
+                {type = "item", name = "sand", amount = 1, independent_probability = 0.28},
+                {type = "item", name = "sulfur", amount = 1, independent_probability = 0.6},
+                {type = "item", name = "iron-ore", amount = 1, independent_probability = 0.08}, 
+                {type = "item", name = "copper-ore", amount = 1, independent_probability = 0.09}, 
+                {type = "item", name = "coal", amount = 1, independent_probability = 0.12}, 
+                {type = "item", name = "neodymium", amount = 32, independent_probability = 0.01}, 
             },
             allow_productivity = true,
-            category = "crushing",
+            categories = {"crushing"},
             auto_recycle = false,
-            show_amount_in_title = false,
+            
             maximum_productivity = 1,
             surface_conditions = {{property = "deep-crustal-stability", min = 4200, max = 4200}},
         }}
@@ -383,28 +383,28 @@ if mods["maraxsis"] then
                 {type = "item", name = "aop-refined-mineral",      amount = 1},
             },
             results = {
-                {type = "item", name = "iron-ore", amount = 2, probability = 0.5},
-                {type = "item", name = "copper-ore", amount = 2, probability = 0.5}, 
-                {type = "item", name = "tungsten-ore", amount = 1, probability = 0.35}, 
-                {type = "item", name = "sulfur", amount = 1, probability = 0.4}, 
-                {type = "item", name = "coal", amount = 3, probability = 0.6}, 
-                {type = "item", name = "calcite", amount = 1, probability = 0.35},
-                {type = "item", name = "uranium-ore", amount = 1, probability = 0.25}, 
-                {type = "item", name = "spoilage", amount = 2, probability = 0.8}, 
-                {type = "item", name = "carbon", amount = 1, probability = 0.3}, 
-                {type = "item", name = "yumako-seed", amount = 1, probability = 0.001}, 
-                {type = "item", name = "jellynut-seed", amount = 1, probability = 0.001}, 
-                {type = "item", name = "iron-bacteria", amount = 1, probability = 0.5},
-                {type = "item", name = "copper-bacteria", amount = 1, probability = 0.5}, 
-                {type = "item", name = "holmium-ore", amount = 1, probability = 0.15}, 
-                {type = "item", name = "scrap", amount = 2, probability = 0.05}, 
-                {type = "item", name = "ice", amount = 2, probability = 0.5},
-                {type = "item", name = "lithium", amount = 1, probability = 0.01},
+                {type = "item", name = "iron-ore", amount = 2, independent_probability = 0.5},
+                {type = "item", name = "copper-ore", amount = 2, independent_probability = 0.5}, 
+                {type = "item", name = "tungsten-ore", amount = 1, independent_probability = 0.35}, 
+                {type = "item", name = "sulfur", amount = 1, independent_probability = 0.4}, 
+                {type = "item", name = "coal", amount = 3, independent_probability = 0.6}, 
+                {type = "item", name = "calcite", amount = 1, independent_probability = 0.35},
+                {type = "item", name = "uranium-ore", amount = 1, independent_probability = 0.25}, 
+                {type = "item", name = "spoilage", amount = 2, independent_probability = 0.8}, 
+                {type = "item", name = "carbon", amount = 1, independent_probability = 0.3}, 
+                {type = "item", name = "yumako-seed", amount = 1, independent_probability = 0.001}, 
+                {type = "item", name = "jellynut-seed", amount = 1, independent_probability = 0.001}, 
+                {type = "item", name = "iron-bacteria", amount = 1, independent_probability = 0.5},
+                {type = "item", name = "copper-bacteria", amount = 1, independent_probability = 0.5}, 
+                {type = "item", name = "holmium-ore", amount = 1, independent_probability = 0.15}, 
+                {type = "item", name = "scrap", amount = 2, independent_probability = 0.05}, 
+                {type = "item", name = "ice", amount = 2, independent_probability = 0.5},
+                {type = "item", name = "lithium", amount = 1, independent_probability = 0.01},
             },
             allow_productivity = true,
-            category = "crushing",
+            categories = {"crushing"},
             auto_recycle = false,
-            show_amount_in_title = false,
+            
             maximum_productivity = 1,
             surface_conditions = {{property = "deep-crustal-stability", min = 10000, max = 10000}},
         }}
@@ -425,14 +425,14 @@ if mods["maraxsis"] then
                 {type = "item", name = "aop-refined-mineral",      amount = 1},
             },
             results = {
-                {type = "item", name = "tetrahedrite", amount = 1, probability = 0.9},
-                {type = "item", name = "sphalerite", amount = 1, probability = 0.9},
-                {type = "item", name = "vaterite", amount = 1, probability = 0.45}, 
+                {type = "item", name = "tetrahedrite", amount = 1, independent_probability = 0.9},
+                {type = "item", name = "sphalerite", amount = 1, independent_probability = 0.9},
+                {type = "item", name = "vaterite", amount = 1, independent_probability = 0.45}, 
             },
             allow_productivity = true,
-            category = "crushing",
+            categories = {"crushing"},
             auto_recycle = false,
-            show_amount_in_title = false,
+            
             maximum_productivity = 1,
             surface_conditions = {{property = "deep-crustal-stability", min = 6300, max = 6300}},
 }}
@@ -462,13 +462,13 @@ data:extend {{
                 {type = "item", name = "aop-refined-mineral",      amount = 1},
             },
             results = {
-                {type = "item", name = "jahtra-ilmenite", amount = 1, probability = 0.5},
-                {type = "item", name = "copper-ore", amount = 2, probability = 0.3},
+                {type = "item", name = "jahtra-ilmenite", amount = 1, independent_probability = 0.5},
+                {type = "item", name = "copper-ore", amount = 2, independent_probability = 0.3},
             },
             allow_productivity = true,
-            category = "crushing",
+            categories = {"crushing"},
             auto_recycle = false,
-            show_amount_in_title = false,
+            
             maximum_productivity = 1,
             surface_conditions = {{property = "deep-crustal-stability", min = 9001, max = 9001}},
         }}

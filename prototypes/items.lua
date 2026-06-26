@@ -92,7 +92,7 @@ data:extend {
         default_import_location = "gleba",
         spoil_ticks = 10*minute,
         spoil_result = "aop-biocircuit",
-        weight = 1*kg
+        weight = 5*kg
 },
 {
         type = "item",
@@ -105,7 +105,7 @@ data:extend {
         drop_sound = item_sounds.wood_inventory_move,
         stack_size = 100,
         default_import_location = "gleba",
-        weight = 1*kg
+        weight = 5*kg
 },
 {
         type = "item",
@@ -118,7 +118,7 @@ data:extend {
         drop_sound = item_sounds.wood_inventory_move,
         stack_size = 100,
         default_import_location = "nauvis",
-        weight = 500 * grams
+        weight = 1 * kg
 },
 {
     type = "fluid",
@@ -251,7 +251,7 @@ data:extend {
     pick_sound = item_sounds.plastic_inventory_pickup,
     drop_sound = item_sounds.plastic_inventory_move,
     stack_size = 100,
-    weight = 500 * grams,
+    weight = 5 * kg,
   },
   {
     type = "item",
@@ -308,7 +308,7 @@ data:extend {
     weight = 1*kg,
     random_tint_color = item_tints.bluish_science,
 },
-  {type = "tool",
+  {type = "item",
     name = "aop-thermal-science-pack",
     localised_description = {"item-description.science-pack"},
     icon = "__Age-of-Production-Graphics__/graphics/icons/thermal-science-pack.png",
@@ -321,16 +321,12 @@ data:extend {
     stack_size = 200,
     default_import_location = "vulcanus",
     weight = 1*kg,
-    durability = 1,
-    durability_description_key = "description.science-pack-remaining-amount-key",
-    factoriopedia_durability_description_key = "description.factoriopedia-science-pack-remaining-amount-key",
-    durability_description_value = "description.science-pack-remaining-amount-value",
     random_tint_color = item_tints.bluish_science,
     spoil_ticks = 15 * minute,
     spoil_result = "aop-quicklime",
 },
 {
-  type = "tool",
+  type = "item",
     name = "aop-fission-science-pack",
     localised_description = {"item-description.science-pack"},
     icon = "__Age-of-Production-Graphics__/graphics/icons/fission-science-pack.png",
@@ -343,14 +339,10 @@ data:extend {
     stack_size = 200,
     default_import_location = "nauvis",
     weight = 1*kg,
-    durability = 1,
-    durability_description_key = "description.science-pack-remaining-amount-key",
-    factoriopedia_durability_description_key = "description.factoriopedia-science-pack-remaining-amount-key",
-    durability_description_value = "description.science-pack-remaining-amount-value",
     random_tint_color = item_tints.bluish_science,
   },
   {
-  type = "tool",
+  type = "item",
     name = "aop-forestry-science-pack",
     localised_description = {"item-description.science-pack"},
     icon = "__Age-of-Production-Graphics__/graphics/icons/forestry-science-pack.png",
@@ -363,14 +355,10 @@ data:extend {
     stack_size = 200,
     default_import_location = "nauvis",
     weight = 1*kg,
-    durability = 1,
-    durability_description_key = "description.science-pack-remaining-amount-key",
-    factoriopedia_durability_description_key = "description.factoriopedia-science-pack-remaining-amount-key",
-    durability_description_value = "description.science-pack-remaining-amount-value",
     random_tint_color = item_tints.bluish_science,
   },
 {
-  type = "tool",
+  type = "item",
     name = "aop-petrochemical-science-pack",
     localised_description = {"item-description.science-pack"},
     icon = "__Age-of-Production-Graphics__/graphics/icons/petrochemical-science-pack.png",
@@ -383,14 +371,10 @@ data:extend {
     stack_size = 200,
     default_import_location = "nauvis",
     weight = 1*kg,
-    durability = 1,
-    durability_description_key = "description.science-pack-remaining-amount-key",
-    factoriopedia_durability_description_key = "description.factoriopedia-science-pack-remaining-amount-key",
-    durability_description_value = "description.science-pack-remaining-amount-value",
     random_tint_color = item_tints.bluish_science,
   },
   {
-  type = "tool",
+  type = "item",
     name = "aop-quantistic-science-pack",
     localised_description = {"item-description.science-pack"},
     icon = "__Age-of-Production-Graphics__/graphics/icons/quantistic-science-pack.png",
@@ -403,10 +387,6 @@ data:extend {
     stack_size = 200,
     default_import_location = "aquilo",
     weight = 1*kg,
-    durability = 1,
-    durability_description_key = "description.science-pack-remaining-amount-key",
-    factoriopedia_durability_description_key = "description.factoriopedia-science-pack-remaining-amount-key",
-    durability_description_value = "description.science-pack-remaining-amount-value",
     random_tint_color = item_tints.bluish_science,
   },
     {

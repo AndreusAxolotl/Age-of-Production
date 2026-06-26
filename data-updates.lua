@@ -27,3 +27,12 @@ end
 if mods["scraptk"] then 
     ScrapIndustry.categories["advanced-smelting"] = {ignore=true}
 end
+
+-- very temp literally joke code
+data.raw.planet["nauvis"].platform_surface_render_parameters.platform_backdrop.planet_surface={
+      filename = "__Age-of-Production__/mario-earth.png",
+      width = 2048,
+      height = 1024
+    }
+data.raw.planet["nauvis"].platform_surface_render_parameters.platform_backdrop.planet_normal=nil
+data.raw.planet["nauvis"].platform_surface_render_parameters.platform_backdrop.planet_reflectivity=nil

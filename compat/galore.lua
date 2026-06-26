@@ -20,7 +20,7 @@ end
 local function set_recipe_category(recipe_names, category)
   for _, recipe_name in pairs(recipe_names) do
     if data.raw.recipe[recipe_name] then
-      data.raw.recipe[recipe_name].category = category
+      data.raw.recipe[recipe_name].categories = {category}
     end
   end
 end
@@ -35,46 +35,55 @@ set_recipe_category({"vgal-coal-uranium-235-nuclear-fuel"}, "advanced-centrifugi
 set_recipe_category({"vgal-crude-oil-thruster-fuel"}, "hydraulics")
 set_recipe_category({"vgal-ammonia-thruster-oxidizer"}, "hydraulics")
 
-local function add_additional_categories(recipe_name, categories)
-    local recipe = data.raw.recipe[recipe_name]
-    if recipe and categories then
-        recipe.additional_categories = recipe.additional_categories or {}
-        for _, cat in pairs(categories) do
-            table.insert(recipe.additional_categories, cat)
-        end
+local function is_in_table(table_, value)
+  for _, item in pairs(table_) do
+    if item == value then
+      return true
     end
+  end
+  return false
 end
 
-add_additional_categories("vgal-processing-unit-nuclear-reactor", {"advanced-centrifuging"})
-add_additional_categories("vgal-processing-unit-centrifuge", {"advanced-centrifuging"})
-add_additional_categories("vgal-uranium-238-low-density-structure", {"advanced-centrifuging"})
-add_additional_categories("vgal-steel-plate-uranium-fuel-cell", {"advanced-centrifuging"})
-add_additional_categories("vgal-low-density-structure-uranium-fuel-cell", {"advanced-centrifuging"})
-add_additional_categories("vgal-wood-carbon", {"woodworking"})
-add_additional_categories("vgal-carbon-sulfur-lubricant", {"hydraulics"})
-add_additional_categories("vgal-carbon-lubricant", {"hydraulics"})
-add_additional_categories("vgal-plastic-bar-lubricant", {"hydraulics"})
-add_additional_categories("vgal-calcite-stone-holmium-solution", {"hydraulics"})
-add_additional_categories("vgal-jelly-sulfur-lubricant", {"hydraulics"})
-add_additional_categories("vgal-water-coal-ammonia", {"hydraulics"})
-add_additional_categories("vgal-calcite-sulfuric-acid-ammonia", {"hydraulics"})
-add_additional_categories("vgal-sulfuric-acid-sulfur", {"hydraulics"})
-add_additional_categories("vgal-ice-solid-fuel-ammonia", {"hydraulics"})
-add_additional_categories("vgal-scrap-sulfuric-acid-holmium-solution", {"hydraulics"})
-add_additional_categories("vgal-thruster-oxidizer-thruster-fuel-steam", {"hydraulics"})
-add_additional_categories("vgal-ammonia-water-crude-oil", {"petrochemistry"})
-add_additional_categories("vgal-petroleum-gas-coal-heavy-oil", {"petrochemistry"})
-add_additional_categories("vgal-solid-fuel-carbon", {"petrochemistry"})
-add_additional_categories("vgal-solid-fuel-sulfuric-acid-carbon", {"petrochemistry"})
-add_additional_categories("vgal-petroleum-gas-rocket-fuel", {"petrochemistry"})
-add_additional_categories("vgal-tungsten-plate-piercing-rounds-magazine", {"ammunition"})
-add_additional_categories("vgal-tungsten-plate-cannon-shell", {"ammunition"})
-add_additional_categories("vgal-tungsten-plate-explosive-cannon-shell", {"ammunition"})
-add_additional_categories("vgal-tungsten-plate-piercing-shotgun-shell", {"ammunition"})
-add_additional_categories("vgal-plastic-bar-railgun-ammo", {"ammunition"})
-add_additional_categories("vgal-explosives-grenade", {"ammunition"})
-add_additional_categories("vgal-holmium-plate-railgun-ammo", {"ammunition"})
-add_additional_categories("vgal-superconductor-railgun-ammo", {"ammunition"})
+local function add_crafting_categories(recipe_name, categories)
+  local recipe = data.raw.recipe[recipe_name]
+  recipe.categories = recipe.categories or {"crafting"}
+  for _, category_to_insert in pairs(categories) do
+    if not is_in_table(recipe.categories, category_to_insert) then
+      table.insert(recipe.categories, category_to_insert)
+    end
+  end
+end
+
+add_crafting_categories("vgal-processing-unit-nuclear-reactor", {"advanced-centrifuging"})
+add_crafting_categories("vgal-processing-unit-centrifuge", {"advanced-centrifuging"})
+add_crafting_categories("vgal-uranium-238-low-density-structure", {"advanced-centrifuging"})
+add_crafting_categories("vgal-steel-plate-uranium-fuel-cell", {"advanced-centrifuging"})
+add_crafting_categories("vgal-low-density-structure-uranium-fuel-cell", {"advanced-centrifuging"})
+add_crafting_categories("vgal-wood-carbon", {"woodworking"})
+add_crafting_categories("vgal-carbon-sulfur-lubricant", {"hydraulics"})
+add_crafting_categories("vgal-carbon-lubricant", {"hydraulics"})
+add_crafting_categories("vgal-plastic-bar-lubricant", {"hydraulics"})
+add_crafting_categories("vgal-calcite-stone-holmium-solution", {"hydraulics"})
+add_crafting_categories("vgal-jelly-sulfur-lubricant", {"hydraulics"})
+add_crafting_categories("vgal-water-coal-ammonia", {"hydraulics"})
+add_crafting_categories("vgal-calcite-sulfuric-acid-ammonia", {"hydraulics"})
+add_crafting_categories("vgal-sulfuric-acid-sulfur", {"hydraulics"})
+add_crafting_categories("vgal-ice-solid-fuel-ammonia", {"hydraulics"})
+add_crafting_categories("vgal-scrap-sulfuric-acid-holmium-solution", {"hydraulics"})
+add_crafting_categories("vgal-thruster-oxidizer-thruster-fuel-steam", {"hydraulics"})
+add_crafting_categories("vgal-ammonia-water-crude-oil", {"petrochemistry"})
+add_crafting_categories("vgal-petroleum-gas-coal-heavy-oil", {"petrochemistry"})
+add_crafting_categories("vgal-solid-fuel-carbon", {"petrochemistry"})
+add_crafting_categories("vgal-solid-fuel-sulfuric-acid-carbon", {"petrochemistry"})
+add_crafting_categories("vgal-petroleum-gas-rocket-fuel", {"petrochemistry"})
+add_crafting_categories("vgal-tungsten-plate-piercing-rounds-magazine", {"ammunition"})
+add_crafting_categories("vgal-tungsten-plate-cannon-shell", {"ammunition"})
+add_crafting_categories("vgal-tungsten-plate-explosive-cannon-shell", {"ammunition"})
+add_crafting_categories("vgal-tungsten-plate-piercing-shotgun-shell", {"ammunition"})
+add_crafting_categories("vgal-plastic-bar-railgun-ammo", {"ammunition"})
+add_crafting_categories("vgal-explosives-grenade", {"ammunition"})
+add_crafting_categories("vgal-holmium-plate-railgun-ammo", {"ammunition"})
+add_crafting_categories("vgal-superconductor-railgun-ammo", {"ammunition"})
 
 local tech = data.raw.technology["electronics"]
 for i, effect in ipairs(tech.effects) do

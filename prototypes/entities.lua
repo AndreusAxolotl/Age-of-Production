@@ -9,7 +9,8 @@ local simulations = require("__space-age__.prototypes.factoriopedia-simulations"
 require ("util")
 require("__base__/prototypes/entity/pipecovers")
 require ("circuit-connector-sprites")
-require("__base__/prototypes/entity/assemblerpipes")
+local assembler_pictures = require("__base__.prototypes.entity.assembler-pictures")
+local pipe_picture = assembler_pictures.assembler3pipepictures
 local hit_effects = require("__base__/prototypes/entity/hit-effects")
 local sounds = require("__base__/prototypes/entity/sounds")
 local movement_triggers = require("__base__/prototypes/entity/movement-triggers")
@@ -273,7 +274,7 @@ data:extend {{
     allow_productivity = false,
     surface_conditions = {{property = "pressure", min = 4000, max = 4000}},
     main_product = "aop-arc-furnace",
-    category = "metallurgy",
+    categories = {"metallurgy"},
     auto_recycle = true
 },
 {
@@ -308,8 +309,7 @@ data:extend {{
     allow_productivity = false,
     surface_conditions = {{property = "pressure", min = 1000, max = 1000}},
     main_product = "aop-atomic-enricher",
-    category = "advanced-centrifuging",
-    additional_categories = {"centrifuging"},
+    categories = {"advanced-centrifuging", "centrifuging"},
     auto_recycle = false
 },
 {
@@ -344,7 +344,7 @@ data:extend {{
     allow_productivity = false,
     surface_conditions = {{property = "pressure", min = 1000, max = 2000}},
     main_product = "aop-greenhouse",
-    category = "woodworking",
+    categories = {"woodworking"},
     auto_recycle = true
 },
 {
@@ -379,8 +379,7 @@ data:extend {{
     allow_productivity = false,
     surface_conditions = {{property = "pressure", min = 300, max = 300}},
     main_product = "aop-hydraulic-plant",
-    category = "crafting-with-fluid",
-    additional_categories = {"chemistry", "hydraulics"},
+    categories = {"crafting-with-fluid", "chemistry", "hydraulics"},
     crafting_machine_tint =
     {
         primary = {r = 0.433, g = 0.773, b = 1.000, a = 1.000},
@@ -421,8 +420,7 @@ data:extend {{
     allow_productivity = false,
     surface_conditions = {{property = "pressure", min = 1000, max = 1000}},
     main_product = "aop-lumber-mill",
-    category = "woodworking",
-    additional_categories = {"crafting"},
+    categories = {"woodworking", "crafting"},
     auto_recycle = true
 },
 {
@@ -457,8 +455,7 @@ data:extend {{
     allow_productivity = false,
     surface_conditions = {{property = "magnetic-field", min = 99, max = 99}},
     main_product = "aop-petrochemical-facility",
-    category = "chemistry",
-    additional_categories = {"petrochemistry", "oil-processing"},
+    categories = {"chemistry", "petrochemistry", "oil-processing"},
     crafting_machine_tint =
     {
       primary = {r = 1.000, g = 0.642, b = 0.261, a = 1.000}, 
@@ -504,7 +501,7 @@ data:extend {{
     allow_productivity = false,
     surface_conditions = {{property = "pressure", max = 600}},
     main_product = "aop-quantum-assembler",
-    category = "electromagnetics",
+    categories = {"electromagnetics"},
     auto_recycle = false
 },
 {
@@ -544,7 +541,7 @@ data:extend {{
     allow_productivity = false,
     surface_conditions = {{property = "pressure", max = 600}},
     main_product = "aop-quantum-computer",
-    category = "electromagnetics",
+    categories = {"electromagnetics"},
     auto_recycle = false
 },
 {
@@ -583,7 +580,7 @@ data:extend {{
     allow_productivity = false,
     surface_conditions = {{property = "pressure", max = 600}},
     main_product = "aop-quantum-stabilizer",
-    category = "electromagnetics",
+    categories = {"electromagnetics"},
     auto_recycle = false
 },
 {
@@ -618,7 +615,7 @@ data:extend {{
     allow_productivity = false,
     surface_conditions = {{property = "pressure", min = 800, max = 800}},
     main_product = "aop-salvager",
-    category = "electromagnetics",
+    categories = {"electromagnetics"},
     auto_recycle = true
 },
 {
@@ -656,7 +653,7 @@ data:extend {{
     allow_productivity = false,
     surface_conditions = {{property = "pressure", min = 800, max = 800}},
     main_product = "aop-advanced-assembling-machine",
-    category = "electromagnetics",
+    categories = {"electromagnetics"},
     auto_recycle = false
 },
 {
@@ -697,7 +694,7 @@ data:extend {{
     allow_productivity = false,
     surface_conditions = {{property = "pressure", min = 4000, max = 4000}},
     main_product = "aop-core-miner",
-    category = "metallurgy",
+    categories = {"metallurgy"},
     auto_recycle = false
 },
 {
@@ -734,7 +731,7 @@ data:extend {{
     allow_productivity = false,
     surface_conditions = {{property = "pressure", min = 4000, max = 4000}},
     main_product = "aop-armory",
-    category = "metallurgy",
+    categories = {"metallurgy"},
     auto_recycle = false
 },
 {
@@ -768,7 +765,7 @@ data:extend {{
     allow_productivity = false,
     surface_conditions = {{property = "pressure", min = 300, max = 300}},
     main_product = "aop-synthesizer",
-    category = "crafting",
+    categories = {"crafting"},
     auto_recycle = true
 },
 {
@@ -804,7 +801,7 @@ data:extend {{
     allow_productivity = false,
     surface_conditions = {{property = "pressure", min = 1000, max = 1000}},
     main_product = "aop-biomass-reactor",
-    category = "crafting",
+    categories = {"crafting"},
     auto_recycle = false
 },
 {
@@ -838,7 +835,7 @@ data:extend {{
     },
     allow_productivity = false,
     main_product = "aop-transmitter",
-    category = "electronics",
+    categories = {"crafting", "electromagnetics"},
     auto_recycle = true
 },
 {
@@ -864,32 +861,32 @@ data:extend {{
         {
           {
             production_type = "input",
-            pipe_covers = pipecoverspictures(),
-            pipe_picture = assembler2pipepictures(),
+            pipe_picture = require("__base__/prototypes/entity/assembler-pictures").assembler2pipepictures,
+        pipe_covers = pipecoverspictures(),
             secondary_draw_orders = { north = -1 },
             volume = 1000,
             pipe_connections = { { flow_direction = "input", direction = defines.direction.north, position = { -1, -2 } } }
         },
         {
             production_type = "input",
-            pipe_covers = pipecoverspictures(),
-            pipe_picture = assembler2pipepictures(),
+            pipe_picture = require("__base__/prototypes/entity/assembler-pictures").assembler2pipepictures,
+        pipe_covers = pipecoverspictures(),
             secondary_draw_orders = { north = -1 },
             volume = 1000,
             pipe_connections = { { flow_direction = "input", direction = defines.direction.north, position = { 1, -2 } } }
         },
         {
             production_type = "output",
-            pipe_covers = pipecoverspictures(),
-            pipe_picture = assembler2pipepictures(),
+            pipe_picture = require("__base__/prototypes/entity/assembler-pictures").assembler2pipepictures,
+        pipe_covers = pipecoverspictures(),
             secondary_draw_orders = { north = -1 },
             volume = 500,
             pipe_connections = { { flow_direction = "output", direction = defines.direction.south, position = { -1, 2 } } }
         },
         {
             production_type = "output",
-            pipe_covers = pipecoverspictures(),
-            pipe_picture = assembler2pipepictures(),
+            pipe_picture = require("__base__/prototypes/entity/assembler-pictures").assembler2pipepictures,
+        pipe_covers = pipecoverspictures(),
             secondary_draw_orders = { north = -1 },
             volume = 500,
             pipe_connections = { { flow_direction = "output", direction = defines.direction.south, position = { 1, 2 } } }
@@ -1158,32 +1155,32 @@ data:extend {{
         {
           {
             production_type = "input",
-            pipe_covers = pipecoverspictures(),
-            pipe_picture = assembler2pipepictures(),
+            pipe_picture = require("__base__/prototypes/entity/assembler-pictures").assembler2pipepictures,
+        pipe_covers = pipecoverspictures(),
             secondary_draw_orders = { north = -1 },
             volume = 1000,
             pipe_connections = { { flow_direction = "input", direction = defines.direction.north, position = { -1, -2 } } }
         },
         {
             production_type = "input",
-            pipe_covers = pipecoverspictures(),
-            pipe_picture = assembler2pipepictures(),
+            pipe_picture = require("__base__/prototypes/entity/assembler-pictures").assembler2pipepictures,
+        pipe_covers = pipecoverspictures(),
             secondary_draw_orders = { north = -1 },
             volume = 1000,
             pipe_connections = { { flow_direction = "input", direction = defines.direction.north, position = { 1, -2 } } }
         },
         {
             production_type = "output",
-            pipe_covers = pipecoverspictures(),
-            pipe_picture = assembler2pipepictures(),
+            pipe_picture = require("__base__/prototypes/entity/assembler-pictures").assembler2pipepictures,
+        pipe_covers = pipecoverspictures(),
             secondary_draw_orders = { north = -1 },
             volume = 500,
             pipe_connections = { { flow_direction = "output", direction = defines.direction.south, position = { -1, 2 } } }
         },
         {
             production_type = "output",
-            pipe_covers = pipecoverspictures(),
-            pipe_picture = assembler2pipepictures(),
+            pipe_picture = require("__base__/prototypes/entity/assembler-pictures").assembler2pipepictures,
+        pipe_covers = pipecoverspictures(),
             secondary_draw_orders = { north = -1 },
             volume = 500,
             pipe_connections = { { flow_direction = "output", direction = defines.direction.south, position = { 1, 2 } } }
@@ -1460,32 +1457,32 @@ data:extend {{
         {
           {
             production_type = "input",
-            pipe_covers = pipecoverspictures(),
-            pipe_picture = assembler2pipepictures(),
+            pipe_picture = require("__base__/prototypes/entity/assembler-pictures").assembler2pipepictures,
+        pipe_covers = pipecoverspictures(),
             secondary_draw_orders = { west = -1 },
             volume = 1000,
             pipe_connections = { { flow_direction = "input", direction = defines.direction.west, position = { -5,  3 } } }
         },
         {
             production_type = "input",
-            pipe_covers = pipecoverspictures(),
-            pipe_picture = assembler2pipepictures(),
+            pipe_picture = require("__base__/prototypes/entity/assembler-pictures").assembler2pipepictures,
+        pipe_covers = pipecoverspictures(),
             secondary_draw_orders = { west = -1 },
             volume = 1000,
             pipe_connections = { { flow_direction = "input", direction = defines.direction.west, position = { -5, -3 } } }
         },
         {
             production_type = "output",
-            pipe_covers = pipecoverspictures(),
-            pipe_picture = assembler2pipepictures(),
+            pipe_picture = require("__base__/prototypes/entity/assembler-pictures").assembler2pipepictures,
+        pipe_covers = pipecoverspictures(),
             secondary_draw_orders = { west = -1 },
             volume = 500,
             pipe_connections = { { flow_direction = "output", direction = defines.direction.east, position = { 5, 3 } } }
         },
         {
             production_type = "output",
-            pipe_covers = pipecoverspictures(),
-            pipe_picture = assembler2pipepictures(),
+            pipe_picture = require("__base__/prototypes/entity/assembler-pictures").assembler2pipepictures,
+        pipe_covers = pipecoverspictures(),
             secondary_draw_orders = { west = -1 },
             volume = 500,
             pipe_connections = { { flow_direction = "output", direction = defines.direction.east, position = { 5, -3 } } }
@@ -1603,7 +1600,7 @@ data:extend {{
         collision_box = {{-1.6, -1.6}, {1.6, 1.6}},
         selection_box = {{-2, -2}, {2, 2}},
         
-        crafting_categories = {"recycling", "recycling-or-hand-crafting"},
+        crafting_categories = {"recycling"},
         crafting_speed = 1,
         energy_source =
         {
@@ -1685,15 +1682,15 @@ data:extend {{
           
         working_sound =
     {
-      sound = { filename = "__quality__/sound/recycler/recycler-loop.ogg", volume = 0.7 },
+      sound = { filename = "__recycler__/sound/recycler/recycler-loop.ogg", volume = 0.7 },
       sound_accents =
       {
-        { sound = { variations = sound_variations("__quality__/sound/recycler/recycler-jaw-move", 5, 0.45 )}, frame = 14, audible_distance_modifier = 0.2 },
-        { sound = { variations = sound_variations("__quality__/sound/recycler/recycler-vox", 5, 0.2 )}, frame = 20, audible_distance_modifier = 0.3 },
-        { sound = { variations = sound_variations("__quality__/sound/recycler/recycler-mechanic", 3, 0.3 )}, frame = 45, audible_distance_modifier = 0.3 },
-        { sound = { variations = sound_variations("__quality__/sound/recycler/recycler-jaw-move", 5, 0.45 )}, frame = 60, audible_distance_modifier = 0.2 },
-        { sound = { variations = sound_variations("__quality__/sound/recycler/recycler-trash", 5, 0.6 )}, frame = 61, audible_distance_modifier = 0.3 },
-        { sound = { variations = sound_variations("__quality__/sound/recycler/recycler-jaw-shut", 6, 0.3 )}, frame = 63, audible_distance_modifier = 0.6 },
+        { sound = { variations = sound_variations("__recycler__/sound/recycler/recycler-jaw-move", 5, 0.45 )}, frame = 14, audible_distance_modifier = 0.2 },
+        { sound = { variations = sound_variations("__recycler__/sound/recycler/recycler-vox", 5, 0.2 )}, frame = 20, audible_distance_modifier = 0.3 },
+        { sound = { variations = sound_variations("__recycler__/sound/recycler/recycler-mechanic", 3, 0.3 )}, frame = 45, audible_distance_modifier = 0.3 },
+        { sound = { variations = sound_variations("__recycler__/sound/recycler/recycler-jaw-move", 5, 0.45 )}, frame = 60, audible_distance_modifier = 0.2 },
+        { sound = { variations = sound_variations("__recycler__/sound/recycler/recycler-trash", 5, 0.6 )}, frame = 61, audible_distance_modifier = 0.3 },
+        { sound = { variations = sound_variations("__recycler__/sound/recycler/recycler-jaw-shut", 6, 0.3 )}, frame = 63, audible_distance_modifier = 0.6 },
       },
       max_sounds_per_type = 2,
       fade_in_ticks = 4,
@@ -1735,32 +1732,32 @@ data:extend {{
         {
           {
             production_type = "input",
-            pipe_covers = pipecoverspictures(),
-            pipe_picture = assembler2pipepictures(),
+            pipe_picture = require("__base__/prototypes/entity/assembler-pictures").assembler2pipepictures,
+        pipe_covers = pipecoverspictures(),
             secondary_draw_orders = { north = -1 },
             volume = 1000,
             pipe_connections = { { flow_direction = "input", direction = defines.direction.north, position = { -1.5, -2.5 } } }
         },
         {
             production_type = "input",
-            pipe_covers = pipecoverspictures(),
-            pipe_picture = assembler2pipepictures(),
+            pipe_picture = require("__base__/prototypes/entity/assembler-pictures").assembler2pipepictures,
+        pipe_covers = pipecoverspictures(),
             secondary_draw_orders = { north = -1 },
             volume = 1000,
             pipe_connections = { { flow_direction = "input", direction = defines.direction.north, position = { 1.5, -2.5 } } }
         },
         {
             production_type = "output",
-            pipe_covers = pipecoverspictures(),
-            pipe_picture = assembler2pipepictures(),
+            pipe_picture = require("__base__/prototypes/entity/assembler-pictures").assembler2pipepictures,
+        pipe_covers = pipecoverspictures(),
             secondary_draw_orders = { north = -1 },
             volume = 500,
             pipe_connections = { { flow_direction = "output", direction = defines.direction.south, position = { -1.5, 2.5 } } }
         },
         {
             production_type = "output",
-            pipe_covers = pipecoverspictures(),
-            pipe_picture = assembler2pipepictures(),
+            pipe_picture = require("__base__/prototypes/entity/assembler-pictures").assembler2pipepictures,
+        pipe_covers = pipecoverspictures(),
             secondary_draw_orders = { north = -1 },
             volume = 500,
             pipe_connections = { { flow_direction = "output", direction = defines.direction.south, position = { 1.5, 2.5 } } }
@@ -2457,32 +2454,32 @@ data:extend {{
         {
           {
             production_type = "input",
-            pipe_covers = pipecoverspictures(),
-            pipe_picture = assembler2pipepictures(),
+            pipe_picture = require("__base__/prototypes/entity/assembler-pictures").assembler2pipepictures,
+        pipe_covers = pipecoverspictures(),
             secondary_draw_orders = { north = -1 },
             volume = 1000,
             pipe_connections = { { flow_direction = "input", direction = defines.direction.north, position = { -1, -3 } } }
         },
         {
             production_type = "input",
-            pipe_covers = pipecoverspictures(),
-            pipe_picture = assembler2pipepictures(),
+            pipe_picture = require("__base__/prototypes/entity/assembler-pictures").assembler2pipepictures,
+        pipe_covers = pipecoverspictures(),
             secondary_draw_orders = { north = -1 },
             volume = 1000,
             pipe_connections = { { flow_direction = "input", direction = defines.direction.north, position = { 1, -3 } } }
         },
         {
             production_type = "output",
-            pipe_covers = pipecoverspictures(),
-            pipe_picture = assembler2pipepictures(),
+            pipe_picture = require("__base__/prototypes/entity/assembler-pictures").assembler2pipepictures,
+        pipe_covers = pipecoverspictures(),
             secondary_draw_orders = { north = -1 },
             volume = 500,
             pipe_connections = { { flow_direction = "output", direction = defines.direction.south, position = { -1, 3 } } }
         },
         {
             production_type = "output",
-            pipe_covers = pipecoverspictures(),
-            pipe_picture = assembler2pipepictures(),
+            pipe_picture = require("__base__/prototypes/entity/assembler-pictures").assembler2pipepictures,
+        pipe_covers = pipecoverspictures(),
             secondary_draw_orders = { north = -1 },
             volume = 500,
             pipe_connections = { { flow_direction = "output", direction = defines.direction.south, position = { 1, 3 } } }
@@ -3000,16 +2997,16 @@ data:extend {{
         {
           {
             production_type = "input",
-            pipe_covers = pipecoverspictures(),
-            pipe_picture = assembler2pipepictures(),
+            pipe_picture = require("__base__/prototypes/entity/assembler-pictures").assembler2pipepictures,
+        pipe_covers = pipecoverspictures(),
             secondary_draw_orders = { north = -1 },
             volume = 1000,
             pipe_connections = { { flow_direction = "input", direction = defines.direction.north, position = { -1, -2 } } }
         },
         {
             production_type = "input",
-            pipe_covers = pipecoverspictures(),
-            pipe_picture = assembler2pipepictures(),
+            pipe_picture = require("__base__/prototypes/entity/assembler-pictures").assembler2pipepictures,
+        pipe_covers = pipecoverspictures(),
             secondary_draw_orders = { north = -1 },
             volume = 1000,
             pipe_connections = { { flow_direction = "input", direction = defines.direction.north, position = { 1, -2 } } }
