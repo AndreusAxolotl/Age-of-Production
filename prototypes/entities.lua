@@ -865,15 +865,8 @@ data:extend {{
         pipe_covers = pipecoverspictures(),
             secondary_draw_orders = { north = -1 },
             volume = 1000,
-            pipe_connections = { { flow_direction = "input", direction = defines.direction.north, position = { -1, -2 } } }
-        },
-        {
-            production_type = "input",
-            pipe_picture = require("__base__/prototypes/entity/assembler-pictures").assembler2pipepictures,
-        pipe_covers = pipecoverspictures(),
-            secondary_draw_orders = { north = -1 },
-            volume = 1000,
-            pipe_connections = { { flow_direction = "input", direction = defines.direction.north, position = { 1, -2 } } }
+            pipe_connections = { { flow_direction = "input", direction = defines.direction.north, position = { -1, -2 } } ,
+            { flow_direction = "input", direction = defines.direction.north, position = { 1, -2 } } }
         },
         {
             production_type = "output",
@@ -881,16 +874,9 @@ data:extend {{
         pipe_covers = pipecoverspictures(),
             secondary_draw_orders = { north = -1 },
             volume = 500,
-            pipe_connections = { { flow_direction = "output", direction = defines.direction.south, position = { -1, 2 } } }
-        },
-        {
-            production_type = "output",
-            pipe_picture = require("__base__/prototypes/entity/assembler-pictures").assembler2pipepictures,
-        pipe_covers = pipecoverspictures(),
-            secondary_draw_orders = { north = -1 },
-            volume = 500,
-            pipe_connections = { { flow_direction = "output", direction = defines.direction.south, position = { 1, 2 } } }
-        },
+            pipe_connections = { { flow_direction = "output", direction = defines.direction.south, position = { -1, 2 } } ,
+             { flow_direction = "output", direction = defines.direction.south, position = { 1, 2 } } }
+        }
       },
         fluid_boxes_off_when_no_fluid_recipe = true,
         crafting_speed = 2,
