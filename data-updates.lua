@@ -27,4 +27,3 @@ end
 if mods["scraptk"] then 
     ScrapIndustry.categories["advanced-smelting"] = {ignore=true}
 end
-

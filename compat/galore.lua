@@ -12,7 +12,8 @@ for _, recipe in pairs(data.raw.recipe) do
             end
         end
         if not exclude then
-            recipe.additional_categories = {"quantum-assembling"}
+            recipe.categories = recipe.categories or {"crafting"}
+            table.insert(recipe.categories, "quantum-assembling")
         end
     end
 end
