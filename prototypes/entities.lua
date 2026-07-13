@@ -888,6 +888,7 @@ data:extend {{
           drain = "160kW",
         },
         impact_category = "metal",
+        use_mirroring = true,
         open_sound = sounds.metal_large_open,
         close_sound = sounds.metal_large_close,
         energy_usage = "1MW",
@@ -1135,7 +1136,7 @@ data:extend {{
         circuit_connector = circuit_connector_definitions["aop-armory"],
         collision_box = {{-2.1, -2.1}, {2.1, 2.1}},
         selection_box = {{-2.5, -2.5}, {2.5, 2.5}},
-        
+        use_mirroring = true,
         crafting_categories = {"ammunition"},
         fluid_boxes =
         {
@@ -1484,6 +1485,7 @@ data:extend {{
           drain = "5MW",
         },
         impact_category = "metal",
+        use_mirroring = true,
         open_sound = sounds.machine_open,
         close_sound = sounds.machine_close,
         energy_usage = "250MW",
@@ -1712,7 +1714,7 @@ data:extend {{
         circuit_connector = circuit_connector_definitions["aop-atomic-enricher"], 
         collision_box = {{-2.6, -2.6}, {2.6, 2.6}},
         selection_box = {{-3, -3}, {3, 3}},
-        
+        use_mirroring = true,
         crafting_categories = {"centrifuging", "advanced-centrifuging"},
         fluid_boxes =
         {
@@ -2057,7 +2059,7 @@ data:extend {{
         circuit_connector = circuit_connector_definitions["aop-greenhouse"],
         collision_box = {{-2.1, -2.1}, {2.1, 2.1}},
         selection_box = {{-2.5, -2.5}, {2.5, 2.5}},
-        
+        use_mirroring = true,
         crafting_categories = {"agriculture"},
         crafting_speed = 2,
         energy_source =
@@ -2239,7 +2241,7 @@ data:extend {{
         circuit_connector = circuit_connector_definitions["aop-hydraulic-plant"],
         collision_box = {{-1.6, -1.6}, {1.6, 1.6}},
         selection_box = {{-2, -2}, {2, 2}},
-        
+        use_mirroring = true,
         crafting_categories = {"hydraulics"},
         fluid_boxes = {
             {
@@ -2434,7 +2436,7 @@ data:extend {{
         circuit_connector = circuit_connector_definitions["aop-lumber-mill"],
         collision_box = {{-3.1, -3.1}, {3.1, 3.1}},
         selection_box = {{-3.5, -3.5}, {3.5, 3.5}},
-        
+        use_mirroring = true,
         crafting_categories = {"woodworking"},
         fluid_boxes =
         {
@@ -2625,7 +2627,7 @@ data:extend {{
         circuit_connector = circuit_connector_definitions["aop-synthesizer"],
         collision_box = {{-1.6, -1.6}, {1.6, 1.6}},
         selection_box = {{-2, -2}, {2, 2}},
-        
+        use_mirroring = true,
         crafting_categories = {"synthesis"},
         crafting_speed = 1.5,
         energy_source =
@@ -2795,7 +2797,7 @@ data:extend {{
         circuit_connector = circuit_connector_definitions["aop-petrochemical-facility"],
         collision_box = {{-2.1, -2.1}, {2.1, 2.1}},
         selection_box = {{-2.5, -2.5}, {2.5, 2.5}},
-        
+        use_mirroring = true,
         crafting_categories = {"oil-processing", "petrochemistry"},
         fluid_boxes =
     {
@@ -2977,7 +2979,7 @@ data:extend {{
         circuit_connector = circuit_connector_definitions["aop-quantum-assembler"],
         collision_box = {{-2.1, -2.1}, {2.1, 2.1}},
         selection_box = {{-2.5, -2.5}, {2.5, 2.5}},
-        
+        use_mirroring = true,
         crafting_categories = {"quantum-assembling"},
         fluid_boxes =
         {

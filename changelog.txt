@@ -1,4 +1,11 @@
 ---------------------------------------------------------------------------------------------------
+Version: 2.1.4
+Date: 2026-07-11
+  Flip it!:
+
+  Fixes:
+    - Added missing flippable property to all entities that needed it. I did not know it was no longer default in 2.1.
+---------------------------------------------------------------------------------------------------
 Version: 2.1.3
 Date: 2026-06-28
   Data...:
