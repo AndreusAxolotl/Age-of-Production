@@ -1,4 +1,18 @@
 ---------------------------------------------------------------------------------------------------
+Version: 2.2.0
+Date: 2026-07-16
+  Planetary updates:
+
+  Changes:
+    - Extended, added and reworked compatibilities with other planets, focusing on updating or adding new core mining techs and adding some planets' recipes to AoP machines.
+
+  Fixes:
+    - Fixed Maraxsis compat from crashing the game.
+
+  Notes:
+    - While compat isnt as in-depth as it was in AoP 1.X, I'd like it to get back there in ways that work with the new progression system of the mod. I personally have not found a satisfying way to do this but if anyone has suggestions I'll listen.
+    - Mods were selected from the All Planets modpack, mods that won't get compat in either core mining due to not matching the requirements/balance or recipes being added to AoP machines will no longer have custom Core Stability values to remove unnecessary mod size.
+---------------------------------------------------------------------------------------------------
 Version: 2.1.4
 Date: 2026-07-11
   Flip it!:

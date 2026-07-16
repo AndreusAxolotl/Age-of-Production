@@ -15,7 +15,7 @@ local function add_tech_effect(tech_name, effect)
     table.insert(tech.effects, effect)
   end
 
-  local function add_crafting_categories(entity_type, entity_name, categories)
+  local function add_machine_crafting_categories(entity_type, entity_name, categories)
     local entity = data.raw[entity_type][entity_name]
     for _,category in pairs(categories) do
       table.insert(entity.crafting_categories, category)

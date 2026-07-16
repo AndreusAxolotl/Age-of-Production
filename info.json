@@ -1,6 +1,6 @@
 {
   "name": "Age-of-Production",
-  "version": "2.1.4",
+  "version": "2.2.0",
   "title": "Age of Production",
   "author": "AndreusAxolotl",
   "homepage": "https://github.com/AndreusAxolotl/Age-of-Production",
@@ -11,7 +11,7 @@
     "space-age",
     "quality",
     "PlanetsLib",
-    "Age-of-Production-Graphics = 2.1.0",
+    "Age-of-Production-Graphics = 2.2.0",
     "(?) space_age_galore",
     "(?) QualityBioLab",
     "(?) atan-nuclear-science",
