@@ -5,10 +5,23 @@ require "compat.qualitybiolab"
 require "compat.nuclear-science"
 require "compat.aai"
 
-local function add_crafting_categories(entity_type, entity_name, categories)
-  local entity = data.raw[entity_type][entity_name]
-  for _,category in pairs(categories) do
-    table.insert(entity.crafting_categories, category)
+local function is_in_table(table_, value)
+  for _, item in pairs(table_) do
+    if item == value then
+      return true
+    end
+  end
+  return false
+end
+
+local function add_crafting_categories(recipe_name, categories)
+  local recipe = data.raw.recipe[recipe_name]
+  if not recipe then return end
+  recipe.categories = recipe.categories or {"crafting"}
+  for _, category_to_insert in pairs(categories) do
+    if not is_in_table(recipe.categories, category_to_insert) then
+      table.insert(recipe.categories, category_to_insert)
+    end
   end
 end
 

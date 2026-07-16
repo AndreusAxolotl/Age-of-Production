@@ -47,6 +47,7 @@ end
 
 local function add_crafting_categories(recipe_name, categories)
   local recipe = data.raw.recipe[recipe_name]
+  if not recipe then return end
   recipe.categories = recipe.categories or {"crafting"}
   for _, category_to_insert in pairs(categories) do
     if not is_in_table(recipe.categories, category_to_insert) then

@@ -70,7 +70,7 @@ local function on_created_entity(event)
     {name = "aop-core-miner", count = 1, quality = entity.quality},
   }
 
-  for _, module in ipairs(entity.get_inventory(defines.inventory.assembling_machine_modules).get_contents()) do
+  for _, module in ipairs(entity.get_inventory(defines.inventory.crafter_modules).get_contents()) do
     table.insert(items_to_return, module)
   end
 
