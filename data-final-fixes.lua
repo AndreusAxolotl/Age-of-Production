@@ -29,3 +29,8 @@ for _, type in pairs{"assembling-machine","furnace","agricultural-tower","boiler
     end
   end
 end
+
+data.raw.item["uranium-238"].weight = 10*kg
+data.raw.item["aop-uranium-233"].weight = 10*kg
+data.raw.item["uranium-235"].weight = 10*kg
+data.raw.item["centrifuge"].weight = 200 * kg

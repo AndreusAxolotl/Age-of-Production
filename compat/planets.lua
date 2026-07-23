@@ -621,7 +621,8 @@ end
     add_crafting_categories("hydronium-destruction", {"hydraulics"})
     add_crafting_categories("oxyhydrogen-combustion", {"hydraulics"})
     add_crafting_categories("toxic-rounds-magazine", {"ammunition"})
-    add_crafting_categories("heavy-shotgun-shells", {"ammunition"})
+    add_crafting_categories("heavy-shotgun-shell", {"ammunition"})
+    add_crafting_categories("explosive-shotgun-shell", {"ammunition"})
      data:extend {{
             type = "recipe",
             name = "aop-murian-crushing",
