@@ -566,6 +566,7 @@ data:extend {
         {type = "item", name = "aop-hot-tungsten-plate", amount = 1, ignored_by_stats = 1, ignored_by_productivity = 1},
     },
     allow_productivity = false,
+    allow_quality = false,
     categories = {"advanced-smelting"},
     auto_recycle = false,
     
@@ -879,7 +880,8 @@ data:extend {
     },
     energy_required = 2,
     results = {{type="item", name="aop-thermal-science-pack", amount=1}},
-    allow_productivity = false
+    allow_productivity = false,
+    allow_quality = false,
   },
     {
     type = "recipe",
