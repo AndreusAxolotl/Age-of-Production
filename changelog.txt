@@ -1,4 +1,11 @@
 ---------------------------------------------------------------------------------------------------
+Version: 2.2.5
+Date: 2026-08-05
+  how did i do that:
+
+  Fixes:
+    - put the ignored by productivity field on the actual correct line for thermal science heating.
+---------------------------------------------------------------------------------------------------
 Version: 2.2.4
 Date: 2026-08-05
   quality unful:

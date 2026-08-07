@@ -876,10 +876,10 @@ data:extend {
     enabled = false,
     ingredients =
     {
-      {type = "item", name = "aop-unheated-thermal-science-pack", amount = 1, ignored_by_stats = 1, ignored_by_productivity = 1},
+      {type = "item", name = "aop-unheated-thermal-science-pack", amount = 1},
     },
     energy_required = 2,
-    results = {{type="item", name="aop-thermal-science-pack", amount=1}},
+    results = {{type="item", name="aop-thermal-science-pack", amount=1, ignored_by_stats = 1, ignored_by_productivity = 1}},
     allow_productivity = false,
     allow_quality = false,
   },
