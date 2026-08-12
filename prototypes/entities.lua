@@ -1610,7 +1610,7 @@ data:extend {{
         allowed_effects = {"consumption", "speed", "pollution", "quality"},
         effect_receiver = {
           base_effect = {
-            quality = 1
+            quality = 0.1
           }
         },
         graphics_set = {
