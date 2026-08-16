@@ -334,9 +334,9 @@ data:extend {{
     ingredients = {
         {type = "item", name = "agricultural-tower",   amount = 1},
         {type = "item", name = "landfill",       amount = 20},
-        {type = "item", name = "steel-plate", amount = 20},
-        {type = "item", name = "aop-biocircuit", amount = 10},
-        {type = "item", name = "iron-gear-wheel", amount = 10},
+        {type = "item", name = "steel-plate", amount = 50},
+        {type = "item", name = "aop-biocircuit", amount = 25},
+        {type = "item", name = "iron-gear-wheel", amount = 20},
     },
     results = {
         {type = "item", name = "aop-greenhouse", amount = 1}

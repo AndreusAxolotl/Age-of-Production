@@ -1,11 +1,17 @@
 ---------------------------------------------------------------------------------------------------
+Version: 2.2.7
+Date: 2026-08-17
+  sorry guys:
+
+  Changes:
+    - Moved the greenhouse back to promethium tier due to it being highkey op with quality.
+---------------------------------------------------------------------------------------------------
 Version: 2.2.6
 Date: 2026-08-13
   thanks 2.1:
 
   Fixes:
     - Adjusted Salvager's innate quality bonus to the intended value.
-
 ---------------------------------------------------------------------------------------------------
 Version: 2.2.5
 Date: 2026-08-05

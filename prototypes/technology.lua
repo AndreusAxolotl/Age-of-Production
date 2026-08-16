@@ -76,10 +76,10 @@ data:extend{
         recipe = "aop-tree-planting"
       },
     },
-    prerequisites = {"aop-biocircuits"},
+    prerequisites = {"aop-biocircuits", "cryogenic-science-pack"},
     unit =
     {
-      count = 1000,
+      count = 5000,
       ingredients =
       {
         {"automation-science-pack", 1},
@@ -90,6 +90,7 @@ data:extend{
         {"space-science-pack", 1},
         {"agricultural-science-pack", 1},
         {"aop-forestry-science-pack", 1},
+        {"cryogenic-science-pack", 1}
       },
       time = 60
     }
