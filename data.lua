@@ -130,7 +130,11 @@ data.raw.recipe["carbon"].crafting_machine_tint =
     quaternary = {r = 0.0, g = 0.0, b = 0.0, a = 1.000}
 }
 data.raw.recipe["tree-seed"].surface_conditions = nil
-data.raw.item["spoilage"].fuel_category = "aop-spoilage"
+if helpers.compare_versions(helpers.game_version, "2.1.20") < 0 then
+    data.raw.item["spoilage"].fuel_category = "aop-spoilage"
+else
+    table.insert(data.raw.item["spoilage"].fuel_categories, "aop-spoilage")
+end
 
 data:extend({
     {

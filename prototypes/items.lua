@@ -14,8 +14,7 @@ local max_nuke_shockwave_movement_distance_deviation = 2
 local max_nuke_shockwave_movement_distance = 19 + max_nuke_shockwave_movement_distance_deviation / 6
 local nuke_shockwave_starting_speed_deviation = 0.075
 
-data:extend {
-{
+local biomass = {
         type = "item",
         name = "aop-biomass",
         icon = "__Age-of-Production-Graphics__/graphics/icons/biomass.png",
@@ -23,14 +22,22 @@ data:extend {
         inventory_move_sound = space_age_item_sounds.agriculture_inventory_move,
         pick_sound = space_age_item_sounds.agriculture_inventory_pickup,
         drop_sound = space_age_item_sounds.agriculture_inventory_move,
-        fuel_category = "nutrients",
         fuel_value = "0.75MJ",
         stack_size = 100,
         default_import_location = "nauvis",
         spoil_ticks = 36000,
         spoil_result = "spoilage",
         weight = 100 
-},
+}
+
+if helpers.compare_versions(helpers.game_version, "2.1.20") < 0 then
+        biomass.fuel_category = "nutrients"
+else
+        biomass.fuel_categories = {"nutrients"}
+end
+
+data:extend {
+biomass,
 {
     type = "fluid",
     name = "aop-mineral-slurry",
