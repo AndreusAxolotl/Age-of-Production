@@ -576,14 +576,17 @@ if mods["panglia_planet_assets"] and mods["panglia_planet"] then
     add_crafting_categories("planetaris-carbon-nanotube", {"synthesis"})
 end
 
-             if mods["planetaris-tellus"] then 
-    data.raw.planet["tellus"].surface_properties["deep-crustal-stability"] = 3045
+if mods["planetaris-dyes"] then
     add_crafting_categories("planetaris-red-dye", {"synthesis"})
     add_crafting_categories("planetaris-blue-dye", {"synthesis"})
     add_crafting_categories("planetaris-yellow-dye", {"synthesis"})
     add_crafting_categories("planetaris-magenta-dye", {"synthesis"})
     add_crafting_categories("planetaris-cyan-dye", {"synthesis"})
     add_crafting_categories("planetaris-green-dye", {"synthesis"})
+end
+
+             if mods["planetaris-tellus"] then 
+    data.raw.planet["tellus"].surface_properties["deep-crustal-stability"] = 3045
     add_crafting_categories("planetaris-compost", {"woodworking"})
     data:extend {{
             type = "recipe",
