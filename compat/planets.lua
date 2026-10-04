@@ -487,7 +487,7 @@ if mods["maraxsis"] then
     if mods["skewer_shattered_planet"] then 
         data.raw.planet["skewer_shattered_planet"].surface_properties["deep-crustal-stability"] = 0
 
-        --awaiting 2.1 release
+        --awaiting 2.1 overhaul
     end
 
     if mods["skewer_planet_vesta"] then 
