@@ -1,4 +1,12 @@
 ---------------------------------------------------------------------------------------------------
+Version: 2.3.5
+Date: 2026-10-20
+  size up:
+
+  Changes:
+    - Extended vertical extension of various machines to have them display fully in the Factoriopedia.
+    - Adapted sizes of the alt mode recipe icons to better suit the size of the machines they're crafted in.
+---------------------------------------------------------------------------------------------------
 Version: 2.3.4
 Date: 2026-10-04
   pull requestful:

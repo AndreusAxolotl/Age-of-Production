@@ -855,7 +855,7 @@ data:extend {{
         circuit_connector = circuit_connector_definitions["aop-advanced-assembling-machine"],
         collision_box = {{-2.1, -2.1}, {2.1, 2.1}},
         selection_box = {{-2.5, -2.5}, {2.5, 2.5}},
-        
+        icon_draw_specification = {scale = 2, shift = {0, -0.3}},
         crafting_categories = data.raw["assembling-machine"]["assembling-machine-3"].crafting_categories,
         fluid_boxes =
         {
@@ -1028,7 +1028,7 @@ data:extend {{
         circuit_connector = circuit_connector_definitions["aop-arc-furnace"],
         collision_box = {{-2.1, -2.1}, {2.1, 2.1}},
         selection_box = {{-2.5, -2.5}, {2.5, 2.5}},
-        
+        icon_draw_specification = {scale = 2, shift = {0, -0.3}},
         crafting_categories = {"smelting", "advanced-smelting"},
         crafting_speed = 5,
         energy_source =
@@ -1137,6 +1137,7 @@ data:extend {{
         collision_box = {{-2.1, -2.1}, {2.1, 2.1}},
         selection_box = {{-2.5, -2.5}, {2.5, 2.5}},
         use_mirroring = true,
+        icon_draw_specification = {scale = 2, shift = {0, -0.3}},
         crafting_categories = {"ammunition"},
         fluid_boxes =
         {
@@ -1587,7 +1588,7 @@ data:extend {{
         circuit_connector = circuit_connector_definitions["aop-salvager"],
         collision_box = {{-1.6, -1.6}, {1.6, 1.6}},
         selection_box = {{-2, -2}, {2, 2}},
-        
+        icon_draw_specification = {shift = {0, -0.25}},
         crafting_categories = {"recycling"},
         crafting_speed = 1,
         energy_source =
@@ -1715,6 +1716,8 @@ data:extend {{
         collision_box = {{-2.6, -2.6}, {2.6, 2.6}},
         selection_box = {{-3, -3}, {3, 3}},
         use_mirroring = true,
+        icon_draw_specification = {scale = 2.5},
+        drawing_box_vertical_extension = 2.2,
         crafting_categories = {"centrifuging", "advanced-centrifuging"},
         fluid_boxes =
         {
@@ -2060,6 +2063,7 @@ data:extend {{
         collision_box = {{-2.1, -2.1}, {2.1, 2.1}},
         selection_box = {{-2.5, -2.5}, {2.5, 2.5}},
         use_mirroring = true,
+        icon_draw_specification = {scale = 2, shift = {0, -0.3}},
         crafting_categories = {"agriculture"},
         crafting_speed = 2,
         energy_source =
@@ -2242,6 +2246,8 @@ data:extend {{
         collision_box = {{-1.6, -1.6}, {1.6, 1.6}},
         selection_box = {{-2, -2}, {2, 2}},
         use_mirroring = true,
+        icon_draw_specification = {shift = {0, -0.25}},
+        drawing_box_vertical_extension = 2.2,
         crafting_categories = {"hydraulics"},
         fluid_boxes = {
             {
@@ -2437,6 +2443,8 @@ data:extend {{
         collision_box = {{-3.1, -3.1}, {3.1, 3.1}},
         selection_box = {{-3.5, -3.5}, {3.5, 3.5}},
         use_mirroring = true,
+        icon_draw_specification = {scale = 3},
+        drawing_box_vertical_extension = 2.2,
         crafting_categories = {"woodworking"},
         fluid_boxes =
         {
@@ -2628,6 +2636,8 @@ data:extend {{
         collision_box = {{-1.6, -1.6}, {1.6, 1.6}},
         selection_box = {{-2, -2}, {2, 2}},
         use_mirroring = true,
+        icon_draw_specification = {shift = {0, -0.25}},
+        drawing_box_vertical_extension = 2.2,
         crafting_categories = {"synthesis"},
         crafting_speed = 1.5,
         energy_source =
@@ -2798,6 +2808,7 @@ data:extend {{
         collision_box = {{-2.1, -2.1}, {2.1, 2.1}},
         selection_box = {{-2.5, -2.5}, {2.5, 2.5}},
         use_mirroring = true,
+        icon_draw_specification = {scale = 2, shift = {0, -0.3}},
         crafting_categories = {"oil-processing", "petrochemistry"},
         fluid_boxes =
     {
@@ -2980,7 +2991,9 @@ data:extend {{
         collision_box = {{-2.1, -2.1}, {2.1, 2.1}},
         selection_box = {{-2.5, -2.5}, {2.5, 2.5}},
         use_mirroring = true,
+        drawing_box_vertical_extension = 2.2,
         crafting_categories = {"quantum-assembling"},
+        icon_draw_specification = {scale = 2, shift = {0, -0.3}},
         fluid_boxes =
         {
           {
@@ -3160,7 +3173,7 @@ data:extend {{
         },
         collision_box = { { -2.6, -2.6 }, { 2.6, 2.6 } },
         selection_box = { { -3, -3 }, { 3, 3 } },
-        
+        icon_draw_specification = {scale = 2},
         researching_speed = 20,
         inputs = {},
         science_pack_drain_rate_percent = 10,
@@ -3179,7 +3192,7 @@ data:extend {{
         icons_positioning =
         {
             { inventory_index = defines.inventory.lab_modules, shift = { 0, 1.6 } },
-            { inventory_index = defines.inventory.lab_input,   shift = { 0, 0.4 }, max_icons_per_row = 6, separation_multiplier = 1 / 1.1 }
+            { inventory_index = defines.inventory.lab_input,   shift = { 0, 0.4 }, max_icons_per_row = 8, separation_multiplier = 1 / 1.1 }
         },
         on_animation =
         {
