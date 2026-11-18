@@ -467,11 +467,11 @@ if mods["maraxsis"] then
                 {type = "item", name = "tetrahedrite", amount = 1, independent_probability = 0.9},
                 {type = "item", name = "sphalerite", amount = 1, independent_probability = 0.9},
                 {type = "item", name = "vaterite", amount = 1, independent_probability = 0.45}, 
+                {type = "item", name = "fluorite", amount = 1, independent_probability = 0.2}, 
             },
             allow_productivity = true,
             categories = {"crushing"},
             auto_recycle = false,
-            
             maximum_productivity = 1,
             surface_conditions = {{property = "deep-crustal-stability", min = 6300, max = 6300}},
 }}
@@ -641,7 +641,7 @@ end
             },
             results = {
                  {type = "item", name = "cotunnite", amount = 1, independent_probability = 0.25},
-        {type = "item", name = "chlorine-salts", amount = 2, independent_probability = 0.7}, 
+        {type = "item", name = "chloride-salts", amount = 2, independent_probability = 0.7}, 
         {type = "item", name = "carbon", amount = 2, independent_probability = 0.2},
         {type = "item", name = "sulfur", amount = 2, independent_probability = 0.1},
             },
